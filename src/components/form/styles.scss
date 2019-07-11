@@ -1,0 +1,332 @@
+@import 'core';
+
+.input {
+  border: 1px solid $dark-grey-color; //was double-dark-grey
+  border-radius: 2px;
+  line-height: 14px;
+  // box-sizing: border-box;
+  padding: 9px 12px;
+  width: 100%;
+
+  @include font($m, $regular, $black-color);
+
+  &:focus {
+    border: 2px solid $primary-color;
+    padding: 8px 11px;
+  }
+
+  &:disabled {
+    background-color: $white-color;
+    opacity: 0.3;
+  }
+
+  &Error {
+    border: 1px solid $error-color;
+    padding: 8px 9px;
+
+    &:focus,
+    &:hover {
+      // padding: 6px 9px;
+      // padding: 9px 11px;
+
+      border: 2px solid $error-color;
+    }
+  }
+}
+
+.dropDownArrow {
+  color: $dark-grey-color;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.crossClose {
+  align-self: center;
+}
+
+.withIcon {
+  display: flex;
+  position: relative;
+
+  &BeforeInput {
+    padding-left: 35px;
+
+    &:focus {
+      border: 2px solid $primary-color;
+      padding: 8px 11px 8px 34px;
+    }
+  }
+
+  &AfterInput {
+    padding-left: 12px;
+
+    &:focus {
+      border: 2px solid $primary-color;
+      padding: 8px 11px;
+    }
+  }
+
+  .icon {
+    color: $dark-grey-color;
+    position: absolute;
+
+    &Before {
+      left: 0;
+      top: 50%;
+      transform: translate(10px, -50%);
+    }
+
+    &After {
+      right: 0;
+      top: 50%;
+      transform: translate(-9px, -50%);
+    }
+  }
+}
+
+.file {
+  &Dropzone {
+    border: none;
+    display: inline-block;
+    width: 98%;
+  }
+
+  @include font($m, $regular, $black-color);
+
+  background: transparent;
+  border: none;
+  border: 1px dashed $dark-grey-color;
+  border-radius: 2px;
+  cursor: pointer;
+  outline: none;
+  padding: 8px 13px;
+  width: 100%;
+
+  &:focus {
+    border: 2px dashed $primary-color;
+    outline: none;
+    padding: 7px 13px;
+  }
+
+  &Text {
+    line-height: 1;
+  }
+
+  &Accepted {
+    background-color: $active-secondary-color;
+    border: 1px dashed $primary-color;
+    line-height: 18px;
+  }
+
+  &Error {
+    background-color: $bgc-error-color;
+    border: 1px dashed $error-color;
+    line-height: 18px;
+
+    &:focus {
+      border: 2px dashed $error-color;
+      padding: 7px 13px;
+    }
+  }
+
+  &RightContainer {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    right: 9px;
+    z-index: 50;
+  }
+}
+
+.img {
+  height: 96px;
+  position: relative;
+  width: 96px;
+
+  &Drop {
+    background-color: transparent;
+    border: 1px dashed $dark-grey-color;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 96px;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    width: 96px;
+
+    &:focus {
+      border: 1px dashed $primary-color;
+    }
+
+    &Error {
+      background-color: $bgc-error-color;
+      border: 1px dashed $error-color;
+
+      &:focus {
+        border: 1px dashed $error-color;
+      }
+    }
+
+    &Avatar {
+      width: 100%;
+    }
+
+    &DeleteBtn {
+      position: absolute;
+      right: 5px;
+      top: -4px;
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid transparent;
+      }
+
+      svg {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+.attachSvg {
+  vertical-align: middle;
+}
+
+.searchIcon {
+  color: $dark-grey-color;
+  left: 7px;
+  position: absolute;
+  z-index: 5;
+
+  &One {
+    top: 34px;
+  }
+
+  &Two {
+    top: 7px;
+  }
+}
+
+.dropzone {
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  height: 140px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+
+  @include font($xs, $regular, $dark-grey-color);
+
+  &Text {
+    &Wrapper {
+      align-items: center;
+      background-color: rgba(18, 38, 63, 0.9);
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  &:hover .dropzoneTextWrapper {
+    opacity: 1;
+  }
+
+  &Image {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+  }
+
+  &Preview {
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    &Wrapper {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &Avatar {
+    height: 120px;
+    margin-top: 20px;
+    object-fit: cover;
+    width: 100px;
+  }
+
+  &File {
+    align-items: center;
+    display: flex;
+    height: 110px;
+    width: 100%;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $dark-grey-color;
+    }
+
+    &Info {
+      flex: 8;
+
+      @include font(14px, $regular, $primary-color);
+
+      &Size {
+        @include font(14px, $regular, $primary-color);
+      }
+    }
+
+    &Options {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+
+      &Icon {
+        color: $primary-color;
+        width: 12px;
+
+        &Wrapper {
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+      }
+    }
+
+    &List {
+      padding: 0;
+      width: 93%;
+
+      &Wrapper {
+        background-color: white;
+        border: 1px solid $primary-color;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+    }
+
+    &Image {
+      height: 60px;
+      width: 60px;
+
+      &Wrapper {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+}

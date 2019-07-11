@@ -1,0 +1,35 @@
+@import 'core';
+
+.page {
+  &Divider {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &Word {
+      @include font($s, $regular, $primary-color);
+
+      margin-left: 5px;
+
+      &BtnUp {
+        margin-left: 2px;
+
+        svg {
+          transform: rotate(180deg);
+          transition: 0.5s;
+        }
+      }
+
+      &BtnDown {
+        margin-left: 2px;
+      }
+    }
+
+    &Part {
+      background-color: $divider-color;
+      flex-basis: 41%;
+      height: 2px;
+    }
+  }
+}

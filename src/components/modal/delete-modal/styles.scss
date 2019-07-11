@@ -1,0 +1,17 @@
+@import 'core';
+
+.page {
+  @include font($m, $regular, $black-color);
+
+  line-height: 20px;
+
+  &Buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+
+    button {
+      margin-left: 10px;
+    }
+  }
+}

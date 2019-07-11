@@ -1,0 +1,97 @@
+@import "core";
+
+:global {
+  @import './vendor.scss';
+
+  .DayPicker {
+    border-radius: 3px;
+    box-shadow: 0 0 0 1px rgba(6, 44, 82, 0.1), 0 2px 16px 0 rgba(33, 43, 54, 0.08);
+    margin-top: 8px;
+    outline: none;
+    position: absolute;
+    width: 594px;
+    z-index: 100;
+
+    &-wrapper {
+      background-color: $white-color;
+      outline: none;
+    }
+
+    &-NavBar {
+      position: relative;
+
+      &-Prev {
+        left: 20px;
+        position: absolute;
+        top: 14px;
+        transform: rotate(90deg);
+      }
+
+      &-Next {
+        position: absolute;
+        right: 20px;
+        top: 14px;
+        transform: rotate(270deg);
+      }
+    }
+
+    &-Month {
+      margin-bottom: 4px;
+    }
+
+    &-Caption {
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    &-Weekday {
+      color: $grey-color;
+      font-size: 12px;
+    }
+
+    &-Day {
+      border: 1px solid $divider-color;
+      border-radius: 0 !important;
+      color: $dark-grey-color;
+      font-size: 14px;
+      height: 37px;
+      width: 37px;
+
+      &.selected {
+        &:not(.DayPicker-Day.start, .DayPicker-Day.end, .DayPicker-Day.outside) {
+          background-color: $active-secondary-color !important;
+          color: $black-color;
+          outline-color: $primary-color;
+        }
+
+        &:not(.DayPicker-Day.disabled, .DayPicker-Day.outside) {
+          background-color: $primary-color;
+          outline-color: transparent;
+        }
+
+        &:not(.DayPicker-Day.disabled, .DayPicker-Day.outside):hover {
+          background-color: $primary-color;
+        }
+      }
+
+      &:focus {
+        outline-color: $primary-color;
+      }
+
+      &.today {
+        outline: 1px solid $primary-color;
+        // box-sizing: boder-box;
+      }
+
+      &.outside {
+        border: 1px solid $divider-color;
+        outline: none;
+      }
+    }
+
+    &:not(.DayPicker.interactionDisabled, .DayPicker-Day.disabled, .DayPicker-Day.selected, .DayPicker-Day.outside):hover {
+      background-color: $active-secondary-color;
+    }
+  }
+}

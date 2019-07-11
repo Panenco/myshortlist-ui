@@ -1,0 +1,103 @@
+@import "core";
+
+.button {
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  line-height: 1;
+  outline: none;
+  text-decoration: none;
+
+  &Link {
+    @include font($m, $regular, $primary-color);
+
+    letter-spacing: 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: $active-primary-color;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $active-primary-color;
+      text-decoration: none;
+    }
+
+    &Disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &Icon {
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin: -1px; // TODO: Check wtf?
+    // height: 24px;
+    // width: 24px;
+    // text-align: center;
+
+    &Item {
+      color: $dark-grey-color;
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background-color: $hover-secondary-color;
+      border: 1px solid $hover-secondary-color;
+    }
+
+    &:active {
+      background-color: $active-secondary-color;
+      border: 1px solid $active-secondary-color;
+    }
+
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &DelTeam {
+    @include font($s, $regular, $black-color);
+
+    align-items: center;
+    background-color: $chips-color;
+    display: flex;
+    padding: 3px 10px;
+
+    .exitTeamIcon {
+      color: $dark-grey-color;
+      margin-left: 5px;
+    }
+  }
+}
+
+.pagination {
+  padding: 5px 9px;
+
+  @include font(14px, $regular, $black-color);
+
+  &Primary {
+    background-color: $active-secondary-color;
+  }
+
+  &Flat {
+    background-color: white;
+
+    @include font(14px, $regular, $black-color);
+
+    &:hover {
+      background-color: #f9fbfd;
+    }
+  }
+}

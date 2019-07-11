@@ -1,0 +1,17 @@
+@import "core";
+
+$grid-size: 12;
+$gutter: 8px;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1 * $gutter; // without 0
+}
+
+@for $i from 1 through 12 {
+  .col#{$i} {
+    padding: 0 $gutter; //without 0
+    width: 100 / $grid-size * $i * 1%;
+  }
+}

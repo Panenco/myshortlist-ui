@@ -1,0 +1,12 @@
+.icon {
+  fill: currentColor;
+  height: 18px;
+  pointer-events: none;
+  stroke: currentColor;
+  width: 18px;
+
+  &Large {
+    height: 24px;
+    width: 24px;
+  }
+}

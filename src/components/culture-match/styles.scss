@@ -1,0 +1,44 @@
+@import 'core';
+
+.match {
+  line-height: 1;
+  margin-bottom: 16px;
+  margin-right: 8px;
+  width: 125px;
+
+  &Header {
+    display: flex;
+    font-size: $s;
+    justify-content: space-between;
+    margin-bottom: 2px;
+
+    &Left {
+      align-items: center;
+      display: flex;
+
+      &Culture {
+        border-right: 1px solid $black-color;
+        margin-right: 6px;
+        padding-right: 6px;
+      }
+    }
+
+    &Icon {
+      opacity: 0;
+    }
+  }
+
+  &Scale {
+    background-color: $divider-color;
+    border-radius: 4px;
+    height: 4px;
+    position: relative;
+
+    &Rate {
+      background-color: $icons-color;
+      border-radius: 4px;
+      height: 4px;
+      position: absolute;
+    }
+  }
+}

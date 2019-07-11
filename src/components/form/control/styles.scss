@@ -1,0 +1,71 @@
+@import "core";
+
+.formControl {
+  display: block;
+  margin-bottom: 16px;
+  position: relative;
+  width: 100%;
+
+  &Label {
+    @include font($s, $regular, $dark-grey-color);
+
+    &Wrapper {
+      margin-bottom: 6px;
+    }
+
+    &SubText {
+      @include font($s, $regular, $dark-grey-color);
+
+      padding: 8px 0;
+    }
+
+    &Shared {
+      @include font($m, $regular, $black-color);
+    }
+
+    &Disabled {
+      color: $dark-grey-color;
+      opacity: 0.3;
+    }
+  }
+
+  &Footer {
+    @include font(16px, $regular, rgba($primary-color, 0.7));
+
+    line-height: 26px;
+    padding: 20px 0;
+  }
+
+  &Error {
+    @include font($s, $regular, $error-color);
+
+    margin-top: 4px;
+  }
+
+  &Input {
+    display: block;
+    width: 100%;
+
+    &Shared {
+      font-size: 16px;
+      padding: 14px;
+
+      &:focus {
+        padding: 13px;
+      }
+    }
+
+    &Error {
+      border-color: $error-color;
+
+      > div {
+        border-color: $error-color;
+
+        &:focus,
+ &:hover {
+          border: 2px solid $error-color;
+        }
+      }
+    }
+  }
+}

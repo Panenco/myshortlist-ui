@@ -1,0 +1,31 @@
+@import 'core';
+
+.avatar {
+  align-items: center;
+  background-color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 65px;
+  display: flex;
+  height: 130px;
+  justify-content: center;
+  width: 130px;
+
+  &Header {
+    background-color: $primary-color;
+    border-radius: 50%;
+    height: 40px;
+    margin-right: 8px;
+    min-width: 40px;
+    width: 40px;
+  }
+
+  &Fallback {
+    @include font(32px, $regular, $hover-secondary-color);
+
+    &Header {
+      @include font(16px, $regular, $hover-secondary-color);
+    }
+  }
+}

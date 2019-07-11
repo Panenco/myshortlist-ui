@@ -1,0 +1,39 @@
+@import "core";
+
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+
+  &Outer {
+    align-items: center;
+    display: flex;
+  }
+
+  &Previous {
+    transform: rotate(90deg);
+
+    &Wrapper {
+      max-height: 34px;
+    }
+  }
+
+  &Next {
+    transform: rotate(-90deg);
+
+    &Wrapper {
+      max-height: 34px;
+    }
+  }
+}
+
+.pageLink {
+  align-items: center;
+  display: flex;
+
+  &Active {
+    background: $active-primary-color;
+    color: $black-color;
+  }
+}

@@ -1,0 +1,26 @@
+@import "core";
+
+.match {
+  @include font($s, $regular, $black-color);
+
+  align-items: center;
+  background-color: $chips-color;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  line-height: 18px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  outline: none;
+  padding: 3px 16px;
+
+  &IsOk {
+    background-color: $icons-color;
+  }
+
+  .matchedIcon {
+    color: $dark-grey-color;
+    margin-left: 5px;
+  }
+}
