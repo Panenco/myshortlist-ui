@@ -1,0 +1,123 @@
+@import 'core';
+
+.dropzone {
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  height: 140px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+
+  @include font($xs, $regular, $dark-grey-color);
+
+  &Text {
+    &Wrapper {
+      align-items: center;
+      background-color: rgba(18, 38, 63, 0.9);
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.2s ease-in-out;
+      width: 100%;
+    }
+  }
+
+  &:hover .dropzoneTextWrapper {
+    opacity: 1;
+  }
+
+  &Image {
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+  }
+
+  &Preview {
+    border-radius: 50%;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    &Wrapper {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &Avatar {
+    height: 120px;
+    margin-top: 20px;
+    object-fit: cover;
+    width: 100px;
+  }
+
+  &File {
+    align-items: center;
+    display: flex;
+    height: 110px;
+    width: 100%;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $dark-grey-color;
+    }
+
+    &Info {
+      flex: 8;
+
+      @include font(14px, $regular, $primary-color);
+
+      &Size {
+        @include font(14px, $regular, $primary-color);
+      }
+    }
+
+    &Options {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+
+      &Icon {
+        color: $primary-color;
+        width: 12px;
+
+        &Wrapper {
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+      }
+    }
+
+    &List {
+      padding: 0;
+      width: 93%;
+
+      &Wrapper {
+        background-color: white;
+        border: 1px solid $primary-color;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+      }
+    }
+
+    &Image {
+      height: 60px;
+      width: 60px;
+
+      &Wrapper {
+        display: flex;
+        flex: 1;
+      }
+    }
+  }
+}

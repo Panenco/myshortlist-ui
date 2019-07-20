@@ -6,8 +6,8 @@ import { ButtonIcon } from 'components/button-icon';
 // import 'react-day-picker/lib/style.css';
 // import reactDayPickerClassNames from 'react-day-picker/lib/src/classNames';
 // import cx from 'classnames';
-import { InputWithIcon } from '../form/input_with_icon';
-import { Icon } from '../icon';
+import { WithIconInput } from 'components/input';
+import { Icon } from 'components/icon';
 import s from './styles.scss';
 
 class DatePicker extends React.Component {
@@ -73,7 +73,7 @@ class DatePicker extends React.Component {
     return (
       <div>
         <DayPickerInput
-          component={props => <InputWithIcon after={Icon.icons.calendar} {...this.props} {...props} />}
+          component={props => <WithIconInput after={Icon.icons.calendar} {...this.props} {...props} />}
           classNames={{ container: s.input }}
           dayPickerProps={{
             numberOfMonths: 2,

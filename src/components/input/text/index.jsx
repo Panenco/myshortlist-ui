@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import s from './styles.scss';
 
-const Input = ({ className, ...props }) => (
+const TextInput = ({ className, ...props }) => (
   <input {...props} className={cx(s.input, props.error && s.inputError, className)} />
 );
 
-Input.propTypes = {
+TextInput.propTypes = {
   className: PropTypes.string,
   error: PropTypes.string,
 };
 
-Input.defaultProps = {
+TextInput.defaultProps = {
   className: null,
   error: null,
 };
 
-export { Input };
+export { TextInput };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import AsyncPaginate from 'react-select-async-paginate';
 import { components } from 'react-select';
 import cx from 'classnames';
-import { Icon } from '../icon';
+import { Icon } from 'components/icon';
 import s from './styles.scss';
 
 export const debounce = (inner, ms = 0) => {

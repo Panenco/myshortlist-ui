@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import cx from 'classnames';
 import { ButtonIcon } from 'components/button-icon';
-import { Icon } from '../icon';
+import { Icon } from 'components/icon';
 import s from './styles.scss';
 
 class ImageDrop extends React.Component {

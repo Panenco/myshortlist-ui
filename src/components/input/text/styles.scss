@@ -1,0 +1,33 @@
+@import 'core';
+
+.input {
+  border: 1px solid $dark-grey-color; //was double-dark-grey
+  border-radius: 2px;
+  line-height: 14px;
+  // box-sizing: border-box;
+  padding: 9px 12px;
+  width: 100%;
+
+  &:focus {
+    border: 2px solid $primary-color;
+    padding: 8px 11px;
+  }
+
+  &:disabled {
+    background-color: $white-color;
+    opacity: 0.3;
+  }
+
+  &Error {
+    border: 1px solid $error-color;
+    padding: 8px 9px;
+
+    &:focus,
+    &:hover {
+      // padding: 6px 9px;
+      // padding: 9px 11px;
+
+      border: 2px solid $error-color;
+    }
+  }
+}

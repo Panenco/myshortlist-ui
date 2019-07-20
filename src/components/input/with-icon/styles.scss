@@ -1,0 +1,41 @@
+@import 'core';
+
+.withIcon {
+  display: flex;
+  position: relative;
+
+  &BeforeInput {
+    padding-left: 35px;
+
+    &:focus {
+      border: 2px solid $primary-color;
+      padding: 8px 11px 8px 34px;
+    }
+  }
+
+  &AfterInput {
+    padding-left: 12px;
+
+    &:focus {
+      border: 2px solid $primary-color;
+      padding: 8px 11px;
+    }
+  }
+
+  .icon {
+    color: $dark-grey-color;
+    position: absolute;
+
+    &Before {
+      left: 0;
+      top: 50%;
+      transform: translate(10px, -50%);
+    }
+
+    &After {
+      right: 0;
+      top: 50%;
+      transform: translate(-9px, -50%);
+    }
+  }
+}

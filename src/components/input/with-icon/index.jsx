@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-
-import { Input } from './input';
-import { Icon } from '../icon';
-
+import { Icon } from 'components/icon';
+import { TextInput } from 'components/input/text';
 import s from './styles.scss';
 
-const InputWithIcon = ({ className, inputStyles, before, after, afterIconStyles, ...props }) => (
+const WithIconInput = ({ className, inputStyles, before, after, afterIconStyles, ...props }) => (
   <div className={cx(s.withIcon)}>
     {before && <Icon.Large icon={before} className={cx(s.icon, s.iconBefore)} />}
-    <Input {...props} className={before ? s.withIconBeforeInput : s.withIconAfterInput} />
+    <TextInput {...props} className={before ? s.withIconBeforeInput : s.withIconAfterInput} />
     {after && <Icon.Large icon={after} className={cx(s.icon, s.iconAfter)} />}
   </div>
 );
 
-InputWithIcon.propTypes = {
+WithIconInput.propTypes = {
   className: PropTypes.string,
   inputStyles: PropTypes.string,
   before: PropTypes.string.isRequired,
@@ -23,9 +21,9 @@ InputWithIcon.propTypes = {
   afterIconStyles: PropTypes.string.isRequired,
 };
 
-InputWithIcon.defaultProps = {
+WithIconInput.defaultProps = {
   className: null,
   inputStyles: null,
 };
 
-export { InputWithIcon };
+export { WithIconInput };
