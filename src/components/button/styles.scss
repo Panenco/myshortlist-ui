@@ -1,4 +1,4 @@
-@import "core";
+@import 'core';
 
 .button {
   border: none;
@@ -67,7 +67,7 @@
     }
   }
 
-  &DelTeam {
+  &DeleteTeam {
     @include font($s, $regular, $black-color);
 
     align-items: center;

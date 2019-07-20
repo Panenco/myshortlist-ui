@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DateUtils } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import { ButtonIcon } from '../button';
+import { ButtonIcon } from 'components/button-icon';
 // import 'react-day-picker/lib/style.css';
 // import reactDayPickerClassNames from 'react-day-picker/lib/src/classNames';
 // import cx from 'classnames';

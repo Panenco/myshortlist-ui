@@ -1,4 +1,7 @@
+@import 'core';
+
 .icon {
+  color: $dark-grey-color;
   fill: currentColor;
   height: 18px;
   pointer-events: none;

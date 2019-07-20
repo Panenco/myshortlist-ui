@@ -1,10 +1,5 @@
 import React from 'react';
-
-import GridReadme from 'components/grid/README.md';
-import GridDocs from 'components/grid/DOCS.md';
-
 import { Row, Col } from 'index';
-
 import { decorator } from '../../utils/decorator';
 
 const Column = () => (
@@ -20,7 +15,7 @@ const Column = () => (
   />
 );
 
-export default decorator('Grid', GridDocs, GridReadme).add('Grid component', () => (
+export default decorator('Grid').add('Grid component', () => (
   <>
     <Row>
       <Col s="6">

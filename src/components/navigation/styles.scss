@@ -1,9 +1,9 @@
-@import "core";
+@import 'core';
 
 .nav {
   border-bottom: 2px solid $divider-color;
   border-radius: 1px;
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
   line-height: 1.2;
   padding-bottom: 4px;
@@ -13,13 +13,9 @@
 
     border: 1px solid transparent;
     cursor: pointer;
-    // margin-right: 20px;
+    margin-right: 20px;
     padding: 1px 4px;
     position: relative;
-
-    &Last {
-      margin-right: 0;
-    }
 
     &:focus {
       border: 1px solid $primary-color;
@@ -50,5 +46,9 @@
       position: absolute;
       width: 100%;
     }
+  }
+
+  &Tab:last-child {
+    margin-right: 0;
   }
 }

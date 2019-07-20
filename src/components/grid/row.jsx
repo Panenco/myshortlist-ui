@@ -4,23 +4,20 @@ import PropTypes from 'prop-types';
 
 import s from './styles.scss';
 
-const Row = ({ className, style, children }) => (
-  <div className={css(s.row, className)} style={style}>
+const Row = ({ className, children, ...props }) => (
+  <div className={css(s.row, className)} {...props}>
     {children}
   </div>
 );
 
 Row.defaultProps = {
-  style: null,
   className: null,
   children: null,
 };
 
 Row.propTypes = {
-  /* eslint-disable-next-line */
-  style: PropTypes.object,
   className: PropTypes.string,
   children: PropTypes.node,
 };
 
-export { Row };
+export default Row;

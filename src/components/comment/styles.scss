@@ -1,4 +1,4 @@
-@import "core";
+@import 'core';
 
 .commentBox {
   @include font($s, $regular, $dark-grey-color);
@@ -11,13 +11,17 @@
   line-height: 1.5;
   margin-bottom: 100px;
   margin-top: 50px;
+  max-width: 300px;
   padding: 10px 15px 15px;
   position: relative;
   text-align: justify;
-  width: 50%;
+
+  &Large {
+    max-width: 500px;
+  }
 
   &::after {
-    border-color: transparent transparent  $white-color;
+    border-color: transparent transparent $white-color;
     border-style: solid;
     border-width: 11px;
     bottom: -17px;

@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Icon } from '../icon';
+import { Icon } from 'components/icon';
 import s from './styles.scss';
 
-const Matches = ({ matched, children, ...props }) => (
+const Match = ({ matched, children, ...props }) => (
   <button className={cx(s.match, matched && s.matchIsOk)} {...props}>
     {children}
-    {matched && <Icon icon={Icon.icons.matchedSmall} className={cx(s.matchedIcon)} />}
+    {matched && <Icon icon={Icon.icons.matched} className={cx(s.matchedIcon)} />}
   </button>
 );
 
-Matches.propTypes = {
+Match.propTypes = {
   matched: PropTypes.bool,
   children: PropTypes.node,
 };
 
-Matches.defaultProps = {
+Match.defaultProps = {
   matched: false,
   children: null,
 };
 
-export { Matches };
+export { Match };

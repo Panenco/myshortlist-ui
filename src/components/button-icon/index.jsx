@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Icon } from '../icon';
+import { Icon } from 'components/icon';
 import s from './styles.scss';
 
 const ButtonIconWrapper = ({ type, className, children, ...props }) => (

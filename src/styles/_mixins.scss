@@ -1,4 +1,7 @@
-@mixin font($size, $weight, $color) {
+@import 'variables';
+@import 'typography';
+
+@mixin font($size: $m, $weight: $regular, $color: $black-color) {
   color: $color;
   font-size: $size;
   font-weight: $weight;

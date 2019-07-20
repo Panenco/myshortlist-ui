@@ -3,59 +3,49 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import s from './styles.scss';
 
-// 24px
-import add from './icons/24px/add.svg';
-import arrowDown from './icons/24px/arrow_down.svg';
-import arrow from './icons/24px/arrow.svg';
-import calendar from './icons/24px/calendar.svg';
-import company from './icons/24px/company.svg';
-import cross from './icons/24px/cross.svg';
-import bin from './icons/24px/delete.svg';
-import download from './icons/24px/download.svg';
-import drill from './icons/24px/drill.svg';
-import duplicate from './icons/24px/duplicate.svg';
-import edit from './icons/24px/edit.svg';
-import eye from './icons/24px/eye.svg';
-import home from './icons/24px/home.svg';
-import notificationsUnread from './icons/24px/notifications_unread.svg';
-import notifications from './icons/24px/notifications.svg';
-import recommendations from './icons/24px/recommendations.svg';
-import remove from './icons/24px/remove.svg';
-import searchProfiles from './icons/24px/search_profiles.svg';
-import search from './icons/24px/search.svg';
-import teams from './icons/24px/teams.svg';
-import unarchive from './icons/24px/unarchive.svg';
-import urgent from './icons/24px/urgent.svg';
-import users from './icons/24px/users.svg';
-
-// 18px
-import acceptedSmall from './icons/18px/accepted.svg';
-import arrowDownSmall from './icons/18px/arrow_down.svg';
-import attachSmall from './icons/18px/attach.svg';
-import candidateSmall from './icons/18px/candidate.svg';
-import consultantSmall from './icons/18px/consultant.svg';
-import contactedSmall from './icons/18px/contacted.svg';
-import crossSmall from './icons/18px/cross.svg';
-import declinedSmall from './icons/18px/declined.svg';
-import eyeNotViewedSmall from './icons/18px/eye_not_viewed.svg';
-import eyeViewedSmall from './icons/18px/eye_viewed.svg';
-import errorSmall from './icons/18px/error.svg';
-import leaveSmall from './icons/18px/leave.svg';
-import locationSmall from './icons/18px/location.svg';
-import mailSmall from './icons/18px/mail.svg';
-import matchedSmall from './icons/18px/matched.svg';
-import notViewedSmall from './icons/18px/not_viewed.svg';
-import onDiscussionSmall from './icons/18px/on_discussion.svg';
-import phoneSmall from './icons/18px/phone.svg';
-import questionmarkSmall from './icons/18px/questionmark.svg';
-import recommendationsSmall from './icons/18px/recommendations.svg';
-import searchProfilesSmall from './icons/18px/search_profiles.svg';
-import teamSmall from './icons/18px/team.svg';
-import teamsSmall from './icons/18px/teams.svg';
-import uploadingSmall from './icons/18px/uploading.svg';
-import usersSmall from './icons/18px/users.svg';
-import waitSmall from './icons/18px/wait.svg';
-import webSmall from './icons/18px/web.svg';
+import add from './icons/add.svg';
+import arrowDown from './icons/arrow_down.svg';
+import arrow from './icons/arrow.svg';
+import calendar from './icons/calendar.svg';
+import company from './icons/company.svg';
+import cross from './icons/cross.svg';
+import bin from './icons/delete.svg';
+import download from './icons/download.svg';
+import drill from './icons/drill.svg';
+import duplicate from './icons/duplicate.svg';
+import edit from './icons/edit.svg';
+import eye from './icons/eye.svg';
+import home from './icons/home.svg';
+import notificationsUnread from './icons/notifications_unread.svg';
+import notifications from './icons/notifications.svg';
+import recommendations from './icons/recommendations.svg';
+import remove from './icons/remove.svg';
+import searchProfiles from './icons/search_profiles.svg';
+import search from './icons/search.svg';
+import teams from './icons/teams.svg';
+import unarchive from './icons/unarchive.svg';
+import urgent from './icons/urgent.svg';
+import users from './icons/users.svg';
+import accepted from './icons/accepted.svg';
+import attach from './icons/attach.svg';
+import candidate from './icons/candidate.svg';
+import consultant from './icons/consultant.svg';
+import contacted from './icons/contacted.svg';
+import declined from './icons/declined.svg';
+import eyeNotViewed from './icons/not_viewed.svg';
+import eyeViewed from './icons/eye_viewed.svg';
+import error from './icons/error.svg';
+import leave from './icons/leave.svg';
+import location from './icons/location.svg';
+import mail from './icons/mail.svg';
+import matched from './icons/matched.svg';
+import onDiscussion from './icons/on_discussion.svg';
+import phone from './icons/phone.svg';
+import questionmark from './icons/questionmark.svg';
+import team from './icons/team.svg';
+import uploading from './icons/uploading.svg';
+import wait from './icons/wait.svg';
+import web from './icons/web.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -89,35 +79,26 @@ Icon.icons = {
   unarchive,
   urgent,
   users,
-
-  // small
-  acceptedSmall,
-  arrowDownSmall,
-  attachSmall,
-  candidateSmall,
-  consultantSmall,
-  contactedSmall,
-  crossSmall,
-  declinedSmall,
-  eyeNotViewedSmall,
-  eyeViewedSmall,
-  errorSmall,
-  leaveSmall,
-  locationSmall,
-  mailSmall,
-  matchedSmall,
-  notViewedSmall,
-  onDiscussionSmall,
-  phoneSmall,
-  questionmarkSmall,
-  recommendationsSmall,
-  searchProfilesSmall,
-  teamSmall,
-  teamsSmall,
-  usersSmall,
-  uploadingSmall,
-  waitSmall,
-  webSmall,
+  accepted,
+  attach,
+  candidate,
+  consultant,
+  contacted,
+  declined,
+  eyeNotViewed,
+  eyeViewed,
+  error,
+  leave,
+  location,
+  mail,
+  matched,
+  onDiscussion,
+  phone,
+  questionmark,
+  team,
+  uploading,
+  wait,
+  web,
 };
 
 Icon.defaultProps = {

@@ -2,15 +2,13 @@
 
 .match {
   line-height: 1;
-  margin-bottom: 16px;
-  margin-right: 8px;
   width: 125px;
 
   &Header {
     display: flex;
     font-size: $s;
     justify-content: space-between;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 
     &Left {
       align-items: center;
@@ -23,7 +21,11 @@
       }
     }
 
-    &Icon {
+    &Matched {
+      opacity: 1;
+    }
+
+    &NotMatched {
       opacity: 0;
     }
   }

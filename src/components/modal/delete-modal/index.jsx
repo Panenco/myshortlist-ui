@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { PrimaryButton, SecondaryButton } from '../../button';
+import { PrimaryButton, SecondaryButton } from 'components/button';
 import s from './styles.scss';
 
 const TeamDelete = ({ name, type, onClose, onDelete, deleteContent }) => (

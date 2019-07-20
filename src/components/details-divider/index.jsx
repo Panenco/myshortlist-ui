@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-import { ButtonIcon } from '../button';
+import { ButtonIcon } from 'components/button-icon';
 import s from './styles.scss';
 
 const Divider = ({ object, showHide, isOpened }) => {
