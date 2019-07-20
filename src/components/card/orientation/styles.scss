@@ -1,0 +1,81 @@
+@import 'core';
+
+$font-size: 14px;
+$line-height: 1.4;
+$lines-to-show: 3;
+
+.card {
+  max-height: 192px;
+  text-align: left;
+  width: 289px;
+
+  &:hover {
+    background-color: $hover-secondary-color;
+  }
+
+  &Header {
+    margin-bottom: 16px;
+
+    &Title {
+      @include font($l, $medium, $secondary-color);
+
+      margin-bottom: 4px;
+    }
+
+    &Date {
+      @include font($s, $regular, $dark-grey-color);
+
+      &Bought {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &Body {
+    @include font($m);
+
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    height: $font-size * $line-height * $lines-to-show;
+    -webkit-line-clamp: $lines-to-show;
+    line-height: 1.4;
+    margin-bottom: 28px;
+    max-width: 289px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &Footer {
+    &Free {
+      @include font($s, $medium, $white-color);
+
+      background-color: $primary-color;
+      border-radius: 12px;
+      padding: 4px 16px;
+      text-transform: uppercase;
+    }
+
+    &Price {
+      @include font($l, $regular, $primary-color);
+    }
+
+    &Purchase {
+      display: none;
+    }
+  }
+
+  &:hover &Body {
+    height: $font-size * $line-height * 2;
+    -webkit-line-clamp: 2;
+    margin-bottom: 35px;
+  }
+
+  &:hover &FooterFree,
+  &:hover &FooterPrice {
+    display: none;
+  }
+
+  &:hover &FooterPurchase {
+    display: inline-block;
+  }
+}

@@ -12,6 +12,7 @@ const customStyles = {
   control: (provided, state) => ({
     ...provided,
     // border: state.isMulti ? '1px solid #a5a5a5' : '1px solid #3d3d3d',
+    backgroundColor: state.isDisabled && 'transparen',
     border: '1px solid #3d3d3d',
     borderRadius: '2px',
     boxShadow: state.isFocused ? 'transparent' : 'transparent',
@@ -21,6 +22,7 @@ const customStyles = {
     ':hover': {
       border: state.isMulti ? '1px solid #3d3d3d' : '1px solid #3d3d3d',
     },
+    opacity: state.isDisabled && '0.3',
     width: '100%',
     padding: state.isMulti ? '2px 6px 2px 6px' : '0 6px 0 12px',
   }),
@@ -54,6 +56,7 @@ const customStyles = {
     fontSize: '14px', // 12 is too small, discuss it
     padding: '3px 6px 3px 6px',
     marginRight: '6px',
+    marginLeft: '0',
   }),
   multiValueRemove: provided => ({
     ...provided,
@@ -72,6 +75,7 @@ const customStyles = {
     marginTop: '0',
     border: '1px solid #ececec',
     boxShadow: 'none',
+    textAlign: 'left',
     width: '100%',
   }),
 };
@@ -91,7 +95,6 @@ const noBordersStyles = {
     // outline: state.isFocused ? '2px solid #26A69A' : 'none',
     color: '#000000',
     fontSize: '14px',
-
     width: '100%',
     padding: '0 3px 0 16px',
   }),
@@ -149,6 +152,26 @@ const noBordersStyles = {
   }),
 };
 
+const errorStyles = {
+  ...customStyles,
+  control: (provided, state) => ({
+    ...provided,
+    border: '2px solid #ff431f',
+    borderRadius: '2px',
+    boxShadow: state.isFocused ? 'transparent' : 'transparent',
+    flexWrap: 'nowrap',
+    fontSize: '14px',
+    maxHeight: state.isMulti ? null : '32px',
+    minHeight: '36px',
+    ':hover': {
+      border: '2px solid #ff431f',
+    },
+    paddingLeft: state.isMulti ? '5px' : '11px',
+    paddingRight: state.isMulti ? '0' : '5px',
+    width: '100%',
+  }),
+};
+
 const customDropDownIndicator = () => <Icon.Large icon={Icon.icons.arrow} className={cx(s.dropDownArrow)} />;
 
 const customMultiValueRemove = props => (
@@ -157,11 +180,11 @@ const customMultiValueRemove = props => (
   </components.MultiValueRemove>
 );
 
-const SelectInput = ({ isMulti, disabled, options, borders, ...props }) => (
+const SelectInput = ({ isMulti, disabled, options, borders, error, ...props }) => (
   <Select
     options={options}
     placeholder="Select item"
-    styles={borders ? noBordersStyles : customStyles}
+    styles={error ? errorStyles : customStyles}
     isMulti={isMulti}
     isDisabled={disabled}
     isSearchable={!!isMulti}
@@ -191,12 +214,14 @@ SelectInput.propTypes = {
     }),
   ).isRequired,
   borders: PropTypes.bool,
+  error: PropTypes.bool,
 };
 
 SelectInput.defaultProps = {
   isMulti: false,
   disabled: false,
   borders: false,
+  error: false,
 };
 
 export { SelectInput };

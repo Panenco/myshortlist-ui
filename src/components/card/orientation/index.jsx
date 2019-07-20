@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card } from 'components/card/base';
+import { PrimaryButton } from 'components/button';
 import cx from 'classnames';
 import s from './styles.scss';
 
@@ -14,11 +15,15 @@ const OrientationCard = ({ children, info, bought, free, className }) => (
     <div className={s.cardBody}>{children}</div>
 
     {free ? (
-      <button className={s.cardFooterFree}>
-        <span className={s.cardFooterFreePurchase}>purchase for</span> free
-      </button>
+      <div className={s.cardFooter}>
+        <span className={s.cardFooterFree}>free</span>
+        <PrimaryButton className={s.cardFooterPurchase}>purchase for free</PrimaryButton>
+      </div>
     ) : (
-      <div className={s.cardFooter}>14,99Є</div>
+      <div className={s.cardFooter}>
+        <span className={s.cardFooterPrice}>14,99Є</span>
+        <PrimaryButton className={s.cardFooterPurchase}>purchase for 14,99Є</PrimaryButton>
+      </div>
     )}
   </Card>
 );
