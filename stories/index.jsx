@@ -10,7 +10,7 @@ import GridStory from './grid';
 import CommentStory from './comment';
 import * as CardStory from './card';
 import * as InputStory from './input';
-// import DatePickerStory from './datepicker';
+import DatePickerStory from './datepicker';
 import CultureMatchStory from './culture-match';
 import PreloaderStory from './loader';
 import MatchStory from './match';
@@ -34,7 +34,7 @@ storiesOf('Card', <CardStory />);
 //
 storiesOf('Input', <InputStory />);
 //
-// storiesOf('DatePicker', <DatePickerStory />);
+storiesOf('DatePicker', <DatePickerStory />);
 //
 storiesOf('CultureMatch', <CultureMatchStory />);
 //
