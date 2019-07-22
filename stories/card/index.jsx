@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { OrientationCard, Row, Col } from 'index';
+import { OrientationCard, CourseCard, Row, Col } from 'index';
 import { decorator } from '../../utils/decorator';
 
 export default decorator('Card').add('OrientationCard Component', () => (
@@ -32,4 +32,26 @@ export default decorator('Card').add('OrientationCard Component', () => (
       </Col>
     </Row>
   </BrowserRouter>
+));
+
+export const CourseCardStory = decorator('Card').add('CourseCard Component', () => (
+  <>
+    <Row>
+      <Col s="12">
+        <CourseCard free />
+      </Col>
+    </Row>
+
+    <Row>
+      <Col s="12">
+        <CourseCard bought />
+      </Col>
+    </Row>
+
+    <Row>
+      <Col s="12">
+        <CourseCard price />
+      </Col>
+    </Row>
+  </>
 ));

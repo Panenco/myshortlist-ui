@@ -10,6 +10,7 @@ import GridStory from './grid';
 import CommentStory from './comment';
 import * as CardStory from './card';
 import * as InputStory from './input';
+import PaginationStory from './pagination';
 import DatePickerStory from './datepicker';
 import CultureMatchStory from './culture-match';
 import PreloaderStory from './loader';
@@ -33,6 +34,8 @@ storiesOf('Comment', <CommentStory />);
 storiesOf('Card', <CardStory />);
 //
 storiesOf('Input', <InputStory />);
+
+storiesOf('Pagination', <PaginationStory />);
 //
 storiesOf('DatePicker', <DatePickerStory />);
 //
