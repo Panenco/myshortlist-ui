@@ -5,7 +5,8 @@ $line-height: 1.4;
 $lines-to-show: 3;
 
 .card {
-  max-height: 192px;
+  height: 192px;
+  position: relative;
   text-align: left;
   width: 289px;
 
@@ -45,6 +46,24 @@ $lines-to-show: 3;
     text-overflow: ellipsis;
   }
 
+  &:hover &Body {
+    height: $font-size * $line-height * 2;
+    -webkit-line-clamp: 2;
+    margin-bottom: 35px;
+  }
+
+  &More {
+    @include font($m, $regular, $primary-color);
+
+    display: none;
+    position: absolute;
+    top: 110px;
+  }
+
+  &:hover &More {
+    display: block;
+  }
+
   &Footer {
     &Free {
       @include font($s, $medium, $white-color);
@@ -62,16 +81,36 @@ $lines-to-show: 3;
     &Purchase {
       display: none;
     }
-  }
 
-  &:hover &Body {
-    height: $font-size * $line-height * 2;
-    -webkit-line-clamp: 2;
-    margin-bottom: 35px;
+    &Rate {
+      @include font($s, $regular, $primary-color);
+
+      &Done {
+        margin-bottom: 8px;
+      }
+
+      &Indicator {
+        background-color: $divider-color;
+        border-radius: 1px;
+        height: 2px;
+        margin-top: 6px;
+        position: relative;
+
+        &DoneLine {
+          background-color: $primary-color;
+          border-radius: 1px;
+          height: 2px;
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
   }
 
   &:hover &FooterFree,
-  &:hover &FooterPrice {
+  &:hover &FooterPrice,
+  &:hover &FooterRate {
     display: none;
   }
 
