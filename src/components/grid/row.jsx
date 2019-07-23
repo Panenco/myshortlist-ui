@@ -20,4 +20,4 @@ Row.propTypes = {
   children: PropTypes.node,
 };
 
-export default Row;
+export { Row };

@@ -5,7 +5,7 @@ $line-height: 1.4;
 $lines-to-show: 3;
 
 .card {
-  height: 192px;
+  max-height: 192px;
   position: relative;
   text-align: left;
   width: 289px;
@@ -17,20 +17,6 @@ $lines-to-show: 3;
 
   &Header {
     margin-bottom: 16px;
-
-    &Title {
-      @include font($l, $medium, $secondary-color);
-
-      margin-bottom: 4px;
-    }
-
-    &Date {
-      @include font($s, $regular, $dark-grey-color);
-
-      &Bought {
-        color: $primary-color;
-      }
-    }
   }
 
   &Body {
@@ -41,7 +27,7 @@ $lines-to-show: 3;
     height: $font-size * $line-height * $lines-to-show;
     -webkit-line-clamp: $lines-to-show;
     line-height: 1.4;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     max-width: 289px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -50,7 +36,7 @@ $lines-to-show: 3;
   &:hover &Body {
     height: $font-size * $line-height * 2;
     -webkit-line-clamp: 2;
-    margin-bottom: 35px;
+    margin-bottom: 39px;
   }
 
   &More {
@@ -58,7 +44,7 @@ $lines-to-show: 3;
 
     display: none;
     position: absolute;
-    top: 110px;
+    top: 104px;
   }
 
   &:hover &More {
@@ -66,6 +52,8 @@ $lines-to-show: 3;
   }
 
   &Footer {
+    line-height: 2;
+
     &Free {
       @include font($s, $medium, $white-color);
 
@@ -81,31 +69,6 @@ $lines-to-show: 3;
 
     &Purchase {
       display: none;
-    }
-
-    &Rate {
-      @include font($s, $regular, $primary-color);
-
-      &Done {
-        margin-bottom: 8px;
-      }
-
-      &Indicator {
-        background-color: $divider-color;
-        border-radius: 1px;
-        height: 2px;
-        margin-top: 6px;
-        position: relative;
-
-        &DoneLine {
-          background-color: $primary-color;
-          border-radius: 1px;
-          height: 2px;
-          left: 0;
-          position: absolute;
-          top: 0;
-        }
-      }
     }
   }
 

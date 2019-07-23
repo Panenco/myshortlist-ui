@@ -2,20 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Card } from 'components/card/base';
+import { CardHeader } from 'components/card/header';
+import { DoneRate } from 'components/card/done-rate';
 import { PrimaryButton, SecondaryButton } from 'components/button';
 import cx from 'classnames';
 import s from './styles.scss';
 
-const OrientationCard = ({ children, info, free, price, bought, done, className }) => {
-  const doneRate = {
-    width: `${(done * 100) / 7}%`,
-  };
+const OrientationCard = ({ children, info, price, bought, done, className, ...props }) => {
   return (
     <Card className={cx(s.card, className)}>
-      <div className={s.cardHeader}>
-        <div className={s.cardHeaderTitle}>Your personal brand</div>
-        <div className={cx(s.cardHeaderDate, bought && s.cardHeaderDateBought)}>{bought && 'Bought '}09/07/2018</div>
-      </div>
+      <CardHeader subTitleStatus={(price || price === 0) && 'default'} className={s.cardHeader} {...props} />
 
       <div className={s.cardBody}>{children}</div>
 
@@ -23,14 +19,14 @@ const OrientationCard = ({ children, info, free, price, bought, done, className 
         Show more
       </Link>
 
-      {free && (
+      {price === 0 && (
         <div className={s.cardFooter}>
           <span className={s.cardFooterFree}>free</span>
           <PrimaryButton className={s.cardFooterPurchase}>purchase for free</PrimaryButton>
         </div>
       )}
 
-      {price && (
+      {price > 0 && (
         <div className={s.cardFooter}>
           <span className={s.cardFooterPrice}>14,99Є</span>
           <PrimaryButton className={s.cardFooterPurchase}>purchase for 14,99Є</PrimaryButton>
@@ -39,12 +35,7 @@ const OrientationCard = ({ children, info, free, price, bought, done, className 
 
       {bought && (
         <div className={s.cardFooter}>
-          <div className={s.cardFooterRate}>
-            <span className={s.cardFooterRateDone}>{done} out of 7 sections done</span>
-            <div className={s.cardFooterRateIndicator}>
-              <div className={s.cardFooterRateIndicatorDoneLine} style={doneRate} />
-            </div>
-          </div>
+          <DoneRate done={done} className={s.cardFooterRate} />
           <SecondaryButton className={s.cardFooterPurchase}>continue testing</SecondaryButton>
         </div>
       )}
@@ -58,7 +49,6 @@ OrientationCard.propTypes = {
   price: PropTypes.number,
   done: PropTypes.number,
   bought: PropTypes.bool,
-  free: PropTypes.bool,
 };
 
 OrientationCard.defaultProps = {
@@ -66,7 +56,6 @@ OrientationCard.defaultProps = {
   price: null,
   done: null,
   bought: false,
-  free: false,
 };
 
 export { OrientationCard };

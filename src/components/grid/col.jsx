@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './styles.scss';
 
 const Col = ({ className, s, m, l, style, children, ...props }) => (
-  <div {...props} className={cx(styles[`col${s}`], styles[`col${m}`], styles[`col${l}`], className)} style={style}>
+  <div className={cx(styles[`col${s}`], styles[`col${m}`], styles[`col${l}`], className)} style={style} {...props}>
     {children}
   </div>
 );
@@ -29,4 +29,4 @@ Col.propTypes = {
   l: PropTypes.number,
 };
 
-export default Col;
+export { Col };

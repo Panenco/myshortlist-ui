@@ -1,0 +1,32 @@
+@import 'core';
+
+.rate {
+  line-height: 1.5;
+
+  &Done {
+    @include font($s, $regular, $primary-color);
+
+    margin-bottom: 8px;
+
+    &Nothing {
+      color: $grey-color;
+    }
+  }
+
+  &Indicator {
+    background-color: $divider-color;
+    border-radius: 1px;
+    height: 2px;
+    margin-top: 6px;
+    position: relative;
+
+    &DoneLine {
+      background-color: $primary-color;
+      border-radius: 1px;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}

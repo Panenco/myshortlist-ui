@@ -1,7 +1,7 @@
 @import 'core';
 
 .card {
-  height: 312px;
+  max-height: 312px;
   padding: 0;
   position: relative;
   text-align: left;
@@ -30,38 +30,23 @@
   }
 
   &Header {
-    line-height: 1;
-    margin-bottom: 26px;
-
-    &Title {
-      @include font($l, $medium, $secondary-color);
-
-      margin-bottom: 4px;
-    }
-
-    &Date {
-      @include font($s, $regular, $dark-grey-color);
-
-      margin-bottom: 8px;
-
-      &Bought {
-        color: $primary-color;
-      }
-    }
-
-    &Author {
-      @include font($s, $regular, $dark-grey-color);
-
-      margin-bottom: 8px;
-    }
-
-    &Rating {
-      @include font($s, $regular, $grey-color);
-    }
+    margin-bottom: 8px;
   }
 
-  &:hover &Header {
-    margin-bottom: 16px;
+  &Author {
+    @include font($s, $regular, $dark-grey-color);
+
+    margin-bottom: 8px;
+  }
+
+  &Rating {
+    @include font($s, $regular, $grey-color);
+
+    margin-bottom: 26px;
+  }
+
+  &:hover &Rating {
+    margin-bottom: 13px;
   }
 
   &Footer {
