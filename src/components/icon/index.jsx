@@ -15,6 +15,8 @@ import drill from './icons/drill.svg';
 import duplicate from './icons/duplicate.svg';
 import edit from './icons/edit.svg';
 import eye from './icons/eye.svg';
+import emptystar from './icons/emptystar.svg';
+import halfstar from './icons/halfstar.svg';
 import home from './icons/home.svg';
 import notificationsUnread from './icons/notifications_unread.svg';
 import notifications from './icons/notifications.svg';
@@ -42,6 +44,7 @@ import matched from './icons/matched.svg';
 import onDiscussion from './icons/on_discussion.svg';
 import phone from './icons/phone.svg';
 import questionmark from './icons/questionmark.svg';
+import star from './icons/star.svg';
 import team from './icons/team.svg';
 import uploading from './icons/uploading.svg';
 import wait from './icons/wait.svg';
@@ -68,6 +71,8 @@ Icon.icons = {
   duplicate,
   edit,
   eye,
+  emptystar,
+  halfstar,
   home,
   notificationsUnread,
   notifications,
@@ -95,6 +100,7 @@ Icon.icons = {
   onDiscussion,
   phone,
   questionmark,
+  star,
   team,
   uploading,
   wait,
