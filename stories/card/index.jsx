@@ -38,25 +38,32 @@ export const CourseCardStory = decorator('Card').add('CourseCard Component', () 
   <>
     <Row>
       <Col s="12">
-        <CourseCard rating={1} price={0} title="React for beginners" subTitle="09/07/2018" />
+        <CourseCard price={0} rating={1} voted={25} title="React for beginners" subTitle="09/07/2018" />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <CourseCard rating={4.8} bought title="React for beginners" subTitle="Bought 09/07/2018" />
+        <CourseCard bought rating={4.5} voted={101} title="React for beginners" subTitle="Bought 09/07/2018" />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <CourseCard rating={3.3} price={14.99} title="React for beginners" subTitle="09/07/2018" />
+        <CourseCard price={14.99} rating={3.2} voted={89} title="React for beginners" subTitle="09/07/2018" />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <CourseCard rating={5} price={26.99} newPrice={14.99} title="React for beginners" subTitle="09/07/2018" />
+        <CourseCard
+          price={26.99}
+          newPrice={14.99}
+          rating={5}
+          voted={47}
+          title="React for beginners"
+          subTitle="09/07/2018"
+        />
       </Col>
     </Row>
   </>

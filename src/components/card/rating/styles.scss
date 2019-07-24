@@ -1,0 +1,23 @@
+@import 'core';
+
+.rating {
+  @include font($s, $regular, $grey-color);
+
+  margin-bottom: 26px;
+
+  &Number {
+    margin-right: 4px;
+  }
+
+  &Stars {
+    display: inline-block;
+
+    &Item {
+      box-shadow: none;
+      color: $secondary-color;
+      height: 10px;
+      margin-right: 2px;
+      width: 10px;
+    }
+  }
+}

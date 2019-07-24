@@ -1,4 +1,4 @@
 export * from './base';
-export * from './orientation';
-export * from './course';
-export * from './mind-map';
+export * from './orientation-card';
+export * from './course-card';
+export * from './mind-map-card';
