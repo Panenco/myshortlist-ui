@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Card } from 'components/card/base';
 import { CardHeader } from 'components/card/header';
 import { DoneRate } from 'components/card/done-rate';
+import { CardChips } from 'components/card/chips';
 import { PrimaryButton, SecondaryButton } from 'components/button';
 import cx from 'classnames';
 import s from './styles.scss';
@@ -21,15 +22,15 @@ const OrientationCard = ({ children, info, price, bought, done, className, ...pr
 
       {price === 0 && (
         <div className={s.cardFooter}>
-          <span className={s.cardFooterFree}>free</span>
+          <CardChips className={s.cardFooterFree}>free</CardChips>
           <PrimaryButton className={s.cardFooterPurchase}>purchase for free</PrimaryButton>
         </div>
       )}
 
       {price > 0 && (
         <div className={s.cardFooter}>
-          <span className={s.cardFooterPrice}>14,99Є</span>
-          <PrimaryButton className={s.cardFooterPurchase}>purchase for 14,99Є</PrimaryButton>
+          <span className={s.cardFooterPrice}>{price}Є</span>
+          <PrimaryButton className={s.cardFooterPurchase}>purchase for {price}Є</PrimaryButton>
         </div>
       )}
 

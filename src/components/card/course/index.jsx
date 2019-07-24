@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card } from 'components/card/base';
+import { CardChips } from 'components/card/chips';
 import { PrimaryButton, SecondaryButton } from 'components/button';
 import cx from 'classnames';
 import { CardHeader } from '../header';
 import s from './styles.scss';
 
-const CourseCard = ({ info, imgSrc, price, bought, className, ...props }) => {
+const CourseCard = ({ info, imgSrc, newPrice, price, bought, className, ...props }) => {
   return (
     <Card className={cx(s.card, className)}>
       <div className={s.cardImg}>
@@ -21,22 +22,33 @@ const CourseCard = ({ info, imgSrc, price, bought, className, ...props }) => {
 
         {price === 0 && (
           <div className={s.cardFooter}>
-            <span className={s.cardFooterFree}>free</span>
+            <CardChips className={s.cardFooterFree}>free</CardChips>
             <PrimaryButton className={s.cardFooterPurchase}>purchase for free</PrimaryButton>
           </div>
         )}
 
-        {price > 0 && (
+        {!newPrice && price > 0 && (
           <div className={s.cardFooter}>
-            <span className={s.cardFooterPrice}>14,99Є</span>
-            <PrimaryButton className={s.cardFooterPurchase}>purchase for 14,99Є</PrimaryButton>
+            <span className={s.cardFooterPrice}>${price}Є</span>
+            <PrimaryButton className={s.cardFooterPurchase}>purchase for ${price}Є</PrimaryButton>
           </div>
         )}
 
         {bought && (
           <div className={s.cardFooter}>
-            <span className={s.cardFooterBought}>Purchased</span>
+            <span className={s.cardFooterPurchased}>Purchased</span>
             <SecondaryButton className={s.cardFooterPurchase}>continue learning</SecondaryButton>
+          </div>
+        )}
+
+        {newPrice && (
+          <div className={s.cardFooter}>
+            <div className={s.cardFooterPackage}>
+              <CardChips className={s.cardFooterPackageChips}>package</CardChips>
+              <span className={s.cardFooterPackagePrice}>${price}Є</span>
+              <span className={s.cardFooterPackageNewPrice}>{newPrice}Є</span>
+            </div>
+            <PrimaryButton className={s.cardFooterPurchase}>purchase for {newPrice}Є</PrimaryButton>
           </div>
         )}
       </div>
@@ -47,6 +59,7 @@ const CourseCard = ({ info, imgSrc, price, bought, className, ...props }) => {
 CourseCard.propTypes = {
   className: PropTypes.string,
   price: PropTypes.number,
+  newPrice: PropTypes.number,
   bought: PropTypes.bool,
   imgSrc: PropTypes.string,
 };
@@ -54,6 +67,7 @@ CourseCard.propTypes = {
 CourseCard.defaultProps = {
   className: null,
   price: null,
+  newPrice: null,
   bought: false,
   imgSrc: 'https://ru.reactjs.org/logo-og.png',
 };

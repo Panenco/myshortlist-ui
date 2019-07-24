@@ -9,7 +9,7 @@
 
   &:hover {
     background-color: $hover-secondary-color;
-    box-shadow: 0 0 2px 0 rgba($dark-grey-color, 0.7);
+    box-shadow: 0 0 2px 0 rgba($dark-grey-color, 0.5);
   }
 
   &Img {
@@ -67,14 +67,36 @@
       display: none;
     }
 
-    &Bought {
+    &Purchased {
       @include font($m, $regular, $grey-color);
+    }
+
+    &Package {
+      align-items: center;
+      display: flex;
+
+      &Chips {
+        background-color: $secondary-color;
+        margin-right: 8px;
+      }
+
+      &Price {
+        @include font($m, $regular, $grey-color);
+
+        margin-right: 8px;
+        text-decoration: line-through;
+      }
+
+      &NewPrice {
+        @include font($l, $regular, $primary-color);
+      }
     }
   }
 
   &:hover &FooterFree,
   &:hover &FooterPrice,
-  &:hover &FooterBought {
+  &:hover &FooterPurchased,
+  &:hover &FooterPackage {
     display: none;
   }
 

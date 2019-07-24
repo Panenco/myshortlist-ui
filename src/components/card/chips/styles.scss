@@ -1,0 +1,10 @@
+@import 'core';
+
+.chips {
+  @include font($s, $medium, $white-color);
+
+  background-color: $primary-color;
+  border-radius: 12px;
+  padding: 4px 16px;
+  text-transform: uppercase;
+}

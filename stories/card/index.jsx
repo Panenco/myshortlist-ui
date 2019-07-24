@@ -16,7 +16,7 @@ export default decorator('Card').add('OrientationCard Component', () => (
 
     <Row>
       <Col s="12">
-        <OrientationCard price={14} title="Your personal brand" subTitle="19/07/2019">
+        <OrientationCard price={14.99} title="Your personal brand" subTitle="19/07/2019">
           Here you will perform a couple of test with your network to give you feedback from a 360 degree angle. Here
           you will qwerty qwerty qwerty qwerty qwerty qwerty
         </OrientationCard>
@@ -50,7 +50,13 @@ export const CourseCardStory = decorator('Card').add('CourseCard Component', () 
 
     <Row>
       <Col s="12">
-        <CourseCard price title="React for beginners" subTitle="09/07/2018" />
+        <CourseCard price={14.99} title="React for beginners" subTitle="09/07/2018" />
+      </Col>
+    </Row>
+
+    <Row>
+      <Col s="12">
+        <CourseCard price={26.99} newPrice={14.99} title="React for beginners" subTitle="09/07/2018" />
       </Col>
     </Row>
   </>
