@@ -8,7 +8,7 @@ import cx from 'classnames';
 import { CardHeader } from '../header';
 import s from './styles.scss';
 
-const CourseCard = ({ info, imgSrc, newPrice, price, bought, voted, rating, className, ...props }) => {
+const CourseCard = ({ title, imgSrc, newPrice, price, bought, voted, rating, className }) => {
   return (
     <Card className={cx(s.card, className)}>
       <div className={s.cardImg}>
@@ -16,10 +16,15 @@ const CourseCard = ({ info, imgSrc, newPrice, price, bought, voted, rating, clas
       </div>
 
       <div className={s.cardDownPart}>
-        <CardHeader subTitleStatus={(price || price === 0) && 'default'} className={s.cardHeader} {...props} />
+        <CardHeader
+          title={title}
+          subTitle={bought ? 'Bought 19/07/2019' : '19/07/2019'}
+          subTitleStatus={(price || price === 0) && 'default'}
+          className={s.cardHeader}
+        />
         <div className={s.cardAuthor}>Bavo Goosens</div>
 
-        <CourseRating rating={rating} />
+        <CourseRating rating={rating} voted={voted} className={s.cardRating} />
 
         {price === 0 && (
           <div className={s.cardFooter}>
@@ -56,6 +61,8 @@ const CourseCard = ({ info, imgSrc, newPrice, price, bought, voted, rating, clas
 
 CourseCard.propTypes = {
   className: PropTypes.string,
+  title: CardHeader.propTypes.title,
+  subTitle: CardHeader.propTypes.subTitle,
   price: PropTypes.number,
   newPrice: PropTypes.number,
   rating: CourseRating.propTypes.rating,
@@ -66,6 +73,8 @@ CourseCard.propTypes = {
 
 CourseCard.defaultProps = {
   className: null,
+  title: CardHeader.defaultProps.title,
+  subTitle: CardHeader.defaultProps.subTitle,
   price: null,
   newPrice: null,
   rating: CourseRating.defaultProps.rating,

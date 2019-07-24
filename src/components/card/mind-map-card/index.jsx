@@ -7,7 +7,7 @@ import { Card } from 'components/card/base';
 import cx from 'classnames';
 import s from './styles.scss';
 
-const MindMapCard = ({ children, done, ...props }) => {
+const MindMapCard = ({ title, children, done }) => {
   const status = {
     7: 'Completed 02/07/2019',
     0: 'Not started ',
@@ -36,10 +36,10 @@ const MindMapCard = ({ children, done, ...props }) => {
   return (
     <Card className={cx(s.card, testsToDo && s.cardStarted)}>
       <CardHeader
+        title={title}
         subTitle={testsToDo ? status.started : status[done]}
         subTitleStatus={notStarted && 'notStarted'}
         className={s.cardHeader}
-        {...props}
       >
         <SecondaryButton className={cx(s.cardHeaderRestartBtn, notStarted && s.cardHeaderRestartBtnNotStarted)}>
           restart
@@ -60,8 +60,13 @@ const MindMapCard = ({ children, done, ...props }) => {
 };
 
 MindMapCard.propTypes = {
+  title: CardHeader.propTypes.title,
   children: PropTypes.node.isRequired,
   done: PropTypes.node.isRequired,
+};
+
+MindMapCard.defaultProps = {
+  title: CardHeader.defaultProps.title,
 };
 
 export { MindMapCard };

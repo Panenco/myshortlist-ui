@@ -7,7 +7,7 @@ export default decorator('Card').add('OrientationCard Component', () => (
   <BrowserRouter>
     <Row>
       <Col s="12">
-        <OrientationCard price={0} title="Your personal brand" subTitle="19/07/2019">
+        <OrientationCard title="Your personal brand" price={0}>
           Here you will perform a couple of test with your network to give you feedback from a 360 degree angle. Here
           you will qwerty qwerty qwerty qwerty qwerty qwerty
         </OrientationCard>
@@ -16,7 +16,7 @@ export default decorator('Card').add('OrientationCard Component', () => (
 
     <Row>
       <Col s="12">
-        <OrientationCard price={14.99} title="Your personal brand" subTitle="19/07/2019">
+        <OrientationCard title="Your personal brand" price={14.99}>
           Here you will perform a couple of test with your network to give you feedback from a 360 degree angle. Here
           you will qwerty qwerty qwerty qwerty qwerty qwerty
         </OrientationCard>
@@ -25,7 +25,7 @@ export default decorator('Card').add('OrientationCard Component', () => (
 
     <Row>
       <Col s="12">
-        <OrientationCard bought done={4} title="Your personal brand" subTitle="Bought 19/07/2019">
+        <OrientationCard title="Your personal brand" bought done={4}>
           Here you will perform a couple of test with your network to give you feedback from a 360 degree angle. Here
           you will qwerty qwerty qwerty qwerty qwerty qwerty
         </OrientationCard>
@@ -38,32 +38,25 @@ export const CourseCardStory = decorator('Card').add('CourseCard Component', () 
   <>
     <Row>
       <Col s="12">
-        <CourseCard price={0} rating={1} voted={25} title="React for beginners" subTitle="09/07/2018" />
+        <CourseCard title="React for beginners" price={0} rating={1} voted={25} />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <CourseCard bought rating={4.5} voted={101} title="React for beginners" subTitle="Bought 09/07/2018" />
+        <CourseCard title="React for beginners" bought rating={4.5} voted={101} />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <CourseCard price={14.99} rating={3.2} voted={89} title="React for beginners" subTitle="09/07/2018" />
+        <CourseCard title="React for beginners" price={14.99} rating={3.2} voted={89} />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <CourseCard
-          price={26.99}
-          newPrice={14.99}
-          rating={5}
-          voted={47}
-          title="React for beginners"
-          subTitle="09/07/2018"
-        />
+        <CourseCard title="React for beginners" price={26.99} newPrice={14.99} rating={5} voted={47} />
       </Col>
     </Row>
   </>
@@ -73,7 +66,7 @@ export const MindMapCardStory = decorator('Card').add('MindMapCard Component', (
   <>
     <Row>
       <Col s="12">
-        <MindMapCard done={0} title="Generic competences">
+        <MindMapCard title="Generic competences" done={0}>
           <ul>
             <li>Communication</li>
             <li>Activity</li>
@@ -86,7 +79,7 @@ export const MindMapCardStory = decorator('Card').add('MindMapCard Component', (
 
     <Row>
       <Col s="12">
-        <MindMapCard done={4} title="Generic competences">
+        <MindMapCard title="Generic competences" done={4}>
           <ul>
             <li>Communication</li>
             <li>Activity</li>
@@ -99,7 +92,7 @@ export const MindMapCardStory = decorator('Card').add('MindMapCard Component', (
 
     <Row>
       <Col s="12">
-        <MindMapCard done={7} title="Generic competences">
+        <MindMapCard title="Generic competences" done={7}>
           <ul>
             <li>Communication</li>
             <li>Activity</li>

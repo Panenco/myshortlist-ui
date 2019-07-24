@@ -9,10 +9,15 @@ import { PrimaryButton, SecondaryButton } from 'components/button';
 import cx from 'classnames';
 import s from './styles.scss';
 
-const OrientationCard = ({ children, info, price, bought, done, className, ...props }) => {
+const OrientationCard = ({ title, children, price, bought, done, className }) => {
   return (
     <Card className={cx(s.card, className)}>
-      <CardHeader subTitleStatus={(price || price === 0) && 'default'} className={s.cardHeader} {...props} />
+      <CardHeader
+        title={title}
+        subTitle={bought ? 'Bought 19/07/2019' : '19/07/2019'}
+        subTitleStatus={(price || price === 0) && 'default'}
+        className={s.cardHeader}
+      />
 
       <div className={s.cardBody}>{children}</div>
 
@@ -45,6 +50,7 @@ const OrientationCard = ({ children, info, price, bought, done, className, ...pr
 };
 
 OrientationCard.propTypes = {
+  title: CardHeader.propTypes.title,
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   price: PropTypes.number,
@@ -53,6 +59,7 @@ OrientationCard.propTypes = {
 };
 
 OrientationCard.defaultProps = {
+  title: CardHeader.defaultProps.title,
   className: null,
   price: null,
   done: null,
