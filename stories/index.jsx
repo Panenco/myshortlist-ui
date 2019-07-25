@@ -18,6 +18,7 @@ import MatchStory from './match';
 import NavigationStory from './navigation';
 import ModalStory from './modal';
 import TooltipStory from './tooltip';
+import TestsProgressStory from './tests-progress';
 
 storiesOf('Avatar', <AvatarStory />);
 //
@@ -50,3 +51,5 @@ storiesOf('Navigation', <NavigationStory />);
 storiesOf('Modal', <ModalStory />);
 //
 storiesOf('Tooltip', <TooltipStory />);
+
+storiesOf('TestProgress', <TestsProgressStory />);

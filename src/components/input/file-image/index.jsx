@@ -2,7 +2,7 @@ import React from 'react';
 import Dropzone from 'react-dropzone';
 import PropTypes from 'prop-types';
 import { ButtonIcon } from 'components/button-icon';
-import Icon from 'components/icon';
+import { Icon } from 'components/icon';
 import cx from 'classnames';
 import s from './styles.scss';
 
