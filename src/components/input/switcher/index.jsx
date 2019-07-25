@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import s from './styles.scss';
 
-const Switcher = ({ id, checked, name, disabled, label, className, ...props }) => (
+const Switcher = ({ id, checked, name, disabled, labelLeft, labelRight, className, ...props }) => (
   <label htmlFor={id} className={cx(disabled && s.disabled, className)}>
-    {label && <span className={s.labelTitle}>{label}</span>}
+    {labelLeft && <span className={cx(s.labelTitle, s.labelTitleLeft)}>{labelLeft}</span>}
     <button className={cx(s.switcher, checked && s.switcher_active)}>
       <input
         type="checkbox"
@@ -18,6 +18,7 @@ const Switcher = ({ id, checked, name, disabled, label, className, ...props }) =
       />
       <div className={cx(s.switcher_slider)} />
     </button>
+    {labelRight && <span className={cx(s.labelTitle, s.labelTitleRight)}>{labelRight}</span>}
   </label>
 );
 
@@ -26,7 +27,8 @@ Switcher.propTypes = {
   name: PropTypes.string,
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
-  label: PropTypes.string,
+  labelLeft: PropTypes.string,
+  labelRight: PropTypes.string,
   className: PropTypes.string,
 };
 
@@ -34,7 +36,8 @@ Switcher.defaultProps = {
   name: null,
   checked: false,
   disabled: false,
-  label: null,
+  labelLeft: null,
+  labelRight: null,
   className: null,
 };
 

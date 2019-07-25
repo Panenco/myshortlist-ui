@@ -27,5 +27,17 @@ export default decorator('Input').add('Checkbox Component', () => (
         <Checkbox checked disabled />
       </Col>
     </Row>
+
+    <Row>
+      <Col s="12">
+        <Checkbox labelLeft="Drawing up budgets" />
+      </Col>
+    </Row>
+
+    <Row>
+      <Col s="12">
+        <Checkbox labelRight="Drawing up budgets" />
+      </Col>
+    </Row>
   </>
 ));

@@ -1,4 +1,5 @@
 export * from './checkbox';
+export * from './radio';
 export * from './control';
 export * from './file-image';
 export * from './field';
