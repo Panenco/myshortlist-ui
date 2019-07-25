@@ -1,4 +1,5 @@
 export { default as CheckboxStory } from './checkbox';
+export { default as RadioStory } from './radio';
 export { default as SwitcherStory } from './switcher';
 export { default as TextInputStory } from './text';
 export { default as WithIconInputStory } from './with-icon';

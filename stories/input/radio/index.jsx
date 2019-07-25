@@ -1,42 +1,42 @@
 import React from 'react';
-import { Switcher, Row, Col } from 'index';
+import { Radio, Row, Col } from 'index';
 import { decorator } from '../../../utils/decorator';
 
-export default decorator('Input').add('Switcher Component', () => (
+export default decorator('Input').add('Radio Component', () => (
   <>
     <Row>
       <Col s="12">
-        <Switcher id="1" />
+        <Radio />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <Switcher disabled />
+        <Radio disabled />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <Switcher checked id="2" />
+        <Radio checked />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <Switcher checked disabled />
+        <Radio checked disabled />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <Switcher id="3" labelLeft="Drawing up budgets" />
+        <Radio labelRight="Drawing up budgets" />
       </Col>
     </Row>
 
     <Row>
       <Col s="12">
-        <Switcher id="4" labelRight="Drawing up budgets" />
+        <Radio labelLeft="Drawing up budgets" />
       </Col>
     </Row>
   </>
