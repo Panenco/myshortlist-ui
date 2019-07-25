@@ -19,6 +19,7 @@ import NavigationStory from './navigation';
 import ModalStory from './modal';
 import TooltipStory from './tooltip';
 import TestsProgressStory from './tests-progress';
+import SkillRateBoxStory from './skill-rate';
 
 storiesOf('Avatar', <AvatarStory />);
 //
@@ -53,3 +54,5 @@ storiesOf('Modal', <ModalStory />);
 storiesOf('Tooltip', <TooltipStory />);
 
 storiesOf('TestProgress', <TestsProgressStory />);
+
+storiesOf('SkillRateBox', <SkillRateBoxStory />);
