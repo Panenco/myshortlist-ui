@@ -6,6 +6,7 @@ $diameter: 24px;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
+  line-height: 1;
 
   & input {
     display: none;
@@ -20,8 +21,8 @@ $diameter: 24px;
     cursor: pointer;
     display: flex;
     flex-shrink: 0;
-    justify-content: center;
     height: $diameter;
+    justify-content: center;
     margin-right: 8px;
     width: $diameter;
   }
@@ -40,24 +41,4 @@ $diameter: 24px;
     background-color: $secondary-color;
     color: $white-color;
   }
-
-  // & input + label[for='star5'] {
-  //   order: 5;
-  // }
-  //
-  // & input + label[for='star4'] {
-  //   order: 4;
-  // }
-  //
-  // & input + label[for='star3'] {
-  //   order: 3;
-  // }
-  //
-  // & input + label[for='star2'] {
-  //   order: 2;
-  // }
-  //
-  // & input + label[for='star1'] {
-  //   order: 1;
-  // }
 }
