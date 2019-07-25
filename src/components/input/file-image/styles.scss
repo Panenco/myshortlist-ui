@@ -1,0 +1,51 @@
+@import 'core';
+
+.img {
+  height: 96px;
+  position: relative;
+  width: 96px;
+
+  &Drop {
+    background-color: transparent;
+    border: 1px dashed $dark-grey-color;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 96px;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    width: 96px;
+
+    &:focus {
+      border: 1px dashed $primary-color;
+    }
+
+    &Error {
+      background-color: $bgc-error-color;
+      border: 1px dashed $error-color;
+
+      &:focus {
+        border: 1px dashed $error-color;
+      }
+    }
+
+    &Avatar {
+      width: 100%;
+    }
+
+    &DeleteBtn {
+      position: absolute;
+      right: 5px;
+      top: -4px;
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid transparent;
+      }
+
+      svg {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

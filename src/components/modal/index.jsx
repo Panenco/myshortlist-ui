@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ButtonIcon } from '../button';
+import { ButtonIcon } from 'components/button-icon';
 import s from './styles.scss';
 
 const Modal = ({ title, onClose, children }) => (
@@ -23,7 +23,7 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  title: '',
+  title: 'Title',
   children: null,
 };
 

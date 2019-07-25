@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Icon from 'components/core/icon';
+import { Icon } from 'components/icon';
 import s from './styles.scss';
 
-export const DelTeamButton = ({ children, ...props }) => (
-  <button type="button" className={cx(s.button, s.buttonDelTeam)} {...props}>
+export const DeleteTeamBtn = ({ children, leaveIcon, ...props }) => (
+  <button type="button" className={cx(s.button, s.buttonDeleteTeam)} {...props}>
     {children}
-    {props.leaveIcon && <Icon icon={Icon.icons.leaveSmall} className={cx(s.exitTeamIcon)} />}
+    {leaveIcon && <Icon icon={Icon.icons.leave} className={cx(s.exitTeamIcon)} />}
   </button>
 );
 
-DelTeamButton.propTypes = {
+DeleteTeamBtn.propTypes = {
   children: PropTypes.node.isRequired,
   leaveIcon: PropTypes.bool.isRequired,
 };

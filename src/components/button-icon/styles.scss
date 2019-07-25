@@ -1,0 +1,42 @@
+@import 'core';
+
+.button {
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  line-height: 1;
+  outline: none;
+  text-decoration: none;
+
+  &Icon {
+    background-color: transparent;
+    border: 1px solid transparent;
+
+    &Item {
+      color: $dark-grey-color;
+      height: 22px;
+      vertical-align: middle;
+      width: 22px;
+    }
+
+    &:hover {
+      background-color: $hover-secondary-color;
+      border: 1px solid $hover-secondary-color;
+    }
+
+    &:active {
+      background-color: $active-secondary-color;
+      border: 1px solid $active-secondary-color;
+    }
+
+    &:focus {
+      border: 1px solid $primary-color;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+}

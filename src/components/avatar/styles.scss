@@ -2,7 +2,7 @@
 
 .avatar {
   align-items: center;
-  background-color: white;
+  background-color: $hover-secondary-color;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@
   }
 
   &Fallback {
-    @include font(32px, $regular, $hover-secondary-color);
+    @include font(32px, $regular, $primary-color);
 
     &Header {
       @include font(16px, $regular, $hover-secondary-color);

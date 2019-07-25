@@ -4,6 +4,7 @@
   border: none;
   border-radius: 2px;
   cursor: pointer;
+  display: inline-block;
   font-size: $xs;
   letter-spacing: 1px;
   line-height: 1;
@@ -82,5 +83,10 @@
     &:focus {
       padding: 15px;
     }
+  }
+
+  &Disabled {
+    opacity: 0.3;
+    pointer-events: none;
   }
 }

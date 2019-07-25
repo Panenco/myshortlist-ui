@@ -1,0 +1,45 @@
+@import 'core';
+
+.block {
+  text-align: left;
+
+  &Name {
+    @include font($xs, $regular, $primary-color);
+
+    line-height: 1;
+    margin-bottom: 4px;
+    // max-width: 85%;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &NotStarted {
+      color: $graph-color;
+    }
+  }
+
+  &Rate {
+    background-color: transparent;
+    border: 1px solid $graph-color;
+    height: 9px;
+    overflow: hidden;
+    position: relative;
+
+    &Done {
+      background-color: $primary-color;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.block:first-child .blockRate {
+  border-radius: 25px 0 0 25px;
+}
+
+.block:last-child .blockRate {
+  border-radius: 0 25px 25px 0;
+}

@@ -1,0 +1,104 @@
+@import 'core';
+
+.card {
+  max-height: 312px;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  width: 289px;
+
+  &:hover {
+    background-color: $hover-secondary-color;
+    box-shadow: 0 0 2px 0 rgba($dark-grey-color, 0.5);
+  }
+
+  &Img {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    height: 160px;
+    overflow: hidden;
+    width: 100%;
+
+    &Item {
+      background-size: cover;
+      width: 100%;
+    }
+  }
+
+  &DownPart {
+    padding: 16px;
+  }
+
+  &Header {
+    margin-bottom: 8px;
+  }
+
+  &Author {
+    @include font($s, $regular, $dark-grey-color);
+
+    margin-bottom: 8px;
+  }
+
+  &Rating {
+    margin-bottom: 26px;
+  }
+
+  &:hover &Rating {
+    margin-bottom: 13px;
+  }
+
+  &Footer {
+    &Free {
+      @include font($s, $medium, $white-color);
+
+      background-color: $primary-color;
+      border-radius: 12px;
+      padding: 4px 16px;
+      text-transform: uppercase;
+    }
+
+    &Price {
+      @include font($l, $regular, $primary-color);
+    }
+
+    &Purchase {
+      display: none;
+    }
+
+    &Purchased {
+      @include font($m, $regular, $grey-color);
+    }
+
+    &Package {
+      align-items: center;
+      display: flex;
+
+      &Chips {
+        background-color: $secondary-color;
+        margin-right: 8px;
+      }
+
+      &Price {
+        @include font($m, $regular, $grey-color);
+
+        margin-right: 8px;
+        text-decoration: line-through;
+      }
+
+      &NewPrice {
+        @include font($l, $regular, $primary-color);
+      }
+    }
+  }
+
+  &:hover &FooterFree,
+  &:hover &FooterPrice,
+  &:hover &FooterPurchased,
+  &:hover &FooterPackage {
+    display: none;
+  }
+
+  &:hover &FooterPurchase {
+    display: inline-block;
+  }
+}

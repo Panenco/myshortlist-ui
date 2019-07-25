@@ -22,7 +22,7 @@ const Pagination = ({ className, style, current, totalItems, itemsPerPage, forma
   if (previousPage > 0) {
     previous = (
       <Item className={s.paginationPreviousWrapper} to={formatUrl(previousPage)}>
-        <Icon.Large className={s.paginationPrevious} icon={Icon.icons.drill} />
+        <Icon className={s.paginationPrevious} icon={Icon.icons.drill} />
       </Item>
     );
   }
@@ -55,7 +55,7 @@ const Pagination = ({ className, style, current, totalItems, itemsPerPage, forma
   if (nextPage <= totalPages) {
     next = (
       <Item className={s.paginationNextWrapper} to={formatUrl(nextPage)}>
-        <Icon.Large className={s.paginationNext} icon={Icon.icons.drill} />
+        <Icon className={s.paginationNext} icon={Icon.icons.drill} />
       </Item>
     );
   }

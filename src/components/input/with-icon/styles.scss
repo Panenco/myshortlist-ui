@@ -1,0 +1,68 @@
+@import 'core';
+
+.withIcon {
+  display: flex;
+  position: relative;
+
+  input::placeholder {
+    color: $grey-color;
+  }
+
+  &Before {
+    padding-left: 35px;
+
+    &:focus {
+      border: 2px solid $primary-color;
+      padding: 8px 11px 8px 34px;
+    }
+
+    &Error {
+      border: 2px solid $error-color;
+      padding: 8px 11px 8px 34px;
+
+      &:focus {
+        border: 2px solid $error-color;
+      }
+    }
+  }
+
+  &After {
+    padding-left: 12px;
+
+    &:focus {
+      border: 2px solid $primary-color;
+      padding: 8px 11px;
+    }
+
+    &Error {
+      border: 2px solid $error-color;
+      padding: 8px 11px;
+
+      &:focus {
+        border: 2px solid $error-color;
+      }
+    }
+  }
+
+  .icon {
+    color: $dark-grey-color;
+    position: absolute;
+
+    &Before {
+      left: 0;
+      top: 50%;
+      transform: translate(10px, -50%);
+    }
+
+    &After {
+      right: 0;
+      top: 50%;
+      transform: translate(-9px, -50%);
+    }
+  }
+
+  &Disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}

@@ -1,4 +1,4 @@
-@import "core";
+@import 'core';
 
 .pagination {
   align-items: center;
@@ -12,15 +12,13 @@
   }
 
   &Previous {
-    transform: rotate(90deg);
-
     &Wrapper {
       max-height: 34px;
     }
   }
 
   &Next {
-    transform: rotate(-90deg);
+    transform: rotate(180deg);
 
     &Wrapper {
       max-height: 34px;
@@ -33,7 +31,7 @@
   display: flex;
 
   &Active {
-    background: $active-primary-color;
+    background: $hover-secondary-color;
     color: $black-color;
   }
 }

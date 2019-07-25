@@ -1,0 +1,74 @@
+@import 'core';
+
+.card {
+  position: relative;
+  text-align: left;
+  width: 442px;
+
+  &:hover {
+    background-color: $hover-secondary-color;
+    box-shadow: 0 0 2px 0 rgba($dark-grey-color, 0.5);
+  }
+
+  &Started {
+    background-color: $active-secondary-color;
+  }
+
+  &Header {
+    margin-bottom: 24px;
+
+    &RestartBtn {
+      display: none;
+
+      &NotStarted {
+        display: none !important;
+      }
+    }
+  }
+
+  &Body {
+    @include font($m);
+
+    filter: blur(5px);
+    line-height: 1.4;
+    margin-bottom: 24px;
+    max-height: 80px;
+    opacity: 0.5;
+    overflow: hidden;
+
+    &Done {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+
+  &Progress {
+    @include font($l, $regular, $graph-color);
+
+    line-height: 1.4;
+    max-width: 210px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  &Footer {
+    &Btn {
+      display: none;
+    }
+
+    &RateTodo > div {
+      background-color: $white-color;
+    }
+  }
+
+  &:hover &FooterBtn,
+  &:hover &HeaderRestartBtn {
+    display: block;
+  }
+
+  &:hover &FooterRate {
+    display: none;
+  }
+}

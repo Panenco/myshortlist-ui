@@ -2,30 +2,38 @@
 
 .tooltip {
   align-items: center;
-  display: flex;
+  display: inline-block;
   position: relative;
 
   &Message {
+    @include font($s, $regular, $dark-grey-color);
+
     background-color: $white-color;
+    // border: 1px solid $divider-color;
+    border-radius: 2px;
+    bottom: 25px;
     box-shadow: 0 0 1px 0 rgba($grey-color, 0.8);
-    min-height: 10px;
-    min-width: 20px;
+    filter: drop-shadow(0 2px 2px rgba($divider-color, 1));
+    left: 50%;
+    line-height: 1.5;
     opacity: 0;
+    padding: 6px 8px;
     pointer-events: none;
     position: absolute;
-    text-align: center;
-    top: -20px;
-    z-index: 20px;
+    text-align: justify;
+    transform: translate(-50%, 0);
 
     &::after {
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid whitesmoke;
+      border-color: transparent transparent $white-color;
+      border-style: solid;
+      border-width: 11px;
+      bottom: -17px;
       content: '';
+      display: block;
       height: 0;
-      left: 30px;
+      left: 20px;
       position: absolute;
-      top: 14px;
+      transform: rotate(180deg);
       width: 0;
     }
   }

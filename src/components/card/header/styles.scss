@@ -1,0 +1,27 @@
+@import 'core';
+
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+  margin-bottom: 16px;
+
+  &Title {
+    @include font($l, $medium, $secondary-color);
+
+    margin-bottom: 4px;
+
+    &Black {
+      color: $black-color;
+    }
+  }
+
+  &SubTitle {
+    @include font($s, $regular, $primary-color);
+
+    &Black {
+      color: $black-color;
+    }
+  }
+}

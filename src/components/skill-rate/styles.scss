@@ -1,0 +1,63 @@
+@import 'core';
+
+$diameter: 24px;
+
+.numberRate {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+
+  & input {
+    display: none;
+  }
+
+  & label {
+    @include font($l, $regular, $black-color);
+
+    align-items: center;
+    background-color: $divider-color;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    height: $diameter;
+    margin-right: 8px;
+    width: $diameter;
+  }
+
+  & input:checked ~ label {
+    background-color: $secondary-color;
+    color: $white-color;
+  }
+
+  & input + label::before {
+    content: '';
+  }
+
+  & input + label:hover,
+  & input + label:hover ~ label {
+    background-color: $secondary-color;
+    color: $white-color;
+  }
+
+  // & input + label[for='star5'] {
+  //   order: 5;
+  // }
+  //
+  // & input + label[for='star4'] {
+  //   order: 4;
+  // }
+  //
+  // & input + label[for='star3'] {
+  //   order: 3;
+  // }
+  //
+  // & input + label[for='star2'] {
+  //   order: 2;
+  // }
+  //
+  // & input + label[for='star1'] {
+  //   order: 1;
+  // }
+}

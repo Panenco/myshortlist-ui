@@ -1,0 +1,75 @@
+@import 'core';
+
+$font-size: 14px;
+$line-height: 1.4;
+$lines-to-show: 3;
+
+.card {
+  max-height: 192px;
+  position: relative;
+  text-align: left;
+  width: 289px;
+
+  &:hover {
+    background-color: $hover-secondary-color;
+    box-shadow: 0 0 2px 0 rgba($dark-grey-color, 0.5);
+  }
+
+  &Header {
+    margin-bottom: 16px;
+  }
+
+  &Body {
+    @include font($m);
+
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    height: $font-size * $line-height * $lines-to-show;
+    -webkit-line-clamp: $lines-to-show;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    max-width: 289px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:hover &Body {
+    height: $font-size * $line-height * 2;
+    -webkit-line-clamp: 2;
+    margin-bottom: 39px;
+  }
+
+  &More {
+    @include font($m, $regular, $primary-color);
+
+    display: none;
+    position: absolute;
+    top: 104px;
+  }
+
+  &:hover &More {
+    display: block;
+  }
+
+  &Footer {
+    line-height: 2;
+
+    &Price {
+      @include font($l, $regular, $primary-color);
+    }
+
+    &Purchase {
+      display: none;
+    }
+  }
+
+  &:hover &FooterFree,
+  &:hover &FooterPrice,
+  &:hover &FooterRate {
+    display: none;
+  }
+
+  &:hover &FooterPurchase {
+    display: inline-block;
+  }
+}
