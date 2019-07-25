@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import s from './styles.scss';
 
-const SkillRateBox = ({ name = 'rating', from = 1, to = 5, step = 1, value = 1, onChange = console.log }) => {
+const SkillRate = ({ name = 'rating', from, to, step, value = 1, onChange = console.log }) => {
   const [val, setValue] = useState(value);
   const handleChange = e => setValue(e.target.value);
 
@@ -30,4 +31,19 @@ const SkillRateBox = ({ name = 'rating', from = 1, to = 5, step = 1, value = 1, 
   return <div className={s.numberRate}>{circles}</div>;
 };
 
-export { SkillRateBox };
+SkillRate.propTypes = {
+  name: PropTypes.string.isRequired,
+  from: PropTypes.number,
+  to: PropTypes.number,
+  step: PropTypes.number,
+  value: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
+
+SkillRate.defaultProps = {
+  from: 1,
+  to: 5,
+  step: 1,
+};
+
+export { SkillRate };
