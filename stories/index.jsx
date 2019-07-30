@@ -21,6 +21,7 @@ import TooltipStory from './tooltip';
 import TestsProgressStory from './tests-progress';
 import SkillRateBoxStory from './skill-rate';
 import DragnDropStory from './dragndrop';
+import PointsScaleStory from './points-scale';
 
 storiesOf('Avatar', <AvatarStory />);
 //
@@ -59,3 +60,5 @@ storiesOf('TestProgress', <TestsProgressStory />);
 storiesOf('SkillRateBox', <SkillRateBoxStory />);
 
 storiesOf('DragnDrop', <DragnDropStory />);
+
+storiesOf('PointsScale', <PointsScaleStory />);

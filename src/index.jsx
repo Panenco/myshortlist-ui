@@ -20,3 +20,4 @@ export * from './components/tooltip';
 export * from './components/tests-progress';
 export * from './components/skill-rate';
 export * from './components/dragndrop';
+export * from './components/points-scale';
