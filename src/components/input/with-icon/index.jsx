@@ -9,12 +9,12 @@ const WithIconInput = ({ className, before, after, error, disabled, ...props }) 
   <div className={cx(s.withIcon, disabled && s.withIconDisabled, className)}>
     {before && <Icon.Large icon={before} className={cx(s.icon, s.iconBefore)} />}
     <TextInput
-      {...props}
       className={
         before
           ? cx(s.withIconBefore, error && s.withIconBeforeError)
           : cx(s.withIconAfter, error && s.withIconAfterError)
       }
+      {...props}
     />
     {after && <Icon.Large icon={after} className={cx(s.icon, s.iconAfter)} />}
   </div>

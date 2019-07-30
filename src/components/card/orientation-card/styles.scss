@@ -28,7 +28,7 @@
   }
 
   &Body {
-    @include font($m);
+    @include font($m, $regular, $black-color);
 
     height: 60px;
     line-height: 1.4;
