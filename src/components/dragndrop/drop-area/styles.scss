@@ -1,0 +1,66 @@
+@import 'core';
+
+.container {
+  background-color: $active-secondary-color;
+  border: 1px dashed $primary-color;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 16px;
+  padding: 16px 8px 8px 8px;
+  position: relative;
+  width: 160px;
+
+  &Title {
+    @include font($m, $regular, $primary-color);
+
+    margin-bottom: 16px;
+  }
+
+  &SubTitle {
+    @include font($l, $regular, $graph-color);
+
+    left: 50%;
+    position: absolute;
+    top: 50px;
+    transform: translate(-50%, 0);
+    width: 100%;
+  }
+
+  &BoxList {
+    min-height: 100px;
+  }
+}
+
+.defaultContainer {
+  background-color: transparent;
+  border: none;
+  margin-bottom: 16px;
+  margin-right: 0;
+  // min-height: 100px;
+  padding: 0;
+  width: 100%;
+
+  .containerTitle,
+  .containerSubTitle {
+    display: none;
+  }
+
+  .containerBoxList {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 39px;
+
+    div {
+      // display: inline-block;
+      margin-bottom: 16px;
+      margin-right: 16px;
+      padding: 10px 16px 10px 4px;
+
+      svg {
+        display: block;
+      }
+    }
+  }
+}

@@ -20,6 +20,7 @@ import ModalStory from './modal';
 import TooltipStory from './tooltip';
 import TestsProgressStory from './tests-progress';
 import SkillRateBoxStory from './skill-rate';
+import DragnDropStory from './dragndrop';
 
 storiesOf('Avatar', <AvatarStory />);
 //
@@ -56,3 +57,5 @@ storiesOf('Tooltip', <TooltipStory />);
 storiesOf('TestProgress', <TestsProgressStory />);
 
 storiesOf('SkillRateBox', <SkillRateBoxStory />);
+
+storiesOf('DragnDrop', <DragnDropStory />);
