@@ -109,6 +109,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "moment": "^2.24.0",
     "react-day-picker": "^7.3.0",
     "react-dropzone": "^10.1.5",
     "react-select": "^3.0.4",

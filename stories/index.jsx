@@ -11,7 +11,7 @@ import CommentStory from './comment';
 import * as CardStory from './card';
 import * as InputStory from './input';
 import PaginationStory from './pagination';
-import DatePickerStory from './datepicker';
+import * as DatePickerStory from './datepicker';
 import CultureMatchStory from './culture-match';
 import PreloaderStory from './loader';
 import MatchStory from './match';
