@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { DateUtils } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
 import { ButtonIcon } from 'components/button-icon';
@@ -9,52 +7,22 @@ import { Icon } from 'components/icon';
 import s from 'components/datepicker/styles.scss';
 
 class DatePickerMulti extends React.Component {
-  static propTypes = {
-    hasRange: PropTypes.bool,
-    onChange: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
-  };
-
-  static defaultProps = {
-    hasRange: false,
-  };
-
   state = {
-    from: '',
-    to: '',
-    singleDate: '',
+    from: undefined,
+    to: undefined,
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state !== prevState) {
-      if (this.props.hasRange) {
-        const { from, to } = this.state;
-        this.props.onChange({
-          from,
-          to,
-        });
-      } else {
-        const { singleDate } = this.state;
-        this.props.onChange(singleDate);
-      }
-    }
-  }
-
-  handleDayRange = day => {
-    const range = DateUtils.addDayToRange(day, this.state);
-    this.setState(range);
+  handleFromChange = from => {
+    this.setState({ from });
   };
 
-  handleDay = day => {
-    this.setState({ singleDate: day });
+  handleToChange = to => {
+    this.setState({ to });
   };
 
   render() {
-    const { value, hasRange } = this.props;
-
-    const { from, to, singleDate } = this.state;
+    const { from, to } = this.state;
     const modifiers = { start: from, end: to };
-    //
 
     const Navbar = ({ onPreviousClick, onNextClick, className }) => {
       const prevClick = () => onPreviousClick();
@@ -69,30 +37,47 @@ class DatePickerMulti extends React.Component {
     };
 
     return (
-      <div>
+      <div className={s.multiPicker}>
         <DayPickerInput
           component={props => <WithIconInput after={Icon.icons.calendar} {...this.props} {...props} />}
-          classNames={{ container: s.input }}
-          dayPickerProps={{
-            numberOfMonths: 2,
-            hasRange,
-            selectedDays: hasRange ? [from, { from, to }] : singleDate,
-            modifiers,
-            locale: 'en-gb',
-            // classNames: reactDayPickerClassNames,
-            navbarElement: Navbar,
-            handleDayClick(day, { selected }) {
-              this.setState({
-                singleDate: selected ? null : day,
-              });
-            },
-          }}
+          value={from}
+          placeholder="From"
+          format="LL"
           formatDate={formatDate}
           parseDate={parseDate}
-          placeholder={`${formatDate(new Date(), 'L', 'en-gb')}`}
-          onDayChange={hasRange ? this.handleDayRange : this.handleDay}
-          value={value}
-          hideOnDayClick={hasRange ? from : true}
+          dayPickerProps={{
+            selectedDays: [from, { from, to }],
+            disabledDays: { after: to },
+            toMonth: to,
+            modifiers,
+            locale: 'en-gb',
+            numberOfMonths: 2,
+            navbarElement: Navbar,
+          }}
+          onDayChange={this.handleFromChange}
+          classNames={{ container: s.input }}
+          {...this.props}
+        />
+        <h4>-</h4>
+        <DayPickerInput
+          value={to}
+          component={props => <WithIconInput after={Icon.icons.calendar} {...this.props} {...props} />}
+          placeholder="To"
+          format="LL"
+          formatDate={formatDate}
+          parseDate={parseDate}
+          dayPickerProps={{
+            selectedDays: [from, { from, to }],
+            disabledDays: { before: from },
+            modifiers,
+            locale: 'en-gb',
+            month: from,
+            fromMonth: from,
+            numberOfMonths: 2,
+            navbarElement: Navbar,
+          }}
+          onDayChange={this.handleToChange}
+          classNames={{ container: s.input }}
           {...this.props}
         />
       </div>

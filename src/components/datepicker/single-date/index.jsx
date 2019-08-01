@@ -9,8 +9,11 @@ import s from 'components/datepicker/styles.scss';
 
 class DatePickerSingle extends React.Component {
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.string,
+  };
+
+  static defaultProps = {
+    value: undefined,
   };
 
   state = {
@@ -24,9 +27,7 @@ class DatePickerSingle extends React.Component {
   render() {
     const { value } = this.props;
 
-    const { from, to, singleDate } = this.state;
-    const modifiers = { start: from, end: to };
-    //
+    const { singleDate } = this.state;
 
     const Navbar = ({ onPreviousClick, onNextClick, className }) => {
       const prevClick = () => onPreviousClick();
@@ -48,7 +49,6 @@ class DatePickerSingle extends React.Component {
           dayPickerProps={{
             numberOfMonths: 2,
             selectedDays: singleDate,
-            modifiers,
             locale: 'en-gb',
             // classNames: reactDayPickerClassNames,
             navbarElement: Navbar,
