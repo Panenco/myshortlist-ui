@@ -45,7 +45,11 @@ export default {
     babel({
       exclude: 'node_modules/**',
     }),
-    commonjs(),
+    commonjs({
+      namedExports: {
+        'react-is': ['isValidElementType', 'isContextConsumer', 'ForwardRef'],
+      },
+    }),
     resolve({
       extensions: ['.js', '.jsx', '.json'],
       preferBuiltins: false,
@@ -76,6 +80,7 @@ export default {
         // console.log(code);
         // Do something with the generated code
         // eg. write to "spritesheet.svg"
+        // fs.writeFile(path.join(paths.outputPath, 'spritesheet.svg'), code);
         writeFile(path.join(paths.outputPath, 'spritesheet.svg'), code);
       },
     }),
