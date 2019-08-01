@@ -42,7 +42,6 @@ class DatePickerMulti extends React.Component {
           component={props => <WithIconInput after={Icon.icons.calendar} {...this.props} {...props} />}
           value={from}
           placeholder="From"
-          format="LL"
           formatDate={formatDate}
           parseDate={parseDate}
           dayPickerProps={{
@@ -53,8 +52,8 @@ class DatePickerMulti extends React.Component {
             locale: 'en-gb',
             numberOfMonths: 2,
             navbarElement: Navbar,
+            onDayClick: this.handleFromChange,
           }}
-          onDayChange={this.handleFromChange}
           classNames={{ container: s.input }}
           {...this.props}
         />
@@ -63,7 +62,6 @@ class DatePickerMulti extends React.Component {
           value={to}
           component={props => <WithIconInput after={Icon.icons.calendar} {...this.props} {...props} />}
           placeholder="To"
-          format="LL"
           formatDate={formatDate}
           parseDate={parseDate}
           dayPickerProps={{
@@ -75,8 +73,8 @@ class DatePickerMulti extends React.Component {
             fromMonth: from,
             numberOfMonths: 2,
             navbarElement: Navbar,
+            onDayClick: this.handleToChange,
           }}
-          onDayChange={this.handleToChange}
           classNames={{ container: s.input }}
           {...this.props}
         />

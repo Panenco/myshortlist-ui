@@ -20,8 +20,10 @@ class DatePickerSingle extends React.Component {
     singleDate: '',
   };
 
-  handleDay = day => {
-    this.setState({ singleDate: day });
+  handleDayChange = selectedDay => {
+    this.setState({
+      singleDate: selectedDay,
+    });
   };
 
   render() {
@@ -52,16 +54,13 @@ class DatePickerSingle extends React.Component {
             locale: 'en-gb',
             // classNames: reactDayPickerClassNames,
             navbarElement: Navbar,
-            handleDayClick(day, { selected }) {
-              this.setState({
-                singleDate: selected ? null : day,
-              });
-            },
+            onDayClick: this.handleDayChange,
           }}
           formatDate={formatDate}
           parseDate={parseDate}
           placeholder={`${formatDate(new Date(), 'L', 'en-gb')}`}
           value={value}
+          selectedDay={this.state.singleDate}
           hideOnDayClick
           {...this.props}
         />
