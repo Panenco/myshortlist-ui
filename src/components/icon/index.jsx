@@ -6,8 +6,10 @@ import s from './styles.scss';
 import add from './icons/add.svg';
 import arrowDown from './icons/arrow-down.svg';
 import arrow from './icons/arrow.svg';
+import book from './icons/book.svg';
 import calendar from './icons/calendar.svg';
 import company from './icons/company.svg';
+import creditCard from './icons/credit-card.svg';
 import cross from './icons/cross.svg';
 import bin from './icons/delete.svg';
 import download from './icons/download.svg';
@@ -63,8 +65,10 @@ Icon.icons = {
   add,
   arrowDown,
   arrow,
+  book,
   calendar,
   company,
+  creditCard,
   cross,
   bin,
   download,
