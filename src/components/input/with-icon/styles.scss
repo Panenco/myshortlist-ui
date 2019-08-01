@@ -64,5 +64,10 @@
   &Disabled {
     opacity: 0.3;
     pointer-events: none;
+
+    input:focus {
+      border: 2px solid $dark-grey-color;
+      pointer-events: none;
+    }
   }
 }

@@ -4,13 +4,14 @@ import cx from 'classnames';
 import s from './styles.scss';
 
 import add from './icons/add.svg';
-import arrowDown from './icons/arrow_down.svg';
+import arrowDown from './icons/arrow-down.svg';
 import arrow from './icons/arrow.svg';
 import calendar from './icons/calendar.svg';
 import company from './icons/company.svg';
 import cross from './icons/cross.svg';
 import bin from './icons/delete.svg';
 import download from './icons/download.svg';
+import dragDots from './icons/drag-dots.svg';
 import drill from './icons/drill.svg';
 import duplicate from './icons/duplicate.svg';
 import edit from './icons/edit.svg';
@@ -18,11 +19,11 @@ import eye from './icons/eye.svg';
 import emptystar from './icons/emptystar.svg';
 import halfstar from './icons/halfstar.svg';
 import home from './icons/home.svg';
-import notificationsUnread from './icons/notifications_unread.svg';
+import notificationsUnread from './icons/notifications-unread.svg';
 import notifications from './icons/notifications.svg';
 import recommendations from './icons/recommendations.svg';
 import remove from './icons/remove.svg';
-import searchProfiles from './icons/search_profiles.svg';
+import searchProfiles from './icons/search-profiles.svg';
 import search from './icons/search.svg';
 import teams from './icons/teams.svg';
 import unarchive from './icons/unarchive.svg';
@@ -34,14 +35,14 @@ import candidate from './icons/candidate.svg';
 import consultant from './icons/consultant.svg';
 import contacted from './icons/contacted.svg';
 import declined from './icons/declined.svg';
-import eyeNotViewed from './icons/not_viewed.svg';
-import eyeViewed from './icons/eye_viewed.svg';
+import eyeNotViewed from './icons/not-viewed.svg';
+import eyeViewed from './icons/eye-viewed.svg';
 import error from './icons/error.svg';
 import leave from './icons/leave.svg';
 import location from './icons/location.svg';
 import mail from './icons/mail.svg';
 import matched from './icons/matched.svg';
-import onDiscussion from './icons/on_discussion.svg';
+import onDiscussion from './icons/on-discussion.svg';
 import phone from './icons/phone.svg';
 import questionmark from './icons/questionmark.svg';
 import star from './icons/star.svg';
@@ -67,6 +68,7 @@ Icon.icons = {
   cross,
   bin,
   download,
+  dragDots,
   drill,
   duplicate,
   edit,

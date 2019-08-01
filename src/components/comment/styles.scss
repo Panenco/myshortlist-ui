@@ -24,13 +24,12 @@
     border-color: transparent transparent $white-color;
     border-style: solid;
     border-width: 11px;
-    bottom: -17px;
     content: '';
     display: block;
     height: 0;
-    left: 47%;
+    left: 50%;
     position: absolute;
-    transform: rotate(180deg);
+    transform: translate(-50%, 0) rotate(180deg);
     width: 0;
   }
 }

@@ -1,18 +1,26 @@
 @import 'core';
 
-$font-size: 14px;
-$line-height: 1.4;
-$lines-to-show: 3;
-
 .card {
   max-height: 192px;
   position: relative;
   text-align: left;
   width: 289px;
 
+  &::after {
+    bottom: 72px;
+    content: '...';
+    position: absolute;
+    right: 12px;
+  }
+
   &:hover {
     background-color: $hover-secondary-color;
     box-shadow: 0 0 2px 0 rgba($dark-grey-color, 0.5);
+  }
+
+  &:hover::after {
+    bottom: 91px;
+    right: 7px;
   }
 
   &Header {
@@ -20,22 +28,19 @@ $lines-to-show: 3;
   }
 
   &Body {
-    @include font($m);
+    @include font($m, $regular, $black-color);
 
-    -webkit-box-orient: vertical;
-    display: -webkit-box;
-    height: $font-size * $line-height * $lines-to-show;
-    -webkit-line-clamp: $lines-to-show;
+    height: 60px;
     line-height: 1.4;
     margin-bottom: 24px;
     max-width: 289px;
     overflow: hidden;
+    position: relative;
     text-overflow: ellipsis;
   }
 
   &:hover &Body {
-    height: $font-size * $line-height * 2;
-    -webkit-line-clamp: 2;
+    height: 40px;
     margin-bottom: 39px;
   }
 

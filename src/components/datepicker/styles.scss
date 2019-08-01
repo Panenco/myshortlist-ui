@@ -56,12 +56,11 @@
       color: $dark-grey-color;
       font-size: 14px;
       height: 37px;
-      outline: none;
+      // outline: none;
       width: 37px;
 
       &:focus {
         border: none;
-        box-shadow: 0 0 0 1px $primary-color;
         outline: none;
       }
     }
@@ -86,12 +85,6 @@
       box-shadow: 0 0 0 1px $primary-color;
       outline: none;
     }
-  }
-
-  .DayPicker-Day--outside {
-    background: transparent !important;
-    color: #8b9898;
-    cursor: default;
   }
 
   .DayPicker-Day--disabled {
@@ -153,6 +146,8 @@
   }
 
   .DayPicker-Day--outside {
-    background-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none;
+    cursor: default;
   }
 }

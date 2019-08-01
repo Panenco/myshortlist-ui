@@ -1,7 +1,7 @@
 @import 'core';
 
 .labelTitle {
-  @include font($m);
+  @include font($m, $regular, $black-color);
 
   cursor: pointer;
   line-height: 1;

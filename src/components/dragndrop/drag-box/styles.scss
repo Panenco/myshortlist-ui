@@ -1,0 +1,24 @@
+@import 'core';
+
+.box {
+  @include font($m, $regular, $black-color);
+
+  align-items: center;
+  background-color: $white-color;
+  border-radius: 2px;
+  box-shadow: 0 0 2px 0 rgba(165, 165, 165, 0.8);
+  display: flex;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  padding: 10px 16px;
+  text-align: left;
+
+  &Dragging {
+    background-color: $hover-secondary-color;
+    margin: 0;
+  }
+
+  &DragDots {
+    display: none;
+  }
+}

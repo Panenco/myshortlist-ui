@@ -11,7 +11,7 @@
 }
 
 .modal {
-  @include font($m);
+  @include font($m, $regular, $black-color);
 
   background-color: $white-color;
   border-radius: 2px;
@@ -27,7 +27,7 @@
   width: 400px;
 
   &Title {
-    @include font($l);
+    @include font($l, $regular, $black-color);
 
     align-items: center;
     display: flex;

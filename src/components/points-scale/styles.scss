@@ -1,0 +1,43 @@
+@import 'core';
+
+.container {
+  align-items: center;
+  display: flex;
+  min-height: 66px;
+}
+
+.scale {
+  border: 1px solid $secondary-color;
+  border-radius: 4px;
+  height: 4px;
+  position: relative;
+  width: 100%;
+
+  &Used {
+    background-color: $secondary-color;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  &Left {
+    @include font($s, $medium, $white-color);
+
+    align-items: center;
+    background-color: $secondary-color;
+    border-radius: 50%;
+    display: flex;
+    height: 66px;
+    justify-content: center;
+    line-height: 1.3;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 66px;
+
+    &Text {
+      width: 36px;
+    }
+  }
+}

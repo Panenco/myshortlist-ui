@@ -1,0 +1,29 @@
+@import 'core';
+
+.item {
+  &Content {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 11px;
+
+    &:hover {
+      background: $hover-secondary-color;
+    }
+
+    &Icon {
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    &Name {
+      @include font($m, $regular, $black-color);
+    }
+  }
+}
+
+.activeItem {
+  .itemContent {
+    background: $active-secondary-color;
+  }
+}
