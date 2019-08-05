@@ -21,10 +21,6 @@ const OrientationCard = ({ title, children, price, bought, done, className }) =>
 
       <div className={s.cardBody}>{children}</div>
 
-      <Link to="/" className={s.cardMore}>
-        Show more
-      </Link>
-
       {price === 0 && (
         <div className={s.cardFooter}>
           <CardChips className={s.cardFooterFree}>free</CardChips>
