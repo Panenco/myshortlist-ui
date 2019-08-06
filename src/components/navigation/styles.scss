@@ -46,9 +46,14 @@
       position: absolute;
       width: 100%;
     }
-  }
+    &:last-child {
+      margin-right: 0;
+    }
 
-  &Tab:last-child {
-    margin-right: 0;
+    &:hover {
+      border: 1px solid $primary-color;
+      box-shadow: none;
+      outline: none;
+    }
   }
 }
