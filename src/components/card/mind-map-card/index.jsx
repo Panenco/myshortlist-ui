@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { PrimaryButton, SecondaryButton } from 'components/button';
-import { DoneRate } from 'components/card/done-rate';
+import { CompletionRate } from 'components/card/completion-rate';
 import { CardHeader } from 'components/card/header';
 import { Card } from 'components/card/base';
 import cx from 'classnames';
@@ -51,7 +51,7 @@ const MindMapCard = ({ title, children, done }) => {
       {testsToDo ? progressStatus.continue : progressStatus[done]}
 
       <div className={s.cardFooter}>
-        <DoneRate done={done} className={cx(s.cardFooterRate, testsToDo && s.cardFooterRateTodo)} />
+        <CompletionRate done={done} className={cx(s.cardFooterRate, testsToDo && s.cardFooterRateTodo)} />
 
         <PrimaryButton className={s.cardFooterBtn}>{testsToDo ? buttons.continue : buttons[done]}</PrimaryButton>
       </div>
