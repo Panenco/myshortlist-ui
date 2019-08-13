@@ -44,7 +44,7 @@ export const CourseCardStory = decorator('Card').add('CourseCard Component', () 
 
     <Row>
       <Col s="12">
-        <CourseCard title="React for beginners" bought rating={4.5} voted={101} />
+        <CourseCard title="React for beginners" bought="22/02/2019" rating={4.5} voted={101} />
       </Col>
     </Row>
 

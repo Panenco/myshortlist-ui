@@ -8,7 +8,7 @@ import cx from 'classnames';
 import { CardHeader } from '../header';
 import s from './styles.scss';
 
-const CourseCard = ({ title, imgSrc, newPrice, price, bought, voted, rating, className }) => {
+const CourseCard = ({ title, imgSrc, newPrice, price, bought, added, voted, rating, className }) => {
   return (
     <Card className={cx(s.card, className)}>
       <div className={s.cardImg}>
@@ -18,24 +18,24 @@ const CourseCard = ({ title, imgSrc, newPrice, price, bought, voted, rating, cla
       <div className={s.cardDownPart}>
         <CardHeader
           title={title}
-          subTitle={bought ? 'Bought 19/07/2019' : '19/07/2019'}
-          subTitleStatus={(price || price === 0) && 'default'}
+          subTitle={bought ? `Bought ${bought}` : added}
+          subTitleStatus={!bought && 'default'}
           className={s.cardHeader}
         />
         <div className={s.cardAuthor}>Bavo Goosens</div>
 
         <CourseRating rating={rating} voted={voted} className={s.cardRating} />
 
-        {price === 0 && (
+        {price === 0 && !bought && (
           <div className={s.cardFooter}>
             <CardChips className={s.cardFooterFree}>free</CardChips>
             <PrimaryButton className={s.cardFooterPurchase}>purchase for free</PrimaryButton>
           </div>
         )}
-        {!newPrice && price > 0 && (
+        {!newPrice && price > 0 && !bought && (
           <div className={s.cardFooter}>
-            <span className={s.cardFooterPrice}>${price}Є</span>
-            <PrimaryButton className={s.cardFooterPurchase}>purchase for ${price}Є</PrimaryButton>
+            <span className={s.cardFooterPrice}>{price}€</span>
+            <PrimaryButton className={s.cardFooterPurchase}>purchase for {price}€</PrimaryButton>
           </div>
         )}
         {bought && (
@@ -44,14 +44,14 @@ const CourseCard = ({ title, imgSrc, newPrice, price, bought, voted, rating, cla
             <SecondaryButton className={s.cardFooterPurchase}>continue learning</SecondaryButton>
           </div>
         )}
-        {newPrice && (
+        {newPrice && !bought && (
           <div className={s.cardFooter}>
             <div className={s.cardFooterPackage}>
               <CardChips className={s.cardFooterPackageChips}>package</CardChips>
-              <span className={s.cardFooterPackagePrice}>${price}Є</span>
-              <span className={s.cardFooterPackageNewPrice}>{newPrice}Є</span>
+              <span className={s.cardFooterPackagePrice}>{price}€</span>
+              <span className={s.cardFooterPackageNewPrice}>{newPrice}€</span>
             </div>
-            <PrimaryButton className={s.cardFooterPurchase}>purchase for {newPrice}Є</PrimaryButton>
+            <PrimaryButton className={s.cardFooterPurchase}>purchase for {newPrice}€</PrimaryButton>
           </div>
         )}
       </div>
@@ -67,7 +67,8 @@ CourseCard.propTypes = {
   newPrice: PropTypes.number,
   rating: CourseRating.propTypes.rating,
   voted: CourseRating.propTypes.voted,
-  bought: PropTypes.bool,
+  bought: PropTypes.string,
+  added: PropTypes.string,
   imgSrc: PropTypes.string,
 };
 
@@ -79,7 +80,8 @@ CourseCard.defaultProps = {
   newPrice: null,
   rating: CourseRating.defaultProps.rating,
   voted: CourseRating.defaultProps.voted,
-  bought: false,
+  bought: null,
+  added: '15/02/2018',
   imgSrc: 'https://ru.reactjs.org/logo-og.png',
 };
 
