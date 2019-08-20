@@ -3,7 +3,7 @@
 .rate {
   line-height: 1.5;
 
-  &Done {
+  &Completion {
     @include font($s, $regular, $primary-color);
 
     margin-bottom: 8px;

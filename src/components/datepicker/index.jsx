@@ -77,7 +77,6 @@ class DatePicker extends React.Component {
             hasRange,
             selectedDays: hasRange ? [from, { from, to }] : singleDate,
             modifiers,
-            // classNames: reactDayPickerClassNames,
             navbarElement: Navbar,
             handleDayClick(day, { selected }) {
               this.setState({

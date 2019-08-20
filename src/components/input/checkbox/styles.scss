@@ -4,7 +4,7 @@
   line-height: 1;
 
   &Title {
-    @include font($m, $regular, $black-color);
+    @include font($s, $regular, $black-color);
 
     cursor: pointer;
 
