@@ -15,25 +15,30 @@ class ImageDrop extends React.Component {
   };
 
   dropHandler = (acceptedF, rejectedF) => {
-    if (rejectedF.length) {
-      this.props.setFieldError(this.props.name, 'Image size is too big!');
-    } else {
-      this.props.onChange(acceptedF);
-    }
+    const { setFieldValue, name } = this.props;
+    setFieldValue(name, acceptedF);
   };
 
-  renderDropzoneContent = () => {
+  renderDropzoneContent = fileProps => {
     const { value } = this.props;
 
-    if (value.length) {
-      return <img className={s.imgDropAvatar} src={URL.createObjectURL(value[0])} alt="avatar" />;
+    if (value && value.length) {
+      return (
+        <>
+          <img className={s.imgDropAvatar} src={URL.createObjectURL(value[0])} alt="avatar" />
+          <input {...fileProps.getInputProps()} />
+        </>
+      );
     }
     return (
-      <img
-        className={s.imgDropAvatar}
-        src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg"
-        alt="avatar"
-      />
+      <>
+        <img
+          className={s.imgDropAvatar}
+          src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg"
+          alt="avatar"
+        />
+        <input {...fileProps.getInputProps()} />
+      </>
     );
   };
 
@@ -41,19 +46,23 @@ class ImageDrop extends React.Component {
     const { maxSize, value, error, onChange, ...props } = this.props;
     return (
       <div className={s.img}>
-        <button type="button" className={cx(s.imgDrop, error && s.imgDropError)}>
-          <Dropzone
-            onDrop={this.dropHandler}
-            // value={this.props.value}
-            accept={this.props.accept}
-            maxSize={maxSize}
-            multiple
-            {...props}
-          >
-            {this.renderDropzoneContent()}
-          </Dropzone>
-        </button>
-        {Boolean(value.length) && (
+        <Dropzone
+          onDrop={this.dropHandler}
+          // value={this.props.value}
+          // accept={this.props.accept}
+          // maxSize={maxSize}
+          multiple
+          // {...props}
+        >
+          {fileProps => {
+            return (
+              <button type="button" className={cx(s.imgDrop, error && s.imgDropError)} {...fileProps.getRootProps()}>
+                {this.renderDropzoneContent(fileProps)}
+              </button>
+            );
+          }}
+        </Dropzone>
+        {Boolean(value && value.length) && (
           <ButtonIcon className={s.imgDropDeleteBtn} icon={Icon.icons.add} onClick={() => this.onDelete(value[0])} />
         )}
       </div>

@@ -5,17 +5,9 @@ import s from './styles.scss';
 
 const Radio = ({ value, name, id, disabled, labelLeft, labelRight, className, ...props }) => {
   return (
-    <label htmlFor={id} className={cx(s.label, disabled && s.labelDisabled)}>
+    <label htmlFor={id} className={cx(s.label, disabled && s.labelDisabled, className)}>
       {labelLeft && <span className={cx(s.labelTitle, s.labelTitleLeft)}>{labelLeft}</span>}
-      <input
-        type="radio"
-        // checked={value === id}
-        value={id}
-        className={cx(s.checkbox, className)}
-        name={name}
-        id={id}
-        {...props}
-      />
+      <input type="radio" value={id} className={cx(s.checkbox)} name={name} id={id} {...props} />
       <div className={s.container}>
         <div className={s.point} />
       </div>

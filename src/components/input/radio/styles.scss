@@ -12,7 +12,7 @@
   }
 
   &Title {
-    @include font($m, $regular, $black-color);
+    @include font($s, $regular, $black-color);
 
     cursor: pointer;
     line-height: 1.4;
@@ -74,4 +74,14 @@
 
 .checkbox:focus + .container {
   border: 1px solid $secondary-color;
+}
+
+.Primary {
+  .checkbox:checked + .container {
+    border: 1px solid $primary-color;
+  }
+
+  .checkbox:focus + .container {
+    border: 1px solid $primary-color;
+  }
 }

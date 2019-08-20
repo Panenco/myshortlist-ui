@@ -43,12 +43,19 @@ ButtonIcon.Small = ({ iconClassName, icon, ...props }) => (
 );
 
 ButtonIcon.icons = Icon.icons;
-
 ButtonIcon.Small.defaultProps = {
   iconClassName: null,
 };
-
 ButtonIcon.Small.propTypes = {
   iconClassName: PropTypes.string,
   icon: PropTypes.oneOf(Object.values(Icon.icons)).isRequired,
 };
+
+ButtonIcon.Label = ({ label, icon, className, ...props }) => (
+  <div className={cx(s.buttonIconLabel, className)} {...props}>
+    <ButtonIcon icon={icon} />
+    <div className={cx(s.buttonIconLabelText)}>{label}</div>
+  </div>
+);
+ButtonIcon.Label.propTypes = ButtonIcon.propTypes;
+ButtonIcon.Label.defaultProps = ButtonIcon.defaultProps;
