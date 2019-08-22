@@ -3,7 +3,7 @@
 .card {
   position: relative;
   text-align: left;
-  width: 442px;
+  width: 464px;
 
   &:hover {
     background-color: $hover-secondary-color;
@@ -46,11 +46,15 @@
     @include font($l, $regular, $graph-color);
 
     line-height: 1.4;
-    max-width: 210px;
+    max-width: 254px;
     position: absolute;
     right: 16px;
     top: 50%;
     transform: translate(0, -50%);
+
+    &AlmostFinished {
+      color: $grey-color;
+    }
   }
 
   &Footer {
@@ -70,5 +74,11 @@
 
   &:hover &FooterRate {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardProgress {
+    max-width: 200px;
   }
 }
