@@ -19,8 +19,10 @@ import duplicate from './icons/duplicate.svg';
 import edit from './icons/edit.svg';
 import eye from './icons/eye.svg';
 import emptystar from './icons/emptystar.svg';
+import facebook from './icons/facebook.svg';
 import halfstar from './icons/halfstar.svg';
 import home from './icons/home.svg';
+import linkedin from './icons/linkedin.svg';
 import notificationsUnread from './icons/notifications-unread.svg';
 import notifications from './icons/notifications.svg';
 import recommendations from './icons/recommendations.svg';
@@ -37,7 +39,7 @@ import candidate from './icons/candidate.svg';
 import consultant from './icons/consultant.svg';
 import contacted from './icons/contacted.svg';
 import declined from './icons/declined.svg';
-import eyeNotViewed from './icons/not-viewed.svg';
+import eyeNotViewed from './icons/eye-not-viewed.svg';
 import eyeViewed from './icons/eye-viewed.svg';
 import error from './icons/error.svg';
 import leave from './icons/leave.svg';
@@ -78,8 +80,10 @@ Icon.icons = {
   edit,
   eye,
   emptystar,
+  facebook,
   halfstar,
   home,
+  linkedin,
   notificationsUnread,
   notifications,
   recommendations,

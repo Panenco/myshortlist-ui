@@ -4,7 +4,7 @@ import cx from 'classnames';
 import s from './styles.scss';
 
 const Switcher = ({ id, checked, name, disabled, labelLeft, labelRight, className, ...props }) => (
-  <label htmlFor={id} className={cx(disabled && s.disabled, className)}>
+  <label htmlFor={id} className={cx(s.wrapper, disabled && s.disabled, className)}>
     {labelLeft && <span className={cx(s.labelTitle, s.labelTitleLeft)}>{labelLeft}</span>}
     <button className={cx(s.switcher, checked && s.switcher_active)}>
       <input

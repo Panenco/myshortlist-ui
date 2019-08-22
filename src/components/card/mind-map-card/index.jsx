@@ -7,7 +7,7 @@ import { Card } from 'components/card/base';
 import cx from 'classnames';
 import s from './styles.scss';
 
-const MindMapCard = ({ title, children, done }) => {
+const MindMapCard = ({ title, children, completion, sections, className }) => {
   const status = {
     7: 'Completed 02/07/2019',
     0: 'Not started ',
@@ -15,29 +15,29 @@ const MindMapCard = ({ title, children, done }) => {
   };
 
   const progressStatus = {
-    0: <div className={s.cardProgress}>Start for getting result</div>,
+    0: <div className={s.cardProgress}>Start questionnaire to get results.</div>,
     continue: (
-      <div className={s.cardProgress}>
-        Almost Complited! <div>Finish test for getting result</div>
+      <div className={cx(s.cardProgress, s.cardProgressAlmostFinished)}>
+        Almost completed! <div>Finish questionnaire to get results.</div>
       </div>
     ),
   };
 
   const buttons = {
     7: 'view details results',
-    0: 'start testing',
-    continue: 'continue testing',
+    0: 'start questionnaire',
+    continue: 'continue questionnaire',
   };
 
-  const testsToDo = done > 0 && done < 7;
-  const completed = done === 7;
-  const notStarted = done === 0;
+  const testsToDo = completion > 0 && completion < sections;
+  const completed = completion === sections;
+  const notStarted = completion === 0;
 
   return (
-    <Card className={cx(s.card, testsToDo && s.cardStarted)}>
+    <Card className={cx(s.card, testsToDo && s.cardStarted, className)}>
       <CardHeader
         title={title}
-        subTitle={testsToDo ? status.started : status[done]}
+        subTitle={testsToDo ? status.started : status[completion]}
         subTitleStatus={notStarted && 'notStarted'}
         className={s.cardHeader}
       >
@@ -48,12 +48,16 @@ const MindMapCard = ({ title, children, done }) => {
 
       <div className={cx(s.cardBody, completed && s.cardBodyDone)}>{children}</div>
 
-      {testsToDo ? progressStatus.continue : progressStatus[done]}
+      {testsToDo ? progressStatus.continue : progressStatus[completion]}
 
       <div className={s.cardFooter}>
-        <CompletionRate done={done} className={cx(s.cardFooterRate, testsToDo && s.cardFooterRateTodo)} />
+        <CompletionRate
+          completion={completion}
+          sections={sections}
+          className={cx(s.cardFooterRate, testsToDo && s.cardFooterRateTodo)}
+        />
 
-        <PrimaryButton className={s.cardFooterBtn}>{testsToDo ? buttons.continue : buttons[done]}</PrimaryButton>
+        <PrimaryButton className={s.cardFooterBtn}>{testsToDo ? buttons.continue : buttons[completion]}</PrimaryButton>
       </div>
     </Card>
   );
@@ -62,11 +66,14 @@ const MindMapCard = ({ title, children, done }) => {
 MindMapCard.propTypes = {
   title: CardHeader.propTypes.title,
   children: PropTypes.node.isRequired,
-  done: PropTypes.node.isRequired,
+  completion: PropTypes.number.isRequired,
+  sections: PropTypes.number.isRequired,
+  className: PropTypes.string,
 };
 
 MindMapCard.defaultProps = {
   title: CardHeader.defaultProps.title,
+  className: null,
 };
 
 export { MindMapCard };

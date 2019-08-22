@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
     <title>18px / phone</title>
     <desc>Created with Sketch.</desc>
     <g id="18px-/-phone" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="18" height="18"></rect>
         <path d="M12.0769231,0 L5.92307692,0 C4.86153846,0 4,0.865454545 4,1.93181818 L4,15.0681818 C4,16.1345455 4.86153846,17 5.92307692,17 L12.0769231,17 C13.1384615,17 14,16.1345455 14,15.0681818 L14,1.93181818 C14,0.865454545 13.1384615,0 12.0769231,0 Z M9,16.2272727 C8.36153846,16.2272727 7.84615385,15.7095455 7.84615385,15.0681818 C7.84615385,14.4268182 8.36153846,13.9090909 9,13.9090909 C9.63846154,13.9090909 10.1538462,14.4268182 10.1538462,15.0681818 C10.1538462,15.7095455 9.63846154,16.2272727 9,16.2272727 Z M12.4615385,13.1363636 L5.53846154,13.1363636 L5.53846154,2.31818182 L12.4615385,2.31818182 L12.4615385,13.1363636 Z" id="Shape" fill="#3D3D3D" fill-rule="nonzero"></path>
     </g>
 </svg>
