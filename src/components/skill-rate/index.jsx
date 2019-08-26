@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import s from './styles.scss';
 
-const SkillRate = ({ name = 'rating', from, to, step, value = 1, onChange = console.log }) => {
+const SkillRate = ({ name = 'rating', id, from, to, step, value = 0, onChange = console.log }) => {
+  // console.log(name);
   const [val, setValue] = useState(value);
   const handleChange = e => setValue(e.target.value);
 
@@ -15,14 +16,8 @@ const SkillRate = ({ name = 'rating', from, to, step, value = 1, onChange = cons
     .map((_, i) => {
       return (
         <React.Fragment>
-          <input
-            id={`rate${from + i * step}`}
-            name={name}
-            type="radio"
-            value={from + i * step}
-            onChange={handleChange}
-          />
-          <label htmlFor={`rate${from + i * step}`}>{from + i * step}</label>
+          <input id={`${id + i}`} name={name} type="radio" value={from + i * step} onChange={handleChange} />
+          <label htmlFor={`${id + i}`}>{from + i * step}</label>
         </React.Fragment>
       );
     })
@@ -33,6 +28,7 @@ const SkillRate = ({ name = 'rating', from, to, step, value = 1, onChange = cons
 
 SkillRate.propTypes = {
   name: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   from: PropTypes.number,
   to: PropTypes.number,
   step: PropTypes.number,
