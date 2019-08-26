@@ -46,7 +46,6 @@ import leave from './icons/leave.svg';
 import location from './icons/location.svg';
 import mail from './icons/mail.svg';
 import matched from './icons/matched.svg';
-import mindMapArrow from './icons/mindmap-arrow.svg';
 import onDiscussion from './icons/on-discussion.svg';
 import phone from './icons/phone.svg';
 import questionmark from './icons/questionmark.svg';
@@ -108,7 +107,6 @@ Icon.icons = {
   location,
   mail,
   matched,
-  mindMapArrow,
   onDiscussion,
   phone,
   questionmark,
