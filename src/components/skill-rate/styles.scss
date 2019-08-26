@@ -5,7 +5,7 @@ $diameter: 24px;
 .numberRate {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  justify-content: flex-end;
   line-height: 1;
 
   & input {
