@@ -34,10 +34,20 @@ function writeFile(filePath, contents) {
 
 export default {
   input: paths.entryPoint,
-  output: {
-    file: path.join(paths.outputPath, 'ui.esm.js'),
-    format: 'esm',
-  },
+  output: [
+    {
+      file: packageJson.main,
+      format: 'cjs',
+      exports: 'named',
+      sourcemap: true,
+    },
+    {
+      file: packageJson.module,
+      format: 'esm',
+      exports: 'named',
+      sourcemap: true,
+    },
+  ],
   plugins: [
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
@@ -48,6 +58,7 @@ export default {
     commonjs({
       namedExports: {
         'react-is': ['isValidElementType', 'isContextConsumer', 'ForwardRef'],
+        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer'],
       },
     }),
     resolve({
@@ -86,4 +97,5 @@ export default {
     }),
   ],
   external,
+  globals: { 'styled-components': 'styled' },
 };
