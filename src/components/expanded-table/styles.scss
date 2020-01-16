@@ -1,0 +1,159 @@
+@import 'core';
+
+.table {
+  width: 100%;
+  &Header {
+    background-color: $white-color;
+    display: flex;
+    justify-content: flex-start;
+
+    &Cell {
+      padding: 19px 12px 19px 24px;
+
+      &Content {
+        align-items: center;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        outline: none;
+        padding: 0;
+
+        &Text {
+          margin-right: 4px;
+
+          @include font($m, $medium, $black-color);
+
+          &Active {
+             @include font($m, $medium, $black-color);
+          }
+        }
+
+        &Square {
+          display: flex;
+          flex-direction: column;
+          height: 14px;
+
+          &Icon {
+            width: 18px;
+            height: 18px;
+          }
+
+          &Hide {
+            display: none;
+          }
+        }
+
+        &Disable {
+          pointer-events: none;
+        }
+      }
+
+      &:hover {
+        cursor: default;
+
+        .tableHeaderCellContent {
+          &Text {
+             @include font($m, $medium, $black-color);
+          }
+
+        }
+      }
+    }
+  }
+
+  &Row {
+    background-color: $white-color;
+    position:relative;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 2px;
+    &Disabled {
+      pointer-events: none;
+    }
+
+    &:hover {
+      outline: none;
+    }
+
+    &Expanded {
+       background-color: $white-color !important;
+        padding-left: 0;
+        border:none;
+        width:100%;
+        &:hover{
+          cursor: pointer;
+        }
+      &Button {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 40px;
+      }
+
+      &Icon {
+        height: 8px;
+        width: 8px;
+      }
+      &NotExpanded{
+        background: red !important;
+      }
+      &Content {
+        display: flex;
+        padding: 16px 0 16px 36px;
+        border-radius: 2px;
+        &Column {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          margin-right: 46px;
+
+          > div {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+          }
+        }
+
+        &Header {
+          display: block;
+
+           @include font($m, $medium, $black-color);
+        }
+
+        &Span {
+          display: block;
+          margin-top: 12px;
+
+          @include font($l, $regular, $black-color);
+        }
+      }
+    }
+  }
+
+  &Cell {
+    align-items: center;
+    display: flex;
+    height: 46px;
+    justify-content: flex-start;
+    padding: 0 12px 0 24px;
+     @include font($l, $regular, $black-color);
+  }
+&IconsCell{
+  display: flex;
+  position: absolute;
+  right:32px;
+  justify-content: space-between;
+  align-self: center;
+  &Icon{
+    margin-left: 12px;
+    height: 24px;
+    width:24px;
+  }
+}
+
+}
+.handleExpandedRow{
+  box-shadow: 0 0 2px 0 $light-grey-color;
+  margin-bottom:6px;
+  width:100%;
+}
