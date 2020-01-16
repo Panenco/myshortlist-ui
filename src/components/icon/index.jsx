@@ -57,7 +57,6 @@ import web from './icons/web.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
-    {console.log('12312', icon)}
     <use xlinkHref={`#${icon.id}`} />
   </svg>
 );
