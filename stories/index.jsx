@@ -23,6 +23,7 @@ import SkillRateBoxStory from './skill-rate';
 import DragnDropStory from './dragndrop';
 import PointsScaleStory from './points-scale';
 import SidebarStory from './sidebar';
+import ExpandedTableStory from './expanded-table';
 
 storiesOf('Avatar', <AvatarStory />);
 //
@@ -65,3 +66,5 @@ storiesOf('DragnDrop', <DragnDropStory />);
 storiesOf('PointsScale', <PointsScaleStory />);
 
 storiesOf('Sidebar', <SidebarStory />);
+
+storiesOf('Expanded table', <ExpandedTableStory />);
