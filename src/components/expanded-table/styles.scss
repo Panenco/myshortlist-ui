@@ -95,7 +95,6 @@
         width: 8px;
       }
       &NotExpanded{
-        background: red !important;
       }
       &Content {
         display: flex;
@@ -156,4 +155,5 @@
   box-shadow: 0 0 2px 0 $light-grey-color;
   margin-bottom:6px;
   width:100%;
+  background:$white-color
 }
