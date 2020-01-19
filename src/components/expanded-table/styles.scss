@@ -20,9 +20,8 @@
 
         &Text {
           margin-right: 4px;
-
-          @include font($m, $medium, $black-color);
-
+          font-size: 12px;
+          font-weight: 400;
           &Active {
              @include font($m, $medium, $black-color);
           }
@@ -94,36 +93,37 @@
         height: 8px;
         width: 8px;
       }
-      &NotExpanded{
-      }
       &Content {
         display: flex;
         padding: 16px 0 16px 36px;
         border-radius: 2px;
+        flex-direction: column;
+        position: relative;
         &Column {
           align-items: flex-start;
           display: flex;
-          flex-direction: column;
           margin-right: 46px;
-
+          margin-bottom: 16px;
           > div {
             align-items: flex-start;
             display: flex;
             flex-direction: column;
+            position: absolute;
+            left: 100px;
           }
         }
 
         &Header {
           display: block;
-
-           @include font($m, $medium, $black-color);
+          color: #3D3D3D;
+          font-weight: 300;
+          font-size: 14px;
         }
 
         &Span {
           display: block;
-          margin-top: 12px;
-
-          @include font($l, $regular, $black-color);
+          font-weight: 400;
+          font-size: 14px;
         }
       }
     }
