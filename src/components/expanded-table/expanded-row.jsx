@@ -25,7 +25,6 @@ class ExpandedRow extends React.Component {
     return (
       <div className={cx(className, s.handleExpandedRow)}>
         <div
-          type="button"
           className={cx(s.tableRow, s.tableRowExpanded, !isExpanded && s.tableRowNotExpanded)}
           onClick={this.handleExpandRow}
         >

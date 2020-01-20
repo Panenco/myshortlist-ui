@@ -5,15 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, Pagination, ExpandedRow } from 'index';
 
 import { decorator } from '../../utils/decorator';
-import s from './styles.scss';
 
 export default decorator('Expanded Table').add('Expanded table component', () => (
   <>
     <Row>
-      {/* <Col s="12"> */}
       <ExpandedTable>
         <Header>
-          <HeaderCell name="" width="40px" />
           <HeaderCell name="name" width="170px">
             Name
           </HeaderCell>

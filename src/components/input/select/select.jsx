@@ -135,7 +135,6 @@ const noBordersStyles = {
     ...provided,
     zIndex: '10',
     borderRadius: '2px',
-    // borderTop: 'none',
     border: '1px solid #ececec',
     boxShadow: 'none',
     marginTop: '0',
