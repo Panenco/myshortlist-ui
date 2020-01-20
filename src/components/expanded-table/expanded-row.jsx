@@ -25,7 +25,6 @@ class ExpandedRow extends React.Component {
     return (
       <div className={cx(className, s.handleExpandedRow)}>
         <div
-          type="button"
           className={cx(s.tableRow, s.tableRowExpanded, !isExpanded && s.tableRowNotExpanded)}
           onClick={this.handleExpandRow}
         >
@@ -40,10 +39,9 @@ class ExpandedRow extends React.Component {
                     .charAt(0)
                     .toUpperCase()}${contentItem.slice(1)}`}</span>
                   <div>
-                    {content[contentItem] &&
-                      content[contentItem].map(row => {
-                        return <span className={s.tableRowExpandedContentSpan}>{row}</span>;
-                      })}
+                    {content[contentItem] && (
+                      <span className={s.tableRowExpandedContentSpan}>{content[contentItem]}</span>
+                    )}
                   </div>
                 </div>
               ))}

@@ -5,15 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, Pagination, ExpandedRow } from 'index';
 
 import { decorator } from '../../utils/decorator';
-import s from './styles.scss';
 
 export default decorator('Expanded Table').add('Expanded table component', () => (
   <>
     <Row>
-      {/* <Col s="12"> */}
       <ExpandedTable>
         <Header>
-          <HeaderCell name="" width="40px" />
           <HeaderCell name="name" width="170px">
             Name
           </HeaderCell>
@@ -32,23 +29,23 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
             {
               firstName: 'Joanna',
               lastName: 'Doe',
-              status: ['Answered', 'Mail received', 'Opened RFV'],
+              status: 'Answered',
               company: 'Company 1',
-              date: ['14/Mar/2019 17:30', '14/Mar/2019 17:30', '14/Mar/2019 17:30'],
+              date: '14/Mar/2019 17:30',
             },
             {
               firstName: 'Helen',
               lastName: 'Elien',
-              status: ['Canceled', 'Mail received', 'Has seen RFV'],
+              status: ['Canceled'],
               company: 'Company 2',
-              date: ['14/Mar/2019 17:30', '14/Mar/2019 17:30', '14/Mar/2019 17:30'],
+              date: ['14/Mar/2019 17:30'],
             },
             {
               firstName: 'Lenny',
               lastName: 'Hover',
-              status: ['Responding RFV', 'Canceled', 'Mail received'],
+              status: ['Responding RFV'],
               company: 'Company 3',
-              date: ['14/Mar/2019 17:30', '14/Mar/2019 17:30', '14/Mar/2019 17:30'],
+              date: ['14/Mar/2019 17:30'],
             },
           ].map(row => (
             <ExpandedRow key={row.firstName} content={{ status: row.status, date: row.date }}>
@@ -56,13 +53,13 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
                 <p>{`${row.firstName} ${row.lastName}`}</p>
               </Cell>
               <Cell width="140px">
-                <p>{row.status[0]}</p>
+                <p>{row.status}</p>
               </Cell>
               <Cell width="120px">
                 <p>{row.company}</p>
               </Cell>
               <Cell width="160px">
-                <p>{row.date[0]}</p>
+                <p>{row.date}</p>
               </Cell>
               <IconsCell icons={['mail', 'error']}></IconsCell>
             </ExpandedRow>

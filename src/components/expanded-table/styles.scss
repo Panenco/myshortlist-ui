@@ -20,9 +20,7 @@
 
         &Text {
           margin-right: 4px;
-
-          @include font($m, $medium, $black-color);
-
+          @include font($s, $regular, $black-color);
           &Active {
              @include font($m, $medium, $black-color);
           }
@@ -94,37 +92,34 @@
         height: 8px;
         width: 8px;
       }
-      &NotExpanded{
-        background: red !important;
-      }
       &Content {
         display: flex;
         padding: 16px 0 16px 36px;
         border-radius: 2px;
+        flex-direction: column;
+        position: relative;
         &Column {
           align-items: flex-start;
           display: flex;
-          flex-direction: column;
           margin-right: 46px;
-
+          margin-bottom: 16px;
           > div {
             align-items: flex-start;
             display: flex;
             flex-direction: column;
+            position: absolute;
+            left: 100px;
           }
         }
 
         &Header {
           display: block;
-
-           @include font($m, $medium, $black-color);
+          @include font($m, $small, $dark-grey-color);
         }
 
         &Span {
           display: block;
-          margin-top: 12px;
-
-          @include font($l, $regular, $black-color);
+          @include font($m, $regular, $black-color);
         }
       }
     }
@@ -156,4 +151,5 @@
   box-shadow: 0 0 2px 0 $light-grey-color;
   margin-bottom:6px;
   width:100%;
+  background:$white-color
 }
