@@ -5,6 +5,21 @@ import { BrowserRouter } from 'react-router-dom';
 import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, Pagination, ExpandedRow } from 'index';
 
 import { decorator } from '../../utils/decorator';
+import s from './styles.scss';
+
+const tableContentComponent = (
+  <div className={s.tableRowExpandedContent}>
+    <div className={s.tableRowExpandedContentHeading}>Web designer</div>
+    <div className={s.tableRowExpandedContentColumn}>
+      <span className={s.tableRowExpandedContentHeader}>Heading name</span>
+      <span className={s.tableRowExpandedContentSpan}>Field value</span>
+    </div>
+    <div className={s.tableRowExpandedContentColumn}>
+      <span className={s.tableRowExpandedContentHeader}>Heading name2</span>
+      <span className={s.tableRowExpandedContentSpan}>Field value2</span>
+    </div>
+  </div>
+);
 
 export default decorator('Expanded Table').add('Expanded table component', () => (
   <>
@@ -20,7 +35,7 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
           <HeaderCell name="company" width="120px">
             Company
           </HeaderCell>
-          <HeaderCell name="added" sort={{ sort: 'name', direction: 'asc' }} width="160px">
+          <HeaderCell name="added" sort={{ name: 'web', sort: 'name', direction: 'asc' }} width="160px">
             Added
           </HeaderCell>
         </Header>
@@ -32,6 +47,12 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
               status: 'Answered',
               company: 'Company 1',
               date: '14/Mar/2019 17:30',
+              jobFunctions: [
+                { id: 3, name: 'Vlad' },
+                { id: 2, name: 'Vlad2' },
+                { id: 1, name: 'Vlad3' },
+              ],
+              headers: [],
             },
             {
               firstName: 'Helen',
@@ -39,6 +60,11 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
               status: ['Canceled'],
               company: 'Company 2',
               date: ['14/Mar/2019 17:30'],
+              jobFunctions: [
+                { id: 3, name: 'Vlad' },
+                { id: 2, name: 'Vlad2' },
+                { id: 1, name: 'Vlad3' },
+              ],
             },
             {
               firstName: 'Lenny',
@@ -48,19 +74,11 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
               date: ['14/Mar/2019 17:30'],
             },
           ].map(row => (
-            <ExpandedRow key={row.firstName} content={{ status: row.status, date: row.date }}>
-              <Cell width="170px">
-                <p>{`${row.firstName} ${row.lastName}`}</p>
-              </Cell>
-              <Cell width="140px">
-                <p>{row.status}</p>
-              </Cell>
-              <Cell width="120px">
-                <p>{row.company}</p>
-              </Cell>
-              <Cell width="160px">
-                <p>{row.date}</p>
-              </Cell>
+            <ExpandedRow key={row.firstName} content={tableContentComponent}>
+              <Cell width="170px">{`${row.firstName} ${row.lastName}`}</Cell>
+              <Cell width="140px">{row.status}</Cell>
+              <Cell width="120px">{row.company}</Cell>
+              <Cell width="160px">{row.date}</Cell>
               <IconsCell icons={['mail', 'error']}></IconsCell>
             </ExpandedRow>
           ))}

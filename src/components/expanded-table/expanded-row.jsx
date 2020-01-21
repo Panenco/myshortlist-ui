@@ -30,23 +30,7 @@ class ExpandedRow extends React.Component {
         >
           {children}
         </div>
-        {isExpanded && (
-          <div className={cx(s.tableRowExpandedContent)}>
-            {Object.keys(content) &&
-              Object.keys(content).map(contentItem => (
-                <div key={contentItem} className={s.tableRowExpandedContentColumn}>
-                  <span className={s.tableRowExpandedContentHeader}>{`${contentItem
-                    .charAt(0)
-                    .toUpperCase()}${contentItem.slice(1)}`}</span>
-                  <div>
-                    {content[contentItem] && (
-                      <span className={s.tableRowExpandedContentSpan}>{content[contentItem]}</span>
-                    )}
-                  </div>
-                </div>
-              ))}
-          </div>
-        )}
+        {isExpanded && content}
       </div>
     );
   }

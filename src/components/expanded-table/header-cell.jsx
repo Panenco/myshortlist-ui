@@ -17,18 +17,14 @@ class HeaderCell extends React.Component {
 
     return (
       <Cell className={cx(s.tableHeaderCell, className)} {...props}>
-        <button
-          name={name}
-          type="button"
-          className={cx(s.tableHeaderCellContent, !name && s.tableHeaderCellContentDisable)}
-        >
+        <button name={name} className={cx(s.tableHeaderCellContent, !name && s.tableHeaderCellContentDisable)}>
           <div className={cx(s.tableHeaderCellContentText, (asc || desc) && s.tableHeaderCellContentTextActive)}>
             {children}
           </div>
           {sort && (
             <div className={cx(s.tableHeaderCellContentSquare, !name && s.tableHeaderCellContentSquareHide)}>
               <Icon
-                icon={Icon.icons.bin}
+                icon={Icon.icons[sort.name]}
                 className={cx(
                   s.tableHeaderCellContentSquareIcon,
                   asc && s.tableHeaderCellContentSquareIconActive,

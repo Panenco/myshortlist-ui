@@ -6,3 +6,40 @@
   font-size: $size;
   font-weight: $weight;
 }
+
+@mixin table(){
+  display: flex;
+  padding: 16px 0 16px 36px;
+  border-radius: 2px;
+  flex-direction: column;
+  position: relative;
+
+}
+
+@mixin tableContentHeading(){
+ @include font($m, $semi-bold,$black-color);
+ display: flex;
+ margin-bottom: 16px;
+
+}
+
+@mixin tableContentColumn(){
+  align-items: flex-start;
+  display: flex;
+  margin-right: 46px;
+  margin-bottom: 16px;
+  flex-direction: row;
+
+}
+
+ @mixin tableColumnName(){
+  display: block;
+  @include font($m, $small, $dark-grey-color);
+ }
+
+ @mixin tableColumnValue($left){
+  display: block;
+  position: absolute;
+  left: $left;
+  @include font($m, $regular, $black-color);
+ }
