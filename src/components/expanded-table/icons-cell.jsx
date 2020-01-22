@@ -11,7 +11,7 @@ const IconsCell = ({ className, children, width, marginLeft, icons, ...props }) 
     {icons.map(iconName => {
       return <Icon className={s.tableIconsCellIcon} icon={Icon.icons[iconName]} />;
     })}
-    {children}
+    <div className={s.tableIconsCellContainer}>{children}</div>
   </div>
 );
 
