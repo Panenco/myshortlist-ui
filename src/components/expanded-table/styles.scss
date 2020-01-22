@@ -64,6 +64,9 @@
     display: flex;
     justify-content: flex-start;
     border-radius: 2px;
+    >div:first-of-type{
+      @include font($m, $semi-bold, $black-color)  
+  }
     &Disabled {
       pointer-events: none;
     }
@@ -148,7 +151,7 @@
       margin-left: 12px;
       height: 24px;
       width:24px;
-  }
+    }
   }
 }
 

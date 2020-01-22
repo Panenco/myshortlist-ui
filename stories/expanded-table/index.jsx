@@ -80,6 +80,7 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
               <Cell width="120px">{row.company}</Cell>
               <Cell width="160px">{row.date}</Cell>
               <IconsCell>
+                <Icon icon={Icon.icons.arrow}></Icon>
                 <Icon icon={Icon.icons.web}></Icon>
               </IconsCell>
             </ExpandedRow>
