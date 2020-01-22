@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, Pagination, ExpandedRow } from 'index';
+import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, Icon, ExpandedRow } from 'index';
 
 import { decorator } from '../../utils/decorator';
 import s from './styles.scss';
@@ -79,7 +79,9 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
               <Cell width="140px">{row.status}</Cell>
               <Cell width="120px">{row.company}</Cell>
               <Cell width="160px">{row.date}</Cell>
-              <IconsCell icons={['mail', 'error']}></IconsCell>
+              <IconsCell>
+                <Icon icon={Icon.icons.web}></Icon>
+              </IconsCell>
             </ExpandedRow>
           ))}
         </>
