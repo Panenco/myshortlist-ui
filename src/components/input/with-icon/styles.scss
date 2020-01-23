@@ -28,10 +28,12 @@
 
   &After {
     padding-left: 12px;
+    padding-right: 35px;
 
     &:focus {
       border: 2px solid $primary-color;
       padding: 8px 11px;
+      padding-right: 34px;
     }
 
     &Error {
