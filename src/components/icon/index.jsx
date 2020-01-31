@@ -54,6 +54,12 @@ import team from './icons/team.svg';
 import uploading from './icons/uploading.svg';
 import wait from './icons/wait.svg';
 import web from './icons/web.svg';
+import dashboard from './icons/dashboard.svg';
+import localActivity from './icons/local-activity.svg';
+import work from './icons/work.svg';
+import courses from './icons/courses.svg';
+import dns from './icons/dns.svg';
+import assignment from './icons/assignment.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -115,6 +121,12 @@ Icon.icons = {
   uploading,
   wait,
   web,
+  dashboard,
+  localActivity,
+  work,
+  courses,
+  dns,
+  assignment,
 };
 
 Icon.defaultProps = {
