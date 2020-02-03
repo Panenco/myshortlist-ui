@@ -12,6 +12,12 @@ export default decorator('Input').add('Radio Component', () => (
 
     <Row>
       <Col s="12">
+        <Radio secondary labelRight="secondary radio" />
+      </Col>
+    </Row>
+
+    <Row>
+      <Col s="12">
         <Radio disabled />
       </Col>
     </Row>

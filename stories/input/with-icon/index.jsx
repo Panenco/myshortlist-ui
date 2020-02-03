@@ -10,7 +10,7 @@ export default decorator('Input').add('WithIconInput Component', () => (
       </Col>
 
       <Col s={5}>
-        <WithIconInput placeholder="Date" after={Icon.icons.calendar} />
+        <WithIconInput placeholder="Date" after={Icon.icons.calendar} onIconClick={() => alert('calendar')} />
       </Col>
     </Row>
 

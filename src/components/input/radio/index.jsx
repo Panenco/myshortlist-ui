@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import s from './styles.scss';
 
-const Radio = ({ value, name, id, disabled, labelLeft, labelRight, className, ...props }) => {
+const Radio = ({ value, name, id, disabled, labelLeft, labelRight, className, secondary, ...props }) => {
   return (
-    <label htmlFor={id} className={cx(s.label, disabled && s.labelDisabled, className)}>
+    <label htmlFor={id} className={cx(s.label, disabled && s.labelDisabled, !secondary && s.Primary, className)}>
       {labelLeft && <span className={cx(s.labelTitle, s.labelTitleLeft)}>{labelLeft}</span>}
       <input type="radio" value={id} className={cx(s.checkbox)} name={name} id={id} {...props} />
       <div className={s.container}>
@@ -24,6 +24,7 @@ Radio.propTypes = {
   className: PropTypes.string,
   value: PropTypes.string,
   disabled: PropTypes.bool,
+  secondary: PropTypes.bool,
 };
 
 Radio.defaultProps = {
@@ -32,6 +33,7 @@ Radio.defaultProps = {
   className: null,
   value: null,
   disabled: false,
+  secondary: false,
 };
 
 export { Radio };

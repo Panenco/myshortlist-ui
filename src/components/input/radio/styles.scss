@@ -68,20 +68,24 @@
   border: 1px solid $secondary-color;
 }
 
-.checkbox:checked + .container > .point {
-  opacity: 1;
-}
-
 .checkbox:focus + .container {
   border: 1px solid $secondary-color;
 }
 
 .Primary {
+  .point {
+    background-color: $primary-color;
+  }
+
   .checkbox:checked + .container {
-    border: 1px solid $primary-color;
+    border-color: $primary-color;
   }
 
   .checkbox:focus + .container {
-    border: 1px solid $primary-color;
+    border-color: $primary-color;
   }
+}
+
+.checkbox:checked + .container > .point {
+  opacity: 1;
 }
