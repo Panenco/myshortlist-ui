@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, Icon, ExpandedRow } from 'index';
+import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, ButtonIcon, Icon, ExpandedRow } from 'index';
 
 import { decorator } from '../../utils/decorator';
 import s from './styles.scss';
@@ -80,8 +80,14 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
               <Cell width="120px">{row.company}</Cell>
               <Cell width="160px">{row.date}</Cell>
               <IconsCell>
-                <Icon.Large icon={Icon.icons.arrow}></Icon.Large>
-                <Icon.Large icon={Icon.icons.web}></Icon.Large>
+                <ButtonIcon
+                  icon={ButtonIcon.icons.arrowDown}
+                  onClick={() => {
+                    alert('clicked');
+                  }}
+                ></ButtonIcon>
+                <ButtonIcon icon={ButtonIcon.icons.arrow}></ButtonIcon>
+                <ButtonIcon icon={ButtonIcon.icons.web}></ButtonIcon>
               </IconsCell>
             </ExpandedRow>
           ))}
