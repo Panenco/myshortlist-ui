@@ -35,7 +35,7 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
           <HeaderCell name="company" width="120px">
             Company
           </HeaderCell>
-          <HeaderCell name="added" sort={{ name: 'web', sort: 'name', direction: 'asc' }} width="160px">
+          <HeaderCell name="added" sort={{ name: 'arrowDown', sort: 'name', direction: 'asc' }} width="160px">
             Added
           </HeaderCell>
         </Header>
