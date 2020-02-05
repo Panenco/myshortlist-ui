@@ -17,7 +17,8 @@
     "clean": "rimraf lib",
     "eslint": "eslint config src stories  --ext .js --ext .jsx",
     "prettier": "prettier '{config,src,stories}/**/*.{js,jsx}' --write",
-    "stylelint": "stylelint 'src/**/*.scss'"
+    "stylelint": "stylelint 'src/**/*.scss'",
+    "prepublish": "yarn build"
   },
   "sideEffects": [
     "**.css"
