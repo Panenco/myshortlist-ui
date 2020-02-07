@@ -5,11 +5,13 @@ import { Pagination } from 'components/pagination';
 
 import s from './styles.scss';
 
-const ExpandedTable = ({ className, children, ...props }) => (
-  <div {...props} className={cx(s.table, className)}>
-    {children}
-  </div>
-);
+const ExpandedTable = ({ className, children, ...props }) => {
+  return (
+    <div {...props} className={cx(s.table, className)}>
+      {children}
+    </div>
+  );
+};
 
 ExpandedTable.propTypes = {
   className: PropTypes.string,

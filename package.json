@@ -114,6 +114,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "react-animate-height": "^2.0.20",
     "react-beautiful-dnd": "^11.0.5",
     "react-day-picker": "^7.3.0",
     "react-dnd": "^9.3.2",

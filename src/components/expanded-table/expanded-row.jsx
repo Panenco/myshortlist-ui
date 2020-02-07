@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Icon } from 'components/icon';
+import AnimatedHeight from 'react-animate-height';
 import { Cell } from './cell';
 
 import s from './styles.scss';
@@ -30,7 +31,9 @@ class ExpandedRow extends React.Component {
         >
           {children}
         </div>
-        {isExpanded && content}
+        <AnimatedHeight duration={500} height={isExpanded ? 'auto' : 0}>
+          {isExpanded && content}
+        </AnimatedHeight>
       </div>
     );
   }
