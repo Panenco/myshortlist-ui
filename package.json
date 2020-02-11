@@ -1,6 +1,6 @@
 {
   "name": "@panenco/shortlist-ui",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "shortlist ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.cjs.js",
@@ -18,7 +18,7 @@
     "eslint": "eslint config src stories  --ext .js --ext .jsx",
     "prettier": "prettier '{config,src,stories}/**/*.{js,jsx}' --write",
     "stylelint": "stylelint 'src/**/*.scss'",
-    "prepublish": "yarn build"
+    "prepublishOnly": "npm run build"
   },
   "sideEffects": [
     "**.css"
