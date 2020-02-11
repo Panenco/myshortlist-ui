@@ -7,3 +7,4 @@ export * from './with-icon';
 export * from './text';
 export * from './select';
 export * from './switcher';
+export * from './text-area';
