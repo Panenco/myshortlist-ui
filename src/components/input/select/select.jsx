@@ -34,16 +34,16 @@ const customStyles = {
     ...provided,
     padding: '0',
   }),
-  option: (provided, state) => ({
+  option: (provided, { isSelected, isFocused }) => ({
     ...provided,
-    backgroundColor: state.isSelected ? '#dff2f1' : '#ffffff',
+    backgroundColor: isSelected || isFocused ? '#dff2f1' : '#ffffff',
     boxShadow: 'none',
-    color: state.isSelected ? '#000000' : '#000000',
+    color: isSelected ? '#000000' : '#000000',
     cursor: 'pointer',
     fontSize: '14px',
-    borderBottom: state.isSelected ? '1px solid transparent' : '1px solid #ececec',
+    borderBottom: isSelected ? '1px solid transparent' : '1px solid #ececec',
     ':hover': {
-      backgroundColor: state.isSelected ? '#dff2f1' : '#f7fBfA',
+      backgroundColor: isSelected ? '#dff2f1' : '#f7fBfA',
       borderBottom: '1px solid transparent',
     },
     ':last-child': {
