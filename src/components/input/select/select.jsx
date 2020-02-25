@@ -179,7 +179,7 @@ const customMultiValueRemove = props => (
   </components.MultiValueRemove>
 );
 
-const SelectInput = ({ isMulti, disabled, options, borders, error, ...props }) => (
+const SelectInput = ({ isMulti, disabled, options, borders, error, value, onChange, ...props }) => (
   <Select
     options={options}
     placeholder="Select item"
@@ -188,6 +188,10 @@ const SelectInput = ({ isMulti, disabled, options, borders, error, ...props }) =
     isDisabled={disabled}
     isSearchable={!!isMulti}
     borders={borders}
+    value={value ? options.find(o => o.value === value) : null}
+    onChange={res => {
+      onChange(res.value);
+    }}
     components={
       isMulti
         ? {
