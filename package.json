@@ -18,6 +18,10 @@
     "eslint": "eslint config src stories  --ext .js --ext .jsx",
     "prettier": "prettier '{config,src,stories}/**/*.{js,jsx}' --write",
     "stylelint": "stylelint 'src/**/*.scss'",
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export YARN_PRODUCTION=false; yarn",
+    "heroku-postbuild": "yarn build && yarn start && export NPM_CONFIG_PRODUCTION=true; export YARN_PRODUCTION=true;",
+    "upload:staging": "npm run build:storybook && scp -r ./packages/ui/static-story/* root@104.248.93.6:/var/www/html/ui",
+
     "prepublishOnly": "npm run build"
   },
   "sideEffects": [
