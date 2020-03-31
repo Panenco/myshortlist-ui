@@ -5,7 +5,7 @@ const express = require('express');
 const compression = require('compression');
 const uiPaths = require('./config/paths');
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 4000;
 const app = express();
 
 app.use(compression());
