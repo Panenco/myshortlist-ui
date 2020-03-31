@@ -10,7 +10,8 @@
   },
   "repository": "git@github.com:Panenco/myshortlist-ui.git",
   "scripts": {
-    "start": "start-storybook -p 9001 -c .storybook",
+    "start": "node server",
+    "start:storybook": "start-storybook -p 9001 -c .storybook",
     "build": "npm run clean && cross-env BABEL_ENV=production rollup --config rollup.config.js",
     "build:storybook": "build-storybook -c .storybook -o storybook-dist",
     "watch": "npm run clean && rollup --config rollup.config.js --watch",
@@ -19,9 +20,8 @@
     "prettier": "prettier '{config,src,stories}/**/*.{js,jsx}' --write",
     "stylelint": "stylelint 'src/**/*.scss'",
     "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export YARN_PRODUCTION=false; yarn",
-    "heroku-postbuild": "yarn build && export NPM_CONFIG_PRODUCTION=true; export YARN_PRODUCTION=true;",
+    "heroku-postbuild": "yarn build:storybook && export NPM_CONFIG_PRODUCTION=true; export YARN_PRODUCTION=true;",
     "upload:staging": "npm run build:storybook && scp -r ./packages/ui/static-story/* root@104.248.93.6:/var/www/html/ui",
-
     "prepublishOnly": "npm run build"
   },
   "sideEffects": [
