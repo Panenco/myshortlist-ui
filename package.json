@@ -1,6 +1,6 @@
 {
   "name": "@panenco/shortlist-ui",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "shortlist ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.cjs.js",
