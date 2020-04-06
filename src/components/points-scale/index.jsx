@@ -8,6 +8,7 @@ const PointsScale = ({ used, className }) => {
   const position = { left: used > 100 ? `97%` : `${used}%` };
   return (
     <div className={cx(s.container, className)}>
+      <p className={s.scaleLeftTextMobile}>{100 - used} points left </p>
       <div className={s.scale}>
         <div className={s.scaleUsed} style={width} />
         <div className={s.scaleLeft} style={position}>

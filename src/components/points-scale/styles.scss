@@ -4,6 +4,11 @@
   align-items: center;
   display: flex;
   min-height: 66px;
+
+  @media (max-width: 433px) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .scale {
@@ -36,8 +41,23 @@
     transform: translate(0, -50%);
     width: 66px;
 
+    @media (max-width: 433px) {
+      display: none;
+    }
+
     &Text {
+      text-align: center;
       width: 36px;
+
+      &Mobile {
+        display: none;
+
+        @media (max-width: 433px) {
+          color: $secondary-color;
+          display: block;
+          width: auto;
+        }
+      }
     }
   }
 }
