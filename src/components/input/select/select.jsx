@@ -188,10 +188,10 @@ const SelectInput = ({ isMulti, disabled, options, borders, error, value, onChan
     isDisabled={disabled}
     isSearchable={!!isMulti}
     borders={borders}
-    value={value ? options.find(o => o.value === value) : null}
-    onChange={res => {
-      onChange(res.value);
-    }}
+    // value={value ? options.find(o => o.value === value) : null}
+    // onChange={res => {
+    //   onChange(res.value);
+    // }}
     components={
       isMulti
         ? {
