@@ -32,7 +32,7 @@ class ExpandedRow extends React.Component {
           {children}
         </div>
         <AnimatedHeight duration={500} height={isExpanded ? 'auto' : 0}>
-          {isExpanded && content}
+          {content}
         </AnimatedHeight>
       </div>
     );
