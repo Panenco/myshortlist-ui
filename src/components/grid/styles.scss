@@ -6,7 +6,7 @@ $gutter: 8px;
 .row {
   align-items: flex-start;
   display: flex;
-  margin: 0 -1 / 2 * $gutter;
+  // margin: 0 -1 / 2 * $gutter;
 }
 
 @for $i from 1 through 12 {
