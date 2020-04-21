@@ -24,24 +24,19 @@ class ImageDrop extends React.Component {
     return (
       <>
         {value ? (
-          <>
-            <img
-              className={s.imgDropAvatar}
-              src={value && value[0] instanceof File ? URL.createObjectURL(value[0]) : value}
-              alt="avatar"
-            />
-            <input {...fileProps.getInputProps()} />
-          </>
+          <img
+            className={s.imgDropAvatar}
+            src={value && value[0] instanceof File ? URL.createObjectURL(value[0]) : value}
+            alt="avatar"
+          />
         ) : (
-          <>
-            <img
-              className={s.imgDropAvatar}
-              src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg"
-              alt="avatar"
-            />
-            <input {...fileProps.getInputProps()} />
-          </>
+          <img
+            className={s.imgDropAvatar}
+            src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg"
+            alt="avatar"
+          />
         )}
+        <input {...fileProps.getInputProps()} />
       </>
     );
   };
