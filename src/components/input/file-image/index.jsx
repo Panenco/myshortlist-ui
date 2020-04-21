@@ -26,7 +26,7 @@ class ImageDrop extends React.Component {
         {value ? (
           <img
             className={s.imgDropAvatar}
-            src={value && value[0] instanceof File ? URL.createObjectURL(value[0]) : value}
+            src={value[0] instanceof File ? URL.createObjectURL(value[0]) : value}
             alt="avatar"
           />
         ) : (
