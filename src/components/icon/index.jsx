@@ -60,6 +60,13 @@ import work from './icons/work.svg';
 import courses from './icons/courses.svg';
 import dns from './icons/dns.svg';
 import assignment from './icons/assignment.svg';
+import contract from './icons/contract.svg';
+import interview from './icons/interview.svg';
+import management from './icons/management.svg';
+import pc from './icons/pc.svg';
+import resume from './icons/resume.svg';
+import reunion from './icons/reunion.svg';
+import smartphone from './icons/smartphone.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -127,6 +134,13 @@ Icon.icons = {
   courses,
   dns,
   assignment,
+  contract,
+  interview,
+  management,
+  pc,
+  resume,
+  reunion,
+  smartphone,
 };
 
 Icon.defaultProps = {
