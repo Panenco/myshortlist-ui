@@ -179,14 +179,14 @@ const customMultiValueRemove = props => (
   </components.MultiValueRemove>
 );
 
-const SelectInput = ({ isMulti, disabled, options, borders, error, ...props }) => (
+const SelectInput = ({ isMulti, isSearchable, disabled, options, borders, error, ...props }) => (
   <Select
     options={options}
     placeholder="Select item"
     styles={error ? errorStyles : customStyles}
     isMulti={isMulti}
     isDisabled={disabled}
-    isSearchable={!!isMulti}
+    isSearchable={isSearchable}
     borders={borders}
     // value={value ? options.find(o => o.value === value) : null}
     // onChange={res => {
@@ -209,6 +209,7 @@ const SelectInput = ({ isMulti, disabled, options, borders, error, ...props }) =
 
 SelectInput.propTypes = {
   isMulti: PropTypes.bool,
+  isSearchable: PropTypes.bool,
   disabled: PropTypes.bool,
   options: PropTypes.arrayOf(
     PropTypes.shape({
@@ -225,6 +226,7 @@ SelectInput.defaultProps = {
   disabled: false,
   borders: false,
   error: false,
+  isSearchable: false,
 };
 
 export { SelectInput };

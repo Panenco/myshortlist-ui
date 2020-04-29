@@ -7,6 +7,19 @@ export default decorator('Input').add('SelectInput Component', () => (
     <Row>
       <Col s={5}>
         <SelectInput
+          isSearchable
+          placeholder="Placeholder"
+          options={[
+            { label: 'Option1', value: 'Option1' },
+            { label: 'Option2', value: 'Option2' },
+            { label: 'Option3', value: 'Option3' },
+          ]}
+        />
+      </Col>
+    </Row>
+    <Row>
+      <Col s={5}>
+        <SelectInput
           placeholder="Placeholder"
           options={[
             { label: 'Option1', value: 'Option1' },
