@@ -2,7 +2,18 @@ import React from 'react';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import { ExpandedTable, Header, HeaderCell, Row, Cell, IconsCell, ButtonIcon, Icon, ExpandedRow } from 'index';
+import {
+  ExpandedTable,
+  Header,
+  HeaderCell,
+  Row,
+  Cell,
+  IconsCell,
+  ButtonIcon,
+  Icon,
+  ExpandedRow,
+  WithIconInput,
+} from 'index';
 
 import { decorator } from '../../utils/decorator';
 import s from './styles.scss';
@@ -26,8 +37,8 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
     <Row>
       <ExpandedTable>
         <Header>
-          <HeaderCell name="name" width="170px">
-            Name
+          <HeaderCell name="name" width="270px" className={s.nameHeaderCell}>
+            Name <WithIconInput placeholder="Search" before={Icon.icons.search} className={s.nameInput} />
           </HeaderCell>
           <HeaderCell name="status" width="140px">
             Status
@@ -75,7 +86,7 @@ export default decorator('Expanded Table').add('Expanded table component', () =>
             },
           ].map(row => (
             <ExpandedRow key={row.firstName} content={tableContentComponent}>
-              <Cell width="170px">{`${row.firstName} ${row.lastName}`}</Cell>
+              <Cell width="270px">{`${row.firstName} ${row.lastName}`}</Cell>
               <Cell width="140px">{row.status}</Cell>
               <Cell width="120px">{row.company}</Cell>
               <Cell width="160px">{row.date}</Cell>

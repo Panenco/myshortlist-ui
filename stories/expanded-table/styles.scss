@@ -17,3 +17,17 @@
         }
     }
 }
+
+.name{
+    &Input{
+    max-width:150px;
+    max-height:30px;
+    margin-left:10px;
+}
+&HeaderCell{
+   button > div{
+        display:flex;
+        align-items:center;
+    }
+}
+}
