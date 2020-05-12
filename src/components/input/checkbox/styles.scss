@@ -15,6 +15,12 @@
     &Left {
       margin-right: 8px;
     }
+
+    &Disabled {
+      color: $grey-color;
+      cursor: default;
+      opacity: 0.3;
+    }
   }
 }
 
