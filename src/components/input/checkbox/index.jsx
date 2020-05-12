@@ -6,12 +6,16 @@ import s from './styles.scss';
 
 const Checkbox = ({ disabled, id, name, labelLeft, labelRight, className, ...props }) => (
   <label htmlFor={id} className={cx(s.label, className)}>
-    {labelLeft && <span className={cx(s.labelTitle, s.labelTitleLeft)}>{labelLeft}</span>}
+    {labelLeft && (
+      <span className={cx(s.labelTitle, s.labelTitleLeft, disabled && s.labelTitleDisabled)}>{labelLeft}</span>
+    )}
     <input type="checkbox" className={s.checkbox} name={name} disabled={disabled} id={id} {...props} />
     <div className={s.container}>
       <Icon icon={Icon.icons.matched} className={s.tick} />
     </div>
-    {labelRight && <span className={cx(s.labelTitle, s.labelTitleRight)}>{labelRight}</span>}
+    {labelRight && (
+      <span className={cx(s.labelTitle, s.labelTitleRight, disabled && s.labelTitleDisabled)}>{labelRight}</span>
+    )}
   </label>
 );
 

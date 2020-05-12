@@ -26,9 +26,9 @@ const customStyles = {
     width: '100%',
     padding: state.isMulti ? '2px 6px 2px 6px' : '0 6px 0 12px',
   }),
-  placeholder: (provided, state) => ({
+  placeholder: provided => ({
     ...provided,
-    color: state.isMulti || state.isDisabled ? '#a5a5a5' : '#000000',
+    color: '#a5a5a5',
   }),
   valueContainer: provided => ({
     ...provided,
