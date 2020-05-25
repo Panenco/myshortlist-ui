@@ -25,7 +25,7 @@ class HeaderCell extends React.Component {
           <div className={cx(s.tableHeaderCellContentText, (asc || desc) && s.tableHeaderCellContentTextActive)}>
             {children}
           </div>
-          {sort && sort.name && (
+          {sort?.name && (
             <div className={cx(s.tableHeaderCellContentSquare, !name && s.tableHeaderCellContentSquareHide)}>
               <Icon
                 icon={Icon.icons[sort.name && sort.name]}
