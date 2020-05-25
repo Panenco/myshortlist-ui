@@ -19,7 +19,7 @@ class HeaderCell extends React.Component {
       <Cell className={cx(s.tableHeaderCell, className)} {...props}>
         <button
           name={name}
-          onClick={this.handleSortClick(name, sort && sort.direction)}
+          onClick={this.handleSortClick(name, sort?.direction)}
           className={cx(s.tableHeaderCellContent, !name && s.tableHeaderCellContentDisable)}
         >
           <div className={cx(s.tableHeaderCellContentText, (asc || desc) && s.tableHeaderCellContentTextActive)}>
