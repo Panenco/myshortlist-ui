@@ -4,19 +4,19 @@ import { decorator } from '../../utils/decorator';
 
 export default decorator('TestsProgressScale').add('TestsProgressScale Component', () => (
   <TestsProgressScale>
-    <ScaleBlock questions={12} done={20}>
+    <ScaleBlock questions={12} testsCount={5} done={12}>
       Generic Competences (10 min)
     </ScaleBlock>
-    <ScaleBlock questions={8} done={8}>
+    <ScaleBlock questions={8} testsCount={5} done={6}>
       Interests (8 min)
     </ScaleBlock>
-    <ScaleBlock questions={8} done={3}>
+    <ScaleBlock questions={8} testsCount={5} done={3}>
       Job specific competences (5 min)
     </ScaleBlock>
-    <ScaleBlock questions={4} done={0}>
+    <ScaleBlock questions={4} testsCount={5} done={0}>
       Career drivers (12 min)
     </ScaleBlock>
-    <ScaleBlock questions={5} done={0}>
+    <ScaleBlock questions={5} testsCount={5} done={0}>
       Culture (10 min)
     </ScaleBlock>
   </TestsProgressScale>
