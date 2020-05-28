@@ -5,6 +5,6 @@
     <desc>Created with Sketch.</desc>
     <g id="24px-/-arrow-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
-        <polygon id="Shape" fill="#3D3D3D" fill-rule="nonzero" points="20 12 18.59 10.59 13 16.17 13 4 11 4 11 16.17 5.42 10.58 4 12 12 20"></polygon>
+        <polygon id="Shape" fill="currentColor" fill-rule="nonzero" points="20 12 18.59 10.59 13 16.17 13 4 11 4 11 16.17 5.42 10.58 4 12 12 20"></polygon>
     </g>
 </svg>
