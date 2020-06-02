@@ -82,7 +82,7 @@ class DatePicker extends React.Component {
           <div className={s.pickk}>
             <div>{months[date.getMonth()]}</div>
             <SelectInput
-              value={date.getFullYear() ? years.find(o => o.value === date.getFullYear()) : null}
+              value={date.getFullYear() && years.find(o => o.value === date.getFullYear())}
               className={s.select}
               options={years}
               onChange={handleChange}
