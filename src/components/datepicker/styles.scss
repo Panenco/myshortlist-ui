@@ -151,3 +151,28 @@
     cursor: default;
   }
 }
+
+.pickk {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  margin-top: -9px;
+}
+
+.select {
+  width: 42%;
+
+  div {
+    @include font($l, $medium, $black-color);
+  }
+
+  > div {
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      border: none;
+    }
+  }
+}
