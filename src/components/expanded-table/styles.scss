@@ -50,7 +50,7 @@
 
         .tableHeaderCellContent {
           &Text {
-             @include font($m, $medium, $black-color);
+             @include font($s, $semi-bold, $dark-grey-color);
           }
 
         }
