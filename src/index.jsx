@@ -22,3 +22,4 @@ export * from './components/dragndrop';
 export * from './components/points-scale';
 export * from './components/sidebar';
 export * from './components/expanded-table';
+export * from './components/chip';
