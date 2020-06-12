@@ -124,23 +124,7 @@ const Option = ({
   );
 };
 const SelectInputOutsideChips = React.forwardRef(
-  ({ isSearchable, disabled, options, borders, error, ...props }, ref) => {
-    const [activeOptions, setOption] = React.useState([]);
-
-    const handleChange = select => {
-      if (activeOptions.length === 0) {
-        setOption([...activeOptions, select]);
-      } else {
-        const hasntElement = activeOptions.every(option => option.value !== select.value);
-        if (hasntElement) {
-          setOption([...activeOptions, select]);
-        } else {
-          setOption(activeOptions.filter(option => option.value !== select.value));
-        }
-      }
-      // if (onChange) onChange(select, action);
-    };
-
+  ({ isSearchable, disabled, options, borders, error, activeOptions, onDelete, ...props }, ref) => {
     return (
       <>
         <Select
@@ -152,8 +136,8 @@ const SelectInputOutsideChips = React.forwardRef(
           isDisabled={disabled}
           isSearchable={isSearchable}
           borders={borders}
-          onChange={handleChange}
-          value={null}
+          // onChange={handleChange}
+          // value={null}
           components={{
             DropdownIndicator: customDropDownIndicator,
             ClearIndicator: null,
@@ -164,15 +148,7 @@ const SelectInputOutsideChips = React.forwardRef(
         {activeOptions?.length > 0 && (
           <div className={s.chips}>
             {activeOptions.map(activeOption => {
-              return (
-                <Chip
-                  onDelete={() => {
-                    setOption(activeOptions.filter(option => option.value !== activeOption.value));
-                  }}
-                >
-                  {activeOption.label}
-                </Chip>
-              );
+              return <Chip onDelete={onDelete(activeOption.value)}>{activeOption.label}</Chip>;
             })}
           </div>
         )}
