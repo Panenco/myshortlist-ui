@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import { DateUtils } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { ButtonIcon } from 'components/button-icon';
-import { WithIconInput } from 'components/input';
+import { WithIconInput, SelectInput } from 'components/input';
 import { Icon } from 'components/icon';
+import { years } from './years';
+
 import s from './styles.scss';
 
 class DatePicker extends React.Component {
@@ -22,6 +24,7 @@ class DatePicker extends React.Component {
     from: '',
     to: '',
     singleDate: '',
+    currentMonth: new Date(),
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -51,7 +54,7 @@ class DatePicker extends React.Component {
   render() {
     const { value, hasRange } = this.props;
 
-    const { from, to, singleDate } = this.state;
+    const { from, to, singleDate, currentMonth } = this.state;
     const modifiers = { start: from, end: to };
     //
 
@@ -67,14 +70,44 @@ class DatePicker extends React.Component {
       );
     };
 
+    const CaptionElement = ({ date, localeUtils, onChange }) => {
+      const months = localeUtils.getMonths();
+
+      const handleChange = year => {
+        onChange(new Date(date.setFullYear(year.value)));
+      };
+
+      return (
+        <div className="DayPicker-Caption">
+          <div className={s.pickk}>
+            <div>{months[date.getMonth()]}</div>
+            <SelectInput
+              value={date.getFullYear() && years.find(o => o.value === date.getFullYear())}
+              className={s.select}
+              options={years}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+      );
+    };
+
+    const changeYear = date => {
+      this.setState({ currentMonth: date });
+    };
+
     return (
       <div>
         <DayPickerInput
           component={props => <WithIconInput after={Icon.icons.calendar} {...this.props} {...props} />}
           classNames={{ container: s.input }}
           dayPickerProps={{
+            captionElement: ({ date, localeUtils }) => (
+              <CaptionElement date={date} localeUtils={localeUtils} currentDate={currentMonth} onChange={changeYear} />
+            ),
             numberOfMonths: 2,
             hasRange,
+            month: currentMonth,
             selectedDays: hasRange ? [from, { from, to }] : singleDate,
             modifiers,
             navbarElement: Navbar,
