@@ -9,3 +9,11 @@
 .crossClose {
   align-self: center;
 }
+
+.chips{
+  display:flex;
+  flex-wrap: wrap;
+  >div{
+    margin-right:10px;
+  }
+}
