@@ -103,7 +103,7 @@ const SelectSearch = ({ onSearch, index, ...props }) => (
   <React.Fragment>
     <AsyncPaginate
       styles={customStyles}
-      loadOptions={debounce(onSearch, 500)}
+      // loadOptions={debounce(onSearch, 500)}
       additional={index}
       components={{
         DropdownIndicator: null,
