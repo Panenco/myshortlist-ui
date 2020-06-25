@@ -162,6 +162,7 @@
 
 .select {
   width: 42%;
+  z-index: 101;
 
   div {
     @include font($l, $medium, $black-color);
