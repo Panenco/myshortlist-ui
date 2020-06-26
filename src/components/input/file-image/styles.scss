@@ -49,3 +49,20 @@
     }
   }
 }
+
+.avatar {
+  align-items: center;
+  background-color: $hover-secondary-color;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 65px;
+  display: flex;
+  height: 97px;
+  justify-content: center;
+  // width: 130px;
+
+  &Fallback {
+    @include font(32px, $regular, $primary-color);
+  }
+}

@@ -20,7 +20,7 @@ class ImageDrop extends React.Component {
   };
 
   renderDropzoneContent = fileProps => {
-    const { value } = this.props;
+    const { value, firstName, lastName, letters } = this.props;
     return (
       <>
         {value ? (
@@ -30,11 +30,21 @@ class ImageDrop extends React.Component {
             alt="avatar"
           />
         ) : (
-          <img
-            className={s.imgDropAvatar}
-            src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg"
-            alt="avatar"
-          />
+          <>
+            {letters ? (
+              <div className={cx(s.avatar)}>
+                <div className={cx(s.avatarFallback)}>{`${firstName.charAt(0).toUpperCase()}${lastName
+                  .charAt(0)
+                  .toUpperCase()}`}</div>
+              </div>
+            ) : (
+              <img
+                className={s.imgDropAvatar}
+                src="http://www.colonialkc.org/wp-content/uploads/2015/07/placeholder_square.jpg"
+                alt="avatar"
+              />
+            )}
+          </>
         )}
         <input {...fileProps.getInputProps()} />
       </>
@@ -79,12 +89,18 @@ ImageDrop.defaultProps = {
   accept: null,
   image: false,
   value: null,
+  firstName: 'Universal',
+  lastName: 'User',
+  letters: false,
 };
 
 ImageDrop.propTypes = {
   /* eslint-disable-next-line */
   inputStyle: PropTypes.object,
   maxSize: PropTypes.string,
+  letters: PropTypes.bool,
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
   className: PropTypes.string,
   error: PropTypes.bool,
   multiple: PropTypes.bool,
