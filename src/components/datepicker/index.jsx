@@ -61,7 +61,6 @@ class DatePicker extends React.Component {
 
     const { from, to, singleDate, currentMonth, autoFocus } = this.state;
     const modifiers = { start: from, end: to };
-    //
 
     const Navbar = ({ onPreviousClick, onNextClick, className }) => {
       const prevClick = () => onPreviousClick();
@@ -103,7 +102,6 @@ class DatePicker extends React.Component {
 
     return (
       <div>
-        {console.log('312312', this.props)}
         <DayPickerInput
           component={props => {
             return (
@@ -141,7 +139,6 @@ class DatePicker extends React.Component {
           onDayChange={hasRange ? this.handleDayRange : this.handleDay}
           value={value}
           hideOnDayClick={hasRange ? from : true}
-          // keepFocus
           {...this.props}
         />
       </div>
