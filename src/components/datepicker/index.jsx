@@ -124,7 +124,8 @@ class DatePicker extends React.Component {
             captionElement: ({ date, localeUtils }) => (
               <CaptionElement date={date} localeUtils={localeUtils} currentDate={currentMonth} onChange={changeYear} />
             ),
-            numberOfMonths: 2,
+            // numberOfMonths: 2,
+            numberOfMonths: 1,
             hasRange,
             month: currentMonth,
             selectedDays: hasRange ? [from, { from, to }] : singleDate,
