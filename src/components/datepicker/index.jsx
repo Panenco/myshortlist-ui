@@ -25,6 +25,7 @@ class DatePicker extends React.Component {
     to: '',
     singleDate: '',
     currentMonth: new Date(),
+    autoFocus: false,
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -51,12 +52,15 @@ class DatePicker extends React.Component {
     this.setState({ singleDate: day });
   };
 
+  handleAutofocus = focus => {
+    this.setState({ autoFocus: !focus });
+  };
+
   render() {
     const { value, hasRange } = this.props;
 
-    const { from, to, singleDate, currentMonth } = this.state;
+    const { from, to, singleDate, currentMonth, autoFocus } = this.state;
     const modifiers = { start: from, end: to };
-    //
 
     const Navbar = ({ onPreviousClick, onNextClick, className }) => {
       const prevClick = () => onPreviousClick();
@@ -99,13 +103,29 @@ class DatePicker extends React.Component {
     return (
       <div>
         <DayPickerInput
-          component={props => <WithIconInput after={Icon.icons.calendar} {...this.props} {...props} />}
+          component={props => {
+            return (
+              <WithIconInput
+                autoFocus={autoFocus}
+                after={Icon.icons.calendar}
+                {...this.props}
+                {...props}
+                onBlur={() => {
+                  this.handleAutofocus(true);
+                }}
+                onClick={() => {
+                  this.handleAutofocus(false);
+                }}
+              />
+            );
+          }}
           classNames={{ container: s.input }}
           dayPickerProps={{
             captionElement: ({ date, localeUtils }) => (
               <CaptionElement date={date} localeUtils={localeUtils} currentDate={currentMonth} onChange={changeYear} />
             ),
-            numberOfMonths: 2,
+            // numberOfMonths: 2,
+            numberOfMonths: 1,
             hasRange,
             month: currentMonth,
             selectedDays: hasRange ? [from, { from, to }] : singleDate,

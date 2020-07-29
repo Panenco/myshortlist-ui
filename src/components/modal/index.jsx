@@ -4,17 +4,33 @@ import PropTypes from 'prop-types';
 import { ButtonIcon } from 'components/button-icon';
 import s from './styles.scss';
 
-const Modal = ({ title, onClose, children }) => (
-  <div className={s.backLog}>
-    <div className={s.modal}>
-      <div className={s.modalTitle}>
-        <span>{title}</span>
-        <ButtonIcon icon={ButtonIcon.icons.cross} onClick={onClose} />
+const Modal = ({ title, onClose, children }) => {
+  React.useEffect(() => {
+    document.addEventListener(
+      'keydown',
+      event => {
+        if (event.keyCode === 27) {
+          event.preventDefault();
+          if (onClose) {
+            onClose();
+          }
+        }
+      },
+      false,
+    );
+  }, []);
+  return (
+    <div className={s.backLog}>
+      <div className={s.modal}>
+        <div className={s.modalTitle}>
+          <span>{title}</span>
+          <ButtonIcon icon={ButtonIcon.icons.cross} onClick={onClose} />
+        </div>
+        {children}
       </div>
-      {children}
     </div>
-  </div>
-);
+  );
+};
 
 Modal.propTypes = {
   title: PropTypes.string,
