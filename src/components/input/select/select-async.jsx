@@ -99,7 +99,7 @@ const customClearIndicator = ({ ...props }) => (
   </components.ClearIndicator>
 );
 
-const SelectSearch = ({ onSearch, index, ...props }) => (
+const SelectSearch = ({ onSearch, index, customeComponents, ...props }) => (
   <React.Fragment>
     <AsyncPaginate
       styles={customStyles}
@@ -108,6 +108,7 @@ const SelectSearch = ({ onSearch, index, ...props }) => (
       components={{
         DropdownIndicator: null,
         ClearIndicator: customClearIndicator,
+        ...customeComponents,
       }}
       {...props}
     />
