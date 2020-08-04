@@ -6,7 +6,7 @@ export default decorator('DatePicker').add('DatePicker Component', () => (
   <>
     <Row>
       <Col s={5}>
-        <DatePicker hasRange onChange={value => value} />
+        <DatePicker onChange={value => value} />
       </Col>
     </Row>
 

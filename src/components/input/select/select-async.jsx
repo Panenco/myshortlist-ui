@@ -42,9 +42,9 @@ const customStyles = {
     position: 'relative',
     padding: '0 5px 0 5px',
   }),
-  placeholder: (provided, state) => ({
+  placeholder: provided => ({
     ...provided,
-    color: state.isDisabled ? '#a5a5a5' : '#000000',
+    color: '#a5a5a5',
   }),
   dropDownIndicator: provided => ({
     ...provided,
@@ -93,21 +93,42 @@ const customStyles = {
   }),
 };
 
+const errorStyles = {
+  ...customStyles,
+  control: (provided, state) => ({
+    ...provided,
+    border: '2px solid #ff431f',
+    borderRadius: '2px',
+    boxShadow: state.isFocused ? 'transparent' : 'transparent',
+    flexWrap: 'nowrap',
+    fontSize: '14px',
+    maxHeight: state.isMulti ? null : '32px',
+    minHeight: '36px',
+    ':hover': {
+      border: '2px solid #ff431f',
+    },
+    paddingLeft: state.isMulti ? '5px' : '11px',
+    paddingRight: state.isMulti ? '0' : '5px',
+    width: '100%',
+  }),
+};
+
 const customClearIndicator = ({ ...props }) => (
   <components.ClearIndicator {...props}>
     <Icon.Large icon={Icon.icons.cross} className={cx(s.crossClearSearch)} />
   </components.ClearIndicator>
 );
 
-const SelectSearch = ({ onSearch, index, ...props }) => (
+const SelectSearch = ({ onSearch, error, index, customeComponents, ...props }) => (
   <React.Fragment>
     <AsyncPaginate
-      styles={customStyles}
+      styles={error ? errorStyles : customStyles}
       // loadOptions={debounce(onSearch, 500)}
       additional={index}
       components={{
         DropdownIndicator: null,
         ClearIndicator: customClearIndicator,
+        ...customeComponents,
       }}
       {...props}
     />
