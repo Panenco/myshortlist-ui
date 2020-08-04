@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useImperativeHandle } from 'react';
+import React, { forwardRef, useRef, useEffect, useImperativeHandle } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
@@ -7,6 +7,16 @@ import s from './styles.scss';
 const TextArea = forwardRef((props, ref) => {
   const { onChange, form, autoresize, minHeight, error, className, ...restProps } = props;
   const textAreaRef = useRef(null);
+
+  useEffect(() => {
+    textAreaRef.current.style.height = 'inherit';
+    const computed = window.getComputedStyle(textAreaRef.current);
+    const height =
+      textAreaRef.current.scrollHeight -
+      parseInt(computed.getPropertyValue('padding-top'), 10) -
+      parseInt(computed.getPropertyValue('padding-bottom'), 10);
+    textAreaRef.current.style.height = `${height}px`;
+  }, []);
 
   useImperativeHandle(ref, () => textAreaRef.current);
 
@@ -46,6 +56,6 @@ TextArea.defaultProps = {
   minHeight: 52,
   error: null,
   className: null,
-}
+};
 
 export { TextArea };
