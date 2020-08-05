@@ -5,10 +5,23 @@ import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { ButtonIcon } from 'components/button-icon';
 import { WithIconInput, SelectInput } from 'components/input';
 import { Icon } from 'components/icon';
+import dateFnsFormat from 'date-fns/format';
+import dateFnsParse from 'date-fns/parse';
 import { years } from './years';
 
 import s from './styles.scss';
 
+function parseDate(str, format, locale) {
+  const parsed = dateFnsParse(str, format, new Date(), { locale });
+  if (DateUtils.isDate(parsed)) {
+    return parsed;
+  }
+  return undefined;
+}
+
+function formatDate(date, format, locale) {
+  return dateFnsFormat(date, format, { locale });
+}
 class DatePicker extends React.Component {
   static propTypes = {
     hasRange: PropTypes.bool,
@@ -57,6 +70,8 @@ class DatePicker extends React.Component {
   };
 
   render() {
+    const FORMAT = 'DD/MM/YYYY';
+
     const { value, hasRange } = this.props;
 
     const { from, to, singleDate, currentMonth, autoFocus } = this.state;
@@ -103,6 +118,10 @@ class DatePicker extends React.Component {
     return (
       <div>
         <DayPickerInput
+          placeholder="D/M/YYYY"
+          formatDate={formatDate}
+          format={FORMAT}
+          parseDate={parseDate}
           component={props => {
             return (
               <WithIconInput
