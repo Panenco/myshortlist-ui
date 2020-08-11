@@ -11,7 +11,7 @@
   width: 100%;
 
   &::placeholder {
-    @include font($m, $regular, $black-color);
+    @include font($m, $regular, $grey-color);
   }
 
   &:focus {
