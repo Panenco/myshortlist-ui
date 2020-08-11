@@ -114,32 +114,44 @@ class DatePicker extends React.Component {
     const changeYear = date => {
       this.setState({ currentMonth: date });
     };
+    let dayPickerInputRef = null;
 
     return (
-      <div>
+      <div name="main-container">
         <DayPickerInput
+          ref={ref => (dayPickerInputRef = ref)}
           placeholder="D/M/YYYY"
           formatDate={formatDate}
           format={FORMAT}
           parseDate={parseDate}
+          keepFocus={false}
           component={props => {
             return (
               <WithIconInput
                 autoFocus={autoFocus}
                 after={Icon.icons.calendar}
-                {...this.props}
-                {...props}
                 onBlur={() => {
                   this.handleAutofocus(true);
                 }}
                 onClick={() => {
                   this.handleAutofocus(false);
                 }}
+                {...this.props}
+                {...props}
               />
             );
           }}
           classNames={{ container: s.input }}
           dayPickerProps={{
+            onBlur: () => {
+              setTimeout(() => {
+                const elClicked = document.activeElement;
+                const container = document.getElementsByName(`main-container`);
+                if (container && !container[0].contains(elClicked)) {
+                  dayPickerInputRef?.hideDayPicker();
+                }
+              }, 1);
+            },
             captionElement: ({ date, localeUtils }) => (
               <CaptionElement date={date} localeUtils={localeUtils} currentDate={currentMonth} onChange={changeYear} />
             ),
@@ -156,6 +168,7 @@ class DatePicker extends React.Component {
               });
             },
           }}
+          // overlayHasFocus={false}
           onDayChange={hasRange ? this.handleDayRange : this.handleDay}
           value={value}
           hideOnDayClick={hasRange ? from : true}
