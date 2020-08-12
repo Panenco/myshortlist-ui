@@ -8,11 +8,10 @@ import { Icon } from 'components/icon';
 import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 import { years } from './years';
-
 import s from './styles.scss';
 
 function parseDate(str, format, locale) {
-  const parsed = dateFnsParse(str, format, new Date(), { locale });
+  const parsed = dateFnsParse(str, 'dd/MM/yyyy', new Date());
   if (DateUtils.isDate(parsed)) {
     return parsed;
   }
@@ -20,7 +19,8 @@ function parseDate(str, format, locale) {
 }
 
 function formatDate(date, format, locale) {
-  return dateFnsFormat(date, format, { locale });
+  // TODO change to format if needed
+  return dateFnsFormat(date, 'dd/MM/yyyy', { locale });
 }
 class DatePicker extends React.Component {
   static propTypes = {
@@ -70,7 +70,7 @@ class DatePicker extends React.Component {
   };
 
   render() {
-    const FORMAT = 'DD/MM/YYYY';
+    const FORMAT = 'dd/MM/yyyy';
 
     const { value, hasRange } = this.props;
 
@@ -130,14 +130,17 @@ class DatePicker extends React.Component {
               <WithIconInput
                 autoFocus={autoFocus}
                 after={Icon.icons.calendar}
+                {...this.props}
+                {...props}
                 onBlur={() => {
+                  props.onBlur();
                   this.handleAutofocus(true);
                 }}
                 onClick={() => {
+                  props.onClick();
+
                   this.handleAutofocus(false);
                 }}
-                {...this.props}
-                {...props}
               />
             );
           }}
