@@ -5,7 +5,7 @@ import s from './styles.scss';
 
 const PointsScale = ({ used, className }) => {
   const width = { width: used > 100 ? `100%` : `${used}%` };
-  const position = { left: used > 100 ? `97%` : `${used}%` };
+  const position = { left: used > 100 ? `97%` : used > 10 ? `calc(${used}% - 65px)` : `${used}%` };
   return (
     <div className={cx(s.container, className)}>
       <p className={s.scaleLeftTextMobile}>{100 - used} points left </p>

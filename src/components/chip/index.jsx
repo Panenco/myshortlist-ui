@@ -8,7 +8,7 @@ import s from './styles.scss';
 const Chip = ({ onDelete, children, className }) => (
   <div className={cx(s.chip, className)}>
     <div className={s.chipText}>{children}</div>
-    <ButtonIcon icon={Icon.icons.cross} onClick={onDelete} className={s.chipIcon} />
+    <ButtonIcon icon={Icon.icons.declined} onClick={onDelete} className={s.chipIcon} />
   </div>
 );
 

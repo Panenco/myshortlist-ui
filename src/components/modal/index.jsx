@@ -24,7 +24,7 @@ const Modal = ({ title, onClose, children }) => {
       <div className={s.modal}>
         <div className={s.modalTitle}>
           <span>{title}</span>
-          <ButtonIcon icon={ButtonIcon.icons.cross} onClick={onClose} />
+          <ButtonIcon icon={ButtonIcon.icons.declined} onClick={onClose} />
         </div>
         {children}
       </div>

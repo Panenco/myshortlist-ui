@@ -1,6 +1,6 @@
 {
   "name": "@panenco/shortlist-ui",
-  "version": "1.0.45",
+  "version": "1.0.50",
   "description": "shortlist ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.cjs.js",
@@ -114,6 +114,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "date-fns": "^2.15.0",
     "react-animate-height": "^2.0.20",
     "react-beautiful-dnd": "^11.0.5",
     "react-day-picker": "^7.3.0",

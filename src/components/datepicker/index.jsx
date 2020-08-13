@@ -5,9 +5,24 @@ import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { ButtonIcon } from 'components/button-icon';
 import { WithIconInput, SelectInput } from 'components/input';
 import { Icon } from 'components/icon';
+import dateFnsFormat from 'date-fns/format';
+import dateFnsParse from 'date-fns/parse';
 import { years } from './years';
-
 import s from './styles.scss';
+
+const FORMAT = 'dd/MM/yyyy';
+
+function parseDate(str, format, locale) {
+  const parsed = dateFnsParse(str, FORMAT, new Date());
+  if (DateUtils.isDate(parsed)) {
+    return parsed;
+  }
+  return undefined;
+}
+
+function formatDate(date, format, locale) {
+  return dateFnsFormat(date, FORMAT, { locale });
+}
 
 class DatePicker extends React.Component {
   static propTypes = {
@@ -99,10 +114,17 @@ class DatePicker extends React.Component {
     const changeYear = date => {
       this.setState({ currentMonth: date });
     };
+    let dayPickerInputRef = null;
 
     return (
-      <div>
+      <div name="main-container">
         <DayPickerInput
+          ref={ref => (dayPickerInputRef = ref)}
+          placeholder="D/M/YYYY"
+          formatDate={formatDate}
+          format={FORMAT}
+          parseDate={parseDate}
+          keepFocus={false}
           component={props => {
             return (
               <WithIconInput
@@ -111,9 +133,12 @@ class DatePicker extends React.Component {
                 {...this.props}
                 {...props}
                 onBlur={() => {
+                  props.onBlur();
                   this.handleAutofocus(true);
                 }}
                 onClick={() => {
+                  props.onClick();
+
                   this.handleAutofocus(false);
                 }}
               />
@@ -121,6 +146,15 @@ class DatePicker extends React.Component {
           }}
           classNames={{ container: s.input }}
           dayPickerProps={{
+            onBlur: () => {
+              setTimeout(() => {
+                const elClicked = document.activeElement;
+                const container = document.getElementsByName(`main-container`);
+                if (container && !container[0].contains(elClicked)) {
+                  dayPickerInputRef?.hideDayPicker();
+                }
+              }, 1);
+            },
             captionElement: ({ date, localeUtils }) => (
               <CaptionElement date={date} localeUtils={localeUtils} currentDate={currentMonth} onChange={changeYear} />
             ),
@@ -137,6 +171,7 @@ class DatePicker extends React.Component {
               });
             },
           }}
+          // overlayHasFocus={false}
           onDayChange={hasRange ? this.handleDayRange : this.handleDay}
           value={value}
           hideOnDayClick={hasRange ? from : true}
