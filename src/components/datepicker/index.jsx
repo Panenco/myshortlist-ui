@@ -10,8 +10,10 @@ import dateFnsParse from 'date-fns/parse';
 import { years } from './years';
 import s from './styles.scss';
 
+const FORMAT = 'dd/MM/yyyy';
+
 function parseDate(str, format, locale) {
-  const parsed = dateFnsParse(str, 'dd/MM/yyyy', new Date());
+  const parsed = dateFnsParse(str, FORMAT, new Date());
   if (DateUtils.isDate(parsed)) {
     return parsed;
   }
@@ -19,9 +21,9 @@ function parseDate(str, format, locale) {
 }
 
 function formatDate(date, format, locale) {
-  // TODO change to format if needed
-  return dateFnsFormat(date, 'dd/MM/yyyy', { locale });
+  return dateFnsFormat(date, FORMAT, { locale });
 }
+
 class DatePicker extends React.Component {
   static propTypes = {
     hasRange: PropTypes.bool,
@@ -70,8 +72,6 @@ class DatePicker extends React.Component {
   };
 
   render() {
-    const FORMAT = 'dd/MM/yyyy';
-
     const { value, hasRange } = this.props;
 
     const { from, to, singleDate, currentMonth, autoFocus } = this.state;
