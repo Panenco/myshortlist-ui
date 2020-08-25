@@ -1,5 +1,5 @@
 import React from 'react';
-import { SelectInput, Row, Col, SelectInputOutsideChips } from 'index';
+import { SelectInput, Row, Col, SelectInputOutsideChips, SelectSearch } from 'index';
 import { decorator } from '../../../utils/decorator';
 
 export default decorator('Input').add('SelectInput Component', () => {
@@ -130,6 +130,11 @@ export default decorator('Input').add('SelectInput Component', () => {
             // onDelete={handleDelete}
             // onChange={handleChange}
           />
+        </Col>
+      </Row>
+      <Row>
+        <Col s={5}>
+          <SelectSearch placeholder="Placeholder" isDisabled />
         </Col>
       </Row>
     </>
