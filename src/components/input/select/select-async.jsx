@@ -31,6 +31,8 @@ const customStyles = {
   control: (provided, state) => ({
     ...provided,
     border: '1px solid #3d3d3d',
+    backgroundColor: state.isDisabled ? 'transparen' : '#fff',
+    opacity: state.isDisabled && '0.3',
     borderRadius: '2px',
     boxShadow: state.isFocused ? 'transparent' : 'transparent',
     color: '#000000',
