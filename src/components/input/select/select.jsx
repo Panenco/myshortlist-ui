@@ -12,7 +12,7 @@ const customStyles = {
   control: (provided, state) => ({
     ...provided,
     // border: state.isMulti ? '1px solid #a5a5a5' : '1px solid #3d3d3d',
-    backgroundColor: state.isDisabled ? 'transparen' : '#fff',
+    backgroundColor: '#fff',
     border: state.isFocused ? '2px solid #26a69a' : '1px solid #3d3d3d',
     borderRadius: '2px',
     boxShadow: state.isFocused ? 'transparent' : 'transparent',
