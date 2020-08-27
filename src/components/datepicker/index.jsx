@@ -10,7 +10,7 @@ import dateFnsParse from 'date-fns/parse';
 import { years } from './years';
 import s from './styles.scss';
 
-const FORMAT = 'dd/MM/yyyy';
+const FORMAT = 'DD/MM/YYYY';
 
 function parseDate(str, format, locale) {
   const parsed = dateFnsParse(str, FORMAT, new Date());
