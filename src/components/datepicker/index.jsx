@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DateUtils } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import { ButtonIcon } from 'components/button-icon';
-import { WithIconInput, SelectInput } from 'components/input';
-import { Icon } from 'components/icon';
+import { TextInput, SelectInput, Row, Col, Checkbox, WithIconInput, ButtonIcon, Icon } from '@panenco/shortlist-ui';
 import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 import { years } from './years';
@@ -38,7 +36,7 @@ class DatePicker extends React.Component {
   state = {
     from: '',
     to: '',
-    singleDate: '',
+    singleDate: this.props.value,
     currentMonth: new Date(),
     autoFocus: false,
   };
@@ -123,7 +121,7 @@ class DatePicker extends React.Component {
           placeholder="D/M/YYYY"
           formatDate={formatDate}
           format={FORMAT}
-          parseDate={parseDate}
+          // parseDate={parseDate}
           keepFocus={false}
           component={props => {
             return (
@@ -132,14 +130,14 @@ class DatePicker extends React.Component {
                 after={Icon.icons.calendar}
                 {...this.props}
                 {...props}
+                readOnly
                 onBlur={() => {
-                  props.onBlur();
-                  this.handleAutofocus(true);
+                  // props.onBlur();
+                  // this.handleAutofocus(true);
                 }}
                 onClick={() => {
-                  props.onClick();
-
-                  this.handleAutofocus(false);
+                  // props.onClick();
+                  // this.handleAutofocus(false);
                 }}
               />
             );
