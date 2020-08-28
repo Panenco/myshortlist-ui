@@ -38,7 +38,7 @@ class DatePicker extends React.Component {
   state = {
     from: '',
     to: '',
-    singleDate: '',
+    singleDate: this.props.value,
     currentMonth: new Date(),
     autoFocus: false,
   };
@@ -123,7 +123,7 @@ class DatePicker extends React.Component {
           placeholder="D/M/YYYY"
           formatDate={formatDate}
           format={FORMAT}
-          parseDate={parseDate}
+          // parseDate={parseDate}
           keepFocus={false}
           component={props => {
             return (
@@ -132,14 +132,15 @@ class DatePicker extends React.Component {
                 after={Icon.icons.calendar}
                 {...this.props}
                 {...props}
+                readOnly
                 onBlur={() => {
-                  props.onBlur();
-                  this.handleAutofocus(true);
+                  // props.onBlur();
+                  // this.handleAutofocus(true);
                 }}
                 onClick={() => {
-                  props.onClick();
-
-                  this.handleAutofocus(false);
+                  // props.onClick();
+                  //
+                  // this.handleAutofocus(false);
                 }}
               />
             );
