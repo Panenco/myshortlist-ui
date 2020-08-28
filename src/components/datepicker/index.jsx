@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DateUtils } from 'react-day-picker';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import { TextInput, SelectInput, Row, Col, Checkbox, WithIconInput, ButtonIcon, Icon } from '@panenco/shortlist-ui';
+import { ButtonIcon } from 'components/button-icon';
+import { WithIconInput, SelectInput } from 'components/input';
+import { Icon } from 'components/icon';
 import dateFnsFormat from 'date-fns/format';
 import dateFnsParse from 'date-fns/parse';
 import { years } from './years';
@@ -137,6 +139,7 @@ class DatePicker extends React.Component {
                 }}
                 onClick={() => {
                   // props.onClick();
+                  //
                   // this.handleAutofocus(false);
                 }}
               />
