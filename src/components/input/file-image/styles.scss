@@ -47,5 +47,21 @@
         transform: rotate(45deg);
       }
     }
+
+    &EditBtn {
+      position: absolute;
+      right: 5px;
+      top: 70px;
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid transparent;
+      }
+    }
   }
+}
+
+.saveButton {
+  margin-right: 10px;
+  margin-top: 15px;
 }
