@@ -14,15 +14,14 @@ class ImageDrop extends React.Component {
     super();
     this.state = {
       modal: false,
-      // image: 'avatar.jpg',
-      // allowZoomOut: false,
-      // position: { x: 0.5, y: 0.5 },
-      // scale: 1,
-      // rotate: 0,
-      // borderRadius: 0,
-      // preview: null,
-      // width: 200,
-      // height: 200,
+      allowZoomOut: false,
+      position: { x: 0.5, y: 0.5 },
+      scale: 1,
+      rotate: 0,
+      borderRadius: 50,
+      preview: null,
+      width: 200,
+      height: 200,
     };
   }
 
@@ -65,17 +64,33 @@ class ImageDrop extends React.Component {
   };
 
   // handleNewImage = e => {
-  //   this.setState({ image: e.target.files[0] });
+  //   alert('check');
+  //   console.log('312312', e.target.files);
+  //   this.dropHandler(e.target.files[0]);
   // };
 
-  // handleScale = e => {
-  //   const scale = parseFloat(e.target.value);
-  //   this.setState({ scale });
-  // };
+  handleScale = e => {
+    const scale = parseFloat(e.target.value);
+    this.setState({ scale });
+  };
 
-  // handlePositionChange = position => {
-  //   this.setState({ position });
-  // };
+  handlePositionChange = position => {
+    this.setState({ position });
+  };
+
+  onClickSave = () => {
+    if (this.editor) {
+      // This returns a HTMLCanvasElement, it can be made into a data URL or a blob,
+      // drawn on another canvas, or added to the DOM.
+      const canvas = this.editor.getImage().toDataURL();
+      this.dropHandler(canvas);
+
+      // If you want the image resized to the canvas size (also a HTMLCanvasElement)
+      const canvasScaled = this.editor.getImageScaledToCanvas();
+    }
+  };
+
+  setEditorRef = editor => (this.editor = editor);
 
   render() {
     const { maxSize, value, error, onChange, onSave, ...props } = this.props;
@@ -92,14 +107,18 @@ class ImageDrop extends React.Component {
             // {...props}
           >
             {fileProps => {
-              console.log('312312', fileProps, fileProps.getRootProps());
               return (
                 <button type="button" className={cx(s.imgDrop, error && s.imgDropError)}>
                   {this.renderDropzoneContent(fileProps)}
                   {modal && value && (
                     <Modal title="Update your avatar" onClose={this.handleModal(false)}>
-                      <img className={s.imgDropAvatar} src={value} alt="avatar" />
-                      {/* <ReactAvatarEditor
+                      {/* <img
+                        className={s.modalAvatar}
+                        src={value[0] instanceof File ? URL.createObjectURL(value[0]) : value.url}
+                        alt="avatar"
+                      /> */}
+                      <ReactAvatarEditor
+                        ref={this.setEditorRef}
                         scale={parseFloat(this.state.scale)}
                         width={this.state.width}
                         height={this.state.height}
@@ -107,11 +126,8 @@ class ImageDrop extends React.Component {
                         onPositionChange={this.handlePositionChange}
                         rotate={parseFloat(this.state.rotate)}
                         borderRadius={this.state.width / (100 / this.state.borderRadius)}
-                        image={this.state.image}
+                        image={value[0] instanceof File ? URL.createObjectURL(value[0]) : value.url}
                       />
-                      <br />
-                      New File:
-                      <input name="newImage" type="file" onChange={this.handleNewImage} />
                       <br />
                       Zoom:
                       <input
@@ -122,10 +138,10 @@ class ImageDrop extends React.Component {
                         max="2"
                         step="0.01"
                         defaultValue="1"
-                      /> */}
+                      />
                       <SecondaryButton.Large {...fileProps.getRootProps()}>Upload new image</SecondaryButton.Large>
                       <div>
-                        <PrimaryButton.Large onClick={onSave} className={s.saveButton}>
+                        <PrimaryButton.Large onClick={this.onClickSave} className={s.saveButton}>
                           Save
                         </PrimaryButton.Large>
                         <PrimaryButton.Large onClick={this.handleModal(false)}>Close</PrimaryButton.Large>
