@@ -67,6 +67,8 @@ import pc from './icons/pc.svg';
 import resume from './icons/resume.svg';
 import reunion from './icons/reunion.svg';
 import smartphone from './icons/smartphone.svg';
+import compass from './icons/compass.svg';
+import award from './icons/award.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -141,6 +143,8 @@ Icon.icons = {
   resume,
   reunion,
   smartphone,
+  compass,
+  award,
 };
 
 Icon.defaultProps = {
