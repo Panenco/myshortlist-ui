@@ -69,6 +69,7 @@ import reunion from './icons/reunion.svg';
 import smartphone from './icons/smartphone.svg';
 import compass from './icons/compass.svg';
 import award from './icons/award.svg';
+import instagram from './icons/instagram.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -145,6 +146,7 @@ Icon.icons = {
   smartphone,
   compass,
   award,
+  instagram,
 };
 
 Icon.defaultProps = {
