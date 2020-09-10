@@ -1,4 +1,8 @@
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20ZM22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" fill="#3D3D3D"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M16.24 7.76L9.88 9.88L7.76 16.24L14.12 14.12L16.24 7.76ZM13.0777 10.9223L11.4611 11.4611L10.9223 13.0777L12.5389 12.5389L13.0777 10.9223Z" fill="#3D3D3D"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>24px / compass</title>
+    <g id="24px-/-compass" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+        <path d="M12,2 C17.5228,2 22,6.47715 22,12 C22,17.5228 17.5228,22 12,22 C6.47715,22 2,17.5228 2,12 C2,6.47715 6.47715,2 12,2 Z M12,4 C7.58172,4 4,7.58172 4,12 C4,16.4183 7.58172,20 12,20 C16.4183,20 20,16.4183 20,12 C20,7.58172 16.4183,4 12,4 Z M16.24,7.76 L14.12,14.12 L7.76,16.24 L9.88,9.88 L16.24,7.76 Z M13.0777,10.9223 L11.4611,11.4611 L10.9223,13.0777 L12.5389,12.5389 L13.0777,10.9223 Z" id="Combined-Shape" fill="currentColor"></path>
+    </g>
 </svg>
