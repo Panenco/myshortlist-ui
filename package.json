@@ -5,9 +5,6 @@
   "module": "lib/ui.esm.js",
   "main": "lib/ui.cjs.js",
   "license": "UNLICENSED",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": "git@github.com:Panenco/myshortlist-ui.git",
   "scripts": {
     "start": "start-storybook -p 9001 -c .storybook",
