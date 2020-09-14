@@ -70,6 +70,12 @@ import smartphone from './icons/smartphone.svg';
 import compass from './icons/compass.svg';
 import award from './icons/award.svg';
 import instagram from './icons/instagram.svg';
+import boundaryConditions from './icons/boundary-conditions.svg';
+import companyCulture from './icons/company-culture.svg';
+import careerDrivers from './icons/career-drivers.svg';
+import genericCompetences from './icons/generic-competences.svg';
+import jobSpecificCompetences from './icons/job-specific-competences.svg';
+import interests from './icons/interests.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -147,6 +153,12 @@ Icon.icons = {
   compass,
   award,
   instagram,
+  boundaryConditions,
+  genericCompetences,
+  jobSpecificCompetences,
+  interests,
+  companyCulture,
+  careerDrivers,
 };
 
 Icon.defaultProps = {
