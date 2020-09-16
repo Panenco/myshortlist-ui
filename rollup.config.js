@@ -58,7 +58,9 @@ export default {
     commonjs({
       namedExports: {
         'react-is': ['ForwardRef', 'isValidElementType', 'isContextConsumer', 'isFragment', 'Memo'],
-        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer'],
+        'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer', 'ForwardRef'],
+        'node_modules/@material-ui/utils/node_modules/react-is/index.js': ['ForwardRef', 'Memo'],
+        'node_modules/@material-ui/core/node_modules/react-is/index.js': ['isFragment'],
       },
     }),
     resolve({
