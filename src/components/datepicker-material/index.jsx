@@ -21,7 +21,7 @@ const useDatePickerStyles = makeStyles(() => ({
   },
 }));
 
-const DatePicker = props => {
+const MaterialDatePicker = props => {
   const s = useDatePickerStyles();
 
   return (
@@ -43,4 +43,4 @@ const DatePicker = props => {
   );
 };
 
-export default DatePicker;
+export { MaterialDatePicker };

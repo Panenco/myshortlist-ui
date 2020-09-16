@@ -57,7 +57,7 @@ export default {
     }),
     commonjs({
       namedExports: {
-        'react-is': ['isValidElementType', 'isContextConsumer', 'ForwardRef'],
+        'react-is': ['ForwardRef', 'isValidElementType', 'isContextConsumer', 'isFragment', 'Memo'],
         'node_modules/react-is/index.js': ['isValidElementType', 'isContextConsumer'],
       },
     }),
