@@ -1,0 +1,32 @@
+@import 'core';
+
+.root {
+  border: 1px solid black !important;
+  border-radius: 2px !important;
+  height: 37px !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  width: 100%;
+  font-size: 14px;
+
+  ::before {
+    display: none;
+  }
+
+  ::after {
+    display: none;
+  }
+
+  > div {
+    height: 100%;
+
+    // &:focus {
+    //   border: 2px solid red !important;
+    // }
+  }
+
+  input {
+    padding-left: 10px;
+    font-size: 14px;
+  }
+}
