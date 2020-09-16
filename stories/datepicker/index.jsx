@@ -1,5 +1,5 @@
 import React from 'react';
-import { DatePicker, Row, Col } from 'index';
+import { DatePicker, Row, Col, MaterialDatePicker } from 'index';
 import { decorator } from '../../utils/decorator';
 
 export default decorator('DatePicker').add('DatePicker Component', () => (
@@ -19,6 +19,12 @@ export default decorator('DatePicker').add('DatePicker Component', () => (
     <Row>
       <Col s={5}>
         <DatePicker disabled />
+      </Col>
+    </Row>
+
+    <Row>
+      <Col>
+        <MaterialDatePicker />
       </Col>
     </Row>
   </>
