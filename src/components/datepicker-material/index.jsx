@@ -1,8 +1,9 @@
 import React from 'react';
 import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
+import { LocalizationProvider, DatePicker } from '@material-ui/pickers';
 import { makeStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import cx from 'classnames';
+import TextField from '@material-ui/core/TextField';
 import styles from './styles.scss';
 
 const useDatePickerStyles = makeStyles(() => ({
@@ -20,19 +21,42 @@ const useDatePickerStyles = makeStyles(() => ({
     },
   },
 }));
+// export const appTheme = {
+//   overrides: {
+//     MuiPickersDay: {
+//       current: {
+//         color: '#26a69a',
+//       },
+//       // day: {
+//       //   background: 'red !important',
+//       // },
+//       daySelected: {
+//         background: '#26a69a !important',
+//       },
+//     },
+//     MuiButton: {
+//       textPrimary: { color: '#26a69a !important' },
+//     },
+//   },
+// };
 export const appTheme = {
   overrides: {
     MuiPickersDay: {
-      current: {
+      root: {
         color: '#26a69a',
       },
-      // day: {
-      //   background: 'red !important',
-      // },
-      daySelected: {
-        background: '#26a69a !important',
+
+      today: {
+        // background: '#26a69a !important',
       },
+
+      // Mui: {
+      //   selected: {
+      //     background: 'red !important',
+      //   },
+      // },
     },
+
     MuiButton: {
       textPrimary: { color: '#26a69a !important' },
     },
@@ -42,24 +66,20 @@ const theme = createMuiTheme(appTheme);
 
 const MaterialDatePicker = props => {
   const s = useDatePickerStyles();
-
+  const formats = {
+    normalDate: 'dd/mm/yyyy',
+    keyboardDate: 'dd/mm/yyyy',
+  };
   return (
     <MuiThemeProvider theme={theme}>
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <KeyboardDatePicker
-          disableToolbar
-          variant="outlined"
-          format="MM/dd/yyyy"
-          // margin="normal"
-          id="date-picker-inline"
-          // label="Date picker inline"
-          KeyboardButtonProps={{
-            'aria-label': 'change date',
-          }}
+      <LocalizationProvider dateAdapter={DateFnsUtils} dateFormats={formats}>
+        <DatePicker
+          clearable
+          renderInput={renderProps => <TextField {...renderProps} />}
           {...props}
           className={cx(styles.root, s.root)}
         />
-      </MuiPickersUtilsProvider>
+      </LocalizationProvider>
     </MuiThemeProvider>
   );
 };
