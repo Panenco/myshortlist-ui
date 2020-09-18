@@ -24,7 +24,7 @@ export default decorator('DatePicker').add('DatePicker Component', () => (
 
     <Row>
       <Col s={5}>
-        <MaterialDatePicker />
+        <MaterialDatePicker onChange={value => value} />
       </Col>
     </Row>
   </>
