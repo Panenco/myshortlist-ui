@@ -1,14 +1,15 @@
 import React from 'react';
 import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
-import { makeStyles } from '@material-ui/core/styles';
+import { LocalizationProvider, DatePicker } from '@material-ui/pickers';
+import { makeStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import cx from 'classnames';
+import TextField from '@material-ui/core/TextField';
+import PropTypes from 'prop-types';
 import styles from './styles.scss';
 
 const useDatePickerStyles = makeStyles(() => ({
   root: {
     '& .Mui-focused': {
-      // outline: 'none !important',
       outline: '2px solid #26a69a',
     },
     '& .MuiFormHelperText-root': {
@@ -21,26 +22,107 @@ const useDatePickerStyles = makeStyles(() => ({
   },
 }));
 
-const MaterialDatePicker = props => {
-  const s = useDatePickerStyles();
+export const appTheme = {
+  // fontSize:'14px',
+  typography: {
+    subtitle1: { fontSize: '14px' },
+  },
 
+  palette: {
+    primary: {
+      lighter: '#26a69a',
+      dark: '#26a69a',
+      main: '#26a69a',
+    },
+    error: {
+      lighter: '#dd2c00',
+      dark: '#dd2c00',
+      main: '#dd2c00',
+    },
+  },
+  overrides: {
+    MuiPickersDay: {
+      root: {
+        color: '#26a69a',
+        fontSize: '10px !important',
+      },
+    },
+
+    MuiButton: {
+      textPrimary: { color: '#26a69a !important' },
+    },
+    MuiFormControl: {
+      root: {
+        height: '37px !important',
+        marginBottom: '0 !important',
+        marginTop: '0 !important',
+        width: '100%',
+        fontSize: '14px',
+      },
+    },
+    MuiInputBase: {
+      root: {
+        height: '37px !important',
+        '&$focused': {
+          border: 'none !important',
+          outline: 'none !important',
+        },
+      },
+    },
+    MuiPickersCalendarHeader: {
+      monthTitleContainer: {
+        alignItems: 'center !important',
+      },
+    },
+  },
+};
+const theme = createMuiTheme(appTheme);
+
+const MaterialDatePicker = ({ className, value, error, helperText, ...props }) => {
+  const s = useDatePickerStyles();
+  const formats = {
+    normalDate: 'dd/MM/yyyy',
+    keyboardDate: 'dd/MM/yyyy',
+  };
+  // const [selectedDate, handleDateChange] = React.useState('');
   return (
-    <MuiPickersUtilsProvider utils={DateFnsUtils}>
-      <KeyboardDatePicker
-        disableToolbar
-        variant="outlined"
-        format="MM/dd/yyyy"
-        // margin="normal"
-        id="date-picker-inline"
-        // label="Date picker inline"
-        KeyboardButtonProps={{
-          'aria-label': 'change date',
-        }}
-        {...props}
-        className={cx(styles.root, s.root)}
-      />
-    </MuiPickersUtilsProvider>
+    <MuiThemeProvider theme={theme}>
+      <LocalizationProvider dateAdapter={DateFnsUtils} dateFormats={formats}>
+        <DatePicker
+          clearable
+          variant="inline"
+          renderInput={renderProps => (
+            <TextField
+              {...renderProps}
+              helperText={(error || renderProps.error) && (helperText || 'Invalid Date')}
+              error={error || renderProps.error}
+              color="primary"
+              variant="outlined"
+            />
+          )}
+          // value={selectedDate}
+          // onChange={date => handleDateChange(date)}
+          value={value || ''}
+          {...props}
+          className={cx(styles.root, s.root, className)}
+        />
+      </LocalizationProvider>
+    </MuiThemeProvider>
   );
+};
+MaterialDatePicker.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  value: PropTypes.string,
+  helperText: PropTypes.string,
+  error: PropTypes.string,
+};
+
+MaterialDatePicker.defaultProps = {
+  className: null,
+  value: '',
+  helperText: 'Invalid date',
+  error: '',
 };
 
 export { MaterialDatePicker };

@@ -12,6 +12,8 @@ import * as CardStory from './card';
 import * as InputStory from './input';
 import PaginationStory from './pagination';
 import DatePickerStory from './datepicker';
+// import MaterialDatePickerStory from './datepicker-material';
+
 import CultureMatchStory from './culture-match';
 import PreloaderStory from './loader';
 import MatchStory from './match';
@@ -44,6 +46,8 @@ storiesOf('Input', <InputStory />);
 storiesOf('Pagination', <PaginationStory />);
 //
 storiesOf('DatePicker', <DatePickerStory />);
+// storiesOf('MaterialDatePicker', <MaterialDatePickerStory />);
+
 //
 storiesOf('CultureMatch', <CultureMatchStory />);
 //

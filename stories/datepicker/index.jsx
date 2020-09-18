@@ -23,7 +23,7 @@ export default decorator('DatePicker').add('DatePicker Component', () => (
     </Row>
 
     <Row>
-      <Col>
+      <Col s={5}>
         <MaterialDatePicker />
       </Col>
     </Row>
