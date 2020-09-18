@@ -60,12 +60,24 @@ export const appTheme = {
         fontSize: '14px',
       },
     },
+    MuiOutlinedInput: {
+      root: {
+        borderRadius: '2px',
+      },
+      notchedOutline: {
+        borderColor: '#3d3d3d',
+      },
+    },
     MuiInputBase: {
       root: {
         height: '37px !important',
         '&$focused': {
           border: 'none !important',
           outline: 'none !important',
+        },
+        '&.Mui-disabled': {
+          backgroundColor: '#fff',
+          opacity: 0.3,
         },
       },
     },
