@@ -63,6 +63,10 @@ export const appTheme = {
     MuiOutlinedInput: {
       root: {
         borderRadius: '2px',
+
+        '&.Mui-error .MuiOutlinedInput-notchedOutline': {
+          borderWidth: '2px',
+        },
       },
       notchedOutline: {
         borderColor: '#3d3d3d',
@@ -84,6 +88,12 @@ export const appTheme = {
     MuiPickersCalendarHeader: {
       monthTitleContainer: {
         alignItems: 'center !important',
+      },
+    },
+    MuiFormHelperText: {
+      contained: {
+        marginLeft: 0,
+        fontSize: '12px',
       },
     },
   },
