@@ -58,6 +58,7 @@ export const appTheme = {
         marginTop: '0 !important',
         width: '100%',
         fontSize: '14px',
+        backgroundColor: '#fff',
       },
     },
     MuiOutlinedInput: {
