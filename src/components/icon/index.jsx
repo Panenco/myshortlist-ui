@@ -60,6 +60,7 @@ import work from './icons/work.svg';
 import courses from './icons/courses.svg';
 import dns from './icons/dns.svg';
 import assignment from './icons/assignment.svg';
+import dreaming from './icons/dreaming.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -127,6 +128,7 @@ Icon.icons = {
   courses,
   dns,
   assignment,
+  dreaming
 };
 
 Icon.defaultProps = {
