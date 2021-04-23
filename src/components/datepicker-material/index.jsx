@@ -117,7 +117,7 @@ const MaterialDatePicker = ({ className, value, error, helperText, ...props }) =
           renderInput={renderProps => (
             <TextField
               {...renderProps}
-              helperText={error && (helperText || 'Invalid Date')}
+              helperText={error && (error === ' ' || error.includes('Invalid Date')) && (helperText || 'Invalid Date')}
               color="primary"
               variant="outlined"
               error={error}
