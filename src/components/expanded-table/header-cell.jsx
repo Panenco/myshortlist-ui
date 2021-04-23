@@ -46,7 +46,7 @@ class HeaderCell extends React.Component {
 HeaderCell.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  handleSort: PropTypes.func.isRequired,
+  handleSort: PropTypes.func,
   name: PropTypes.string,
   sort: PropTypes.shape({
     sort: PropTypes.string,
@@ -59,6 +59,7 @@ HeaderCell.defaultProps = {
   className: null,
   children: null,
   name: null,
+  handleSort: () => {},
   sort: {
     sort: '',
     direction: '',
