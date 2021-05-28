@@ -10,10 +10,11 @@
   align-self: center;
 }
 
-.chips{
-  display:flex;
+.chips {
+  display: flex;
   flex-wrap: wrap;
-  >div{
-    margin-right:10px;
+
+  > div {
+    margin-right: 10px;
   }
 }

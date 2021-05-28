@@ -7,39 +7,37 @@
   font-weight: $weight;
 }
 
-@mixin table(){
-  display: flex;
-  padding: 16px 0 16px 36px;
+@mixin table() {
   border-radius: 2px;
+  display: flex;
   flex-direction: column;
+  padding: 16px 0 16px 36px;
   position: relative;
-
 }
 
-@mixin tableContentHeading(){
- @include font($m, $semi-bold,$black-color);
- display: flex;
- margin-bottom: 16px;
+@mixin tableContentHeading() {
+  @include font($m, $semi-bold,$black-color);
 
+  display: flex;
+  margin-bottom: 16px;
 }
 
-@mixin tableContentColumn(){
+@mixin tableContentColumn() {
   align-items: flex-start;
   display: flex;
-  margin-right: 46px;
-  margin-bottom: 16px;
   flex-direction: row;
-
+  margin-bottom: 16px;
+  margin-right: 46px;
 }
 
- @mixin tableColumnName(){
-  display: block;
+@mixin tableColumnName() {
   @include font($m, $small, $dark-grey-color);
- }
 
- @mixin tableColumnValue($left){
-  display: block;
-  position: absolute;
-  left: $left;
+  width: 140px;
+}
+
+@mixin tableColumnValue() {
+  flex: 1;
+
   @include font($m, $regular, $black-color);
- }
+}

@@ -2,6 +2,7 @@
 
 .table {
   width: 100%;
+
   &Header {
     background-color: $white-color;
     display: flex;
@@ -12,17 +13,20 @@
 
       &Content {
         align-items: center;
+        background: $white-color;
         border: none;
         cursor: pointer;
         display: flex;
         outline: none;
         padding: 0;
-        background:$white-color;
+
         &Text {
           margin-right: 4px;
+
           @include font($s, $regular, $black-color);
+
           &Active {
-             @include font($m, $medium, $black-color);
+            @include font($m, $medium, $black-color);
           }
         }
 
@@ -31,8 +35,8 @@
           flex-direction: column;
 
           &Icon {
-            width: 18px;
             height: 18px;
+            width: 18px;
           }
 
           &Hide {
@@ -50,9 +54,8 @@
 
         .tableHeaderCellContent {
           &Text {
-             @include font($s, $semi-bold, $dark-grey-color);
+            @include font($s, $semi-bold, $dark-grey-color);
           }
-
         }
       }
     }
@@ -60,13 +63,11 @@
 
   &Row {
     background-color: $white-color;
-    position:relative;
+    border-radius: 2px;
     display: flex;
     justify-content: flex-start;
-    border-radius: 2px;
-    >div:first-of-type{
-      @include font($m, $semi-bold, $black-color)  
-  }
+    position: relative;
+
     &Disabled {
       pointer-events: none;
     }
@@ -76,13 +77,15 @@
     }
 
     &Expanded {
-       background-color: $white-color !important;
-        padding-left: 0;
-        border:none;
-        width:100%;
-        &:hover{
-          cursor: pointer;
-        }
+      background-color: $white-color !important;
+      border: none;
+      padding-left: 0;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+
       &Button {
         align-items: center;
         display: flex;
@@ -94,36 +97,45 @@
         height: 8px;
         width: 8px;
       }
+
       &Content {
-        display: flex;
-        padding: 16px 0 16px 36px;
         border-radius: 2px;
+        display: flex;
         flex-direction: column;
+        padding: 16px 0 16px 36px;
         position: relative;
+
         &Column {
           align-items: flex-start;
           display: flex;
-          margin-right: 46px;
           margin-bottom: 16px;
+          margin-right: 46px;
+
           > div {
             align-items: flex-start;
             display: flex;
             flex-direction: column;
-            position: absolute;
             left: 100px;
+            position: absolute;
           }
         }
 
         &Header {
           display: block;
+
           @include font($m, $small, $dark-grey-color);
         }
 
         &Span {
           display: block;
+
           @include font($m, $regular, $black-color);
         }
       }
+    }
+
+    > div:first-of-type {
+      @include font($m, $semi-bold, $black-color);
     }
   }
 
@@ -133,33 +145,38 @@
     height: 46px;
     justify-content: flex-start;
     padding: 0 12px 0 24px;
-     @include font($l, $regular, $black-color);
+
+    @include font($l, $regular, $black-color);
   }
-&IconsCell{
-  display: flex;
-  position: absolute;
-  right:32px;
-  justify-content: space-between;
-  align-self: center;
-  &Icon{
-    margin-left: 12px;
-    height: 24px;
-    width:24px;
-  }
-  &Container{
-    >button{   
+
+  &IconsCell {
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 32px;
+
+    &Icon {
+      height: 24px;
       margin-left: 12px;
+      width: 24px;
     }
-    >a{   
-      margin-left: 12px;
+
+    &Container {
+      > button {
+        margin-left: 12px;
+      }
+
+      > a {
+        margin-left: 12px;
+      }
     }
   }
 }
 
-}
-.handleExpandedRow{
+.handleExpandedRow {
+  background: $white-color;
   box-shadow: 0 0 2px 0 $light-grey-color;
-  margin-bottom:6px;
-  width:100%;
-  background:$white-color
+  margin-bottom: 6px;
+  width: 100%;
 }

@@ -62,7 +62,7 @@ class FileInput extends React.Component {
     }
     return (
       <div className={s.fileText}>
-        {<Icon icon={Icon.icons.attachSmall} className={s.attachSvg} />}
+        <Icon icon={Icon.icons.attachSmall} className={s.attachSvg} />
         Add file
       </div>
     );
