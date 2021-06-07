@@ -1,19 +1,23 @@
 @import 'core';
 
-.tableRowExpanded{
-    &Content{
-        @include table();
-        &Column{
-            @include tableContentColumn();
-        }
-        &Header{
-            @include tableColumnName();
-        }
-        &Span{
-            @include tableColumnValue(150px);
-        }
-        &Heading{
-            @include tableContentHeading();
-        }
+.tableRowExpanded {
+  &Content {
+    @include table();
+
+    &Column {
+      @include tableContentColumn();
     }
+
+    &Header {
+      @include tableColumnName();
+    }
+
+    &Span {
+      @include tableColumnValue();
+    }
+
+    &Heading {
+      @include tableContentHeading();
+    }
+  }
 }

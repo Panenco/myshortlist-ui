@@ -77,6 +77,7 @@ import genericCompetences from './icons/generic-competences.svg';
 import jobSpecificCompetences from './icons/job-specific-competences.svg';
 import interests from './icons/interests.svg';
 import dreaming from './icons/dreaming.svg';
+import currentCulture from './icons/current-culture.svg';
 
 const Icon = ({ icon, className, ...props }) => (
   <svg {...props} className={cx(s.icon, className)} viewBox={icon.viewBox}>
@@ -161,6 +162,7 @@ Icon.icons = {
   companyCulture,
   careerDrivers,
   dreaming,
+  currentCulture,
 };
 
 Icon.defaultProps = {
