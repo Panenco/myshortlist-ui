@@ -1,7 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -55,32 +53,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [autoprefixer],
-            },
-          },
-        ],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: '[hash:base64:5]',
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [autoprefixer],
+              localIdentName: '[local]-[hash:base64:5]',
             },
           },
           {
@@ -105,10 +88,6 @@ module.exports = {
   },
   plugins: (() => {
     const plugins = [
-      new MiniCssExtractPlugin({
-        filename: path.join('css', `[name].[hash].css`),
-        chunkFilename: path.join('css', `[id].[hash].css`),
-      }),
       new OptimizeCSSAssetsPlugin({}),
       new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),
     ];
