@@ -65,6 +65,13 @@ export default {
           'Memo',
           'isFragment',
         ],
+        'node_modules/react-redux/node_modules/react-is/index.js': [
+          'isValidElementType',
+          'isContextConsumer',
+          'ForwardRef',
+          'Memo',
+          'isFragment',
+        ],
         'node_modules/@material-ui/utils/node_modules/react-is/index.js': ['ForwardRef', 'Memo'],
         'node_modules/@material-ui/core/node_modules/react-is/index.js': ['isFragment'],
       },
