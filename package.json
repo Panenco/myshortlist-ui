@@ -83,7 +83,6 @@
     "markdown-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.5.0",
     "mkdirp": "^0.5.1",
-    "node-sass": "^4.11.0",
     "node-sass-import-once": "^1.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
@@ -103,6 +102,7 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.1.0",
     "rollup-plugin-svg-spritesheet": "^0.0.1",
+    "sass": "^1.51.0",
     "sass-loader": "^7.0.3",
     "storybook-readme": "^4.0.5",
     "style-loader": "^0.23.1",
@@ -131,5 +131,8 @@
     "react-dropzone": "^10.1.5",
     "react-select": "^3.0.11",
     "react-select-async-paginate": "^0.3.4"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
