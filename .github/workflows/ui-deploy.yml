@@ -15,12 +15,14 @@ jobs:
 
       - name: Install root dependencies
         uses: bahmutov/npm-install@v1
+        with:
+          install-command: yarn
 
       - name: Build storybook
         run: npm run build:storybook
 
       - name: Google cloud auth
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@v0
         with:
           service_account_email: ${{ secrets.GCP_SA_EMAIL }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
