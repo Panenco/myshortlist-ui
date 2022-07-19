@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AsyncPaginate from 'react-select-async-paginate';
+import { AsyncPaginate } from 'react-select-async-paginate';
 import { components } from 'react-select';
 import cx from 'classnames';
 import { Icon } from 'components/icon';
 import s from './styles.scss';
+
+export const additionalStyles = (element, styles, ...arg) => (styles?.[element] ? styles[element](...arg) : {});
 
 export const debounce = (inner, ms = 0) => {
   let timer = null;
@@ -22,7 +24,7 @@ export const debounce = (inner, ms = 0) => {
   };
 };
 
-const customStyles = {
+const customStyles = styles => ({
   container: provided => ({
     ...provided,
     // marginBottom: '40px',
@@ -59,22 +61,42 @@ const customStyles = {
     padding: '0',
     paddingRight: '20px',
   }),
-  option: (provided, state) => ({
-    ...provided,
-    backgroundColor: state.isSelected ? '#dff2f1' : '#ffffff',
-    boxShadow: 'none',
-    color: state.isSelected ? '#000000' : '#000000',
-    cursor: 'pointer',
-    fontSize: '14px',
-    borderBottom: state.isSelected ? '1px solid transparent' : '1px solid #ececec',
-    ':hover': {
-      backgroundColor: '#f7fBfA',
+  option: (provided, state) => {
+    const customOptionStyles = {
+      backgroundColor: state.isSelected ? '#dff2f1' : '#ffffff',
+      boxShadow: 'none',
+      color: state.isSelected ? '#000000' : '#000000',
+      cursor: 'pointer',
+      fontSize: '14px',
       borderBottom: '1px solid transparent',
-    },
-    ':last-child': {
-      borderBottom: '1px solid transparent',
-    },
-  }),
+      ':hover': {
+        backgroundColor: '#f7fBfA',
+      },
+    };
+
+    return {
+      ...provided,
+      ...customOptionStyles,
+      ...additionalStyles('option', styles, { ...provided, ...customOptionStyles }, state),
+    };
+  },
+  multiValueRemove: (provided, state) => {
+    const customMVRStyles = {
+      backgroundColor: 'transparent',
+      color: 'black',
+      '&:hover': {
+        color: 'black',
+        cursor: 'pointer',
+        backgroundColor: 'transparent',
+      },
+    };
+
+    return {
+      ...provided,
+      ...customMVRStyles,
+      ...additionalStyles('multiValueRemove', styles, { ...provided, ...customMVRStyles }, state),
+    };
+  },
   indicatorSeparator: provided => ({
     ...provided,
     display: 'none',
@@ -93,10 +115,18 @@ const customStyles = {
     // position: 'absolute',
     width: '100%',
   }),
-};
+  menuList: provided => ({
+    ...provided,
+    textAlign: 'left',
+  }),
+  group: provided => ({
+    ...provided,
+    paddingBottom: 'unset',
+  }),
+});
 
-const errorStyles = {
-  ...customStyles,
+const errorStyles = styles => ({
+  ...customStyles(styles),
   control: (provided, state) => ({
     ...provided,
     border: '2px solid #ff431f',
@@ -113,7 +143,7 @@ const errorStyles = {
     paddingRight: state.isMulti ? '0' : '5px',
     width: '100%',
   }),
-};
+});
 
 const customClearIndicator = ({ ...props }) => (
   <components.ClearIndicator {...props}>
@@ -121,21 +151,23 @@ const customClearIndicator = ({ ...props }) => (
   </components.ClearIndicator>
 );
 
-const SelectSearch = ({ onSearch, error, index, customeComponents, ...props }) => (
-  <React.Fragment>
-    <AsyncPaginate
-      styles={error ? errorStyles : customStyles}
-      // loadOptions={debounce(onSearch, 500)}
-      additional={index}
-      components={{
-        DropdownIndicator: null,
-        ClearIndicator: customClearIndicator,
-        ...customeComponents,
-      }}
-      {...props}
-    />
-  </React.Fragment>
-);
+const SelectSearch = ({ onSearch, error, index, styles, customeComponents, ...props }) => {
+  return (
+    <React.Fragment>
+      <AsyncPaginate
+        styles={error ? errorStyles(styles) : customStyles(styles)}
+        // loadOptions={debounce(onSearch, 500)}
+        additional={index}
+        components={{
+          DropdownIndicator: null,
+          ClearIndicator: customClearIndicator,
+          ...customeComponents,
+        }}
+        {...props}
+      />
+    </React.Fragment>
+  );
+};
 
 SelectSearch.propTypes = {
   isMulti: PropTypes.bool,
@@ -143,12 +175,18 @@ SelectSearch.propTypes = {
   labelText: PropTypes.string,
   onSearch: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
+  error: PropTypes.string,
+  styles: PropTypes.shape({}),
+  customeComponents: PropTypes.shape({}),
 };
 
 SelectSearch.defaultProps = {
   isMulti: false,
   disabled: false,
   labelText: '',
+  error: '',
+  styles: {},
+  customeComponents: {},
 };
 
 export { SelectSearch };
