@@ -12,16 +12,16 @@
   padding: 10px 22px;
   text-decoration: none;
 
-  &:focus {
-    padding: 9px 21px;
-  }
+  // &:focus {
+  //   padding: 9px 21px;
+  // }
 
   &Primary {
     background-color: $primary-color;
     border: 1px solid $primary-color;
     text-transform: uppercase;
 
-    @include font($xs, $medium, $white-color);
+    @include font($xs, $medium, $dark-grey-color);
 
     &:hover {
       background-color: $hover-primary-color;
@@ -29,7 +29,8 @@
     }
 
     &:focus {
-      border: 2px solid $active-primary-color;
+      // border: 2px solid $active-primary-color;
+      border: 1px solid $active-primary-color;
     }
 
     &:active {
@@ -44,21 +45,22 @@
 
   &Secondary {
     background-color: $secondary-btn-color;
-    border: 1px solid $dark-grey-color;
+    border: 1px solid $tertiary500;
     text-transform: uppercase;
 
-    @include font($xs, $medium, $dark-grey-color);
+    @include font($xs, $medium, $tertiary500);
 
     &:hover {
-      background-color: $hover-secondary-color;
+      background-color: $tertiary100;
     }
 
     &:focus {
-      border: 2px solid $primary-color;
+      border: 1px solid $dark-grey-color;
     }
 
     &:active {
-      background-color: $active-secondary-color;
+      background-color: $tertiary300;
+      border: 1px solid $tertiary500;
     }
 
     &:disabled {
@@ -70,19 +72,18 @@
   &Large {
     font-size: $s;
     padding: 11px 32px;
-
-    &:focus {
-      padding: 10px 31px;
-    }
+    // save comments to make be prepared for possible changes
+    // &:focus {
+    //   padding: 10px 31px;
+    // }
   }
 
   &Shared {
     font-size: 16px;
     padding: 16px;
-
-    &:focus {
-      padding: 15px;
-    }
+    // &:focus {
+    //   padding: 15px;
+    // }
   }
 
   &Disabled {

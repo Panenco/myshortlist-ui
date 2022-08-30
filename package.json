@@ -1,6 +1,6 @@
 {
   "name": "@panenco/shortlist-ui",
-  "version": "1.0.91",
+  "version": "1.0.92",
   "description": "shortlist ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.cjs.js",
@@ -130,7 +130,7 @@
     "react-dnd": "^9.3.2",
     "react-dropzone": "^10.1.5",
     "react-select": "^3.0.11",
-    "react-select-async-paginate": "^0.3.4"
+    "react-select-async-paginate": "^0.4.1"
   },
   "engines": {
     "node": "16.x"

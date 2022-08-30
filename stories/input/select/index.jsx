@@ -3,24 +3,33 @@ import { SelectInput, Row, Col, SelectInputOutsideChips, SelectSearch } from 'in
 import { decorator } from '../../../utils/decorator';
 
 export default decorator('Input').add('SelectInput Component', () => {
-  // const [activeOptions, setOption] = React.useState([]);
+  const groupedOptions = [
+    {
+      domain: 'IT',
+      id: 'it-id',
+      options: [
+        {
+          id: 'item-1-id',
+          name: 'item-1-name',
+        },
+        {
+          id: 'item-2-id',
+          name: 'item-2-name',
+        },
+      ],
+    },
+    {
+      domain: 'Business',
+      id: 'Business-id',
+      options: [
+        {
+          id: 'Business-item-1-id',
+          name: 'Business-item-1-name',
+        },
+      ],
+    },
+  ];
 
-  // const handleChange = select => {
-  //   if (activeOptions.length === 0) {
-  //     setOption([...activeOptions, select]);
-  //   } else {
-  //     const hasntElement = activeOptions.every(option => option.value !== select.value);
-  //     if (hasntElement) {
-  //       setOption([...activeOptions, select]);
-  //     } else {
-  //       setOption(activeOptions.filter(option => option.value !== select.value));
-  //     }
-  //   }
-  //   // if (onChange) onChange(select, action);
-  // };
-  // const handleDelete = () => {
-  //   setOption(activeOptions.filter(option => option.value !== activeOption.value));
-  // };
   return (
     <>
       <Row>
@@ -134,7 +143,17 @@ export default decorator('Input').add('SelectInput Component', () => {
       </Row>
       <Row>
         <Col s={5}>
-          <SelectSearch placeholder="Placeholder" isDisabled />
+          <SelectSearch
+            placeholder="SelectSearch"
+            loadOptions={() => new Promise(res => res({ options: groupedOptions, hasMore: false }))}
+            menuIsOpen
+            isMulti
+            formatGroupLabel={data => data.id}
+            getOptionLabel={v => {
+              return v.name;
+            }}
+            getOptionValue={v => v.id}
+          />
         </Col>
       </Row>
     </>

@@ -41,7 +41,8 @@ const customStyles = {
     color: isSelected ? '#000000' : '#000000',
     cursor: 'pointer',
     fontSize: '14px',
-    borderBottom: isSelected ? '1px solid transparent' : '1px solid #ececec',
+    // borderBottom: isSelected ? '1px solid transparent' : '1px solid #ececec',
+    borderBottom: '1px solid transparent',
     ':hover': {
       backgroundColor: isSelected ? '#dff2f1' : '#f7fBfA',
       borderBottom: '1px solid transparent',
@@ -80,76 +81,76 @@ const customStyles = {
   }),
 };
 
-const noBordersStyles = {
-  container: provided => ({
-    ...provided,
-    minHeight: '36px',
-    // marginBottom: '40px',
-  }),
-  control: (provided, state) => ({
-    ...provided,
-    border: 'none',
-    minHeight: '36px',
-    borderRadius: '2px',
-    boxShadow: state.isFocused ? 'transparent' : 'transparent',
-    // outline: state.isFocused ? '2px solid #26A69A' : 'none',
-    color: '#000000',
-    fontSize: '14px',
-    width: '100%',
-    padding: '0 3px 0 16px',
-  }),
-  placeholder: (provided, state) => ({
-    ...provided,
-    color: state.isMulti ? '#a5a5a5' : '#000000',
-  }),
-  valueContainer: provided => ({
-    ...provided,
-    padding: '0',
-  }),
-  option: (provided, state) => ({
-    ...provided,
-    backgroundColor: state.isSelected ? '#dff2f1' : '#ffffff',
-    boxShadow: 'none',
-    color: state.isSelected ? '#000000' : '#000000',
-    cursor: 'pointer',
-    fontSize: '14px',
-    borderBottom: state.isSelected ? '1px solid transparent' : '1px solid #ececec',
-    ':hover': {
-      backgroundColor: '#f7fBfA',
-      borderBottom: '1px solid transparent',
-    },
-    ':last-child': {
-      borderBottom: '1px solid transparent',
-    },
-  }),
-  indicatorSeparator: provided => ({
-    ...provided,
-    display: 'none',
-  }),
-  dropdownIndicator: provided => ({
-    ...provided,
-    marginRight: '10px',
-    display: 'none',
-  }),
-  menu: provided => ({
-    ...provided,
-    zIndex: '10',
-    borderRadius: '2px',
-    border: '1px solid #ececec',
-    boxShadow: 'none',
-    marginTop: '0',
-    width: '100%',
-    ':before': {
-      content: null,
-      position: 'absolute',
-      top: '0',
-      left: '0',
-      width: '10px',
-      height: '5px',
-      backgroundColor: '#000',
-    },
-  }),
-};
+// const noBordersStyles = {
+//   container: provided => ({
+//     ...provided,
+//     minHeight: '36px',
+//     // marginBottom: '40px',
+//   }),
+//   control: (provided, state) => ({
+//     ...provided,
+//     border: 'none',
+//     minHeight: '36px',
+//     borderRadius: '2px',
+//     boxShadow: state.isFocused ? 'transparent' : 'transparent',
+//     // outline: state.isFocused ? '2px solid #26A69A' : 'none',
+//     color: '#000000',
+//     fontSize: '14px',
+//     width: '100%',
+//     padding: '0 3px 0 16px',
+//   }),
+//   placeholder: (provided, state) => ({
+//     ...provided,
+//     color: state.isMulti ? '#a5a5a5' : '#000000',
+//   }),
+//   valueContainer: provided => ({
+//     ...provided,
+//     padding: '0',
+//   }),
+//   option: (provided, state) => ({
+//     ...provided,
+//     backgroundColor: state.isSelected ? '#dff2f1' : '#ffffff',
+//     boxShadow: 'none',
+//     color: state.isSelected ? '#000000' : '#000000',
+//     cursor: 'pointer',
+//     fontSize: '14px',
+//     borderBottom: state.isSelected ? '1px solid transparent' : '1px solid #ececec',
+//     ':hover': {
+//       backgroundColor: '#f7fBfA',
+//       borderBottom: '1px solid transparent',
+//     },
+//     ':last-child': {
+//       borderBottom: '1px solid transparent',
+//     },
+//   }),
+//   indicatorSeparator: provided => ({
+//     ...provided,
+//     display: 'none',
+//   }),
+//   dropdownIndicator: provided => ({
+//     ...provided,
+//     marginRight: '10px',
+//     display: 'none',
+//   }),
+//   menu: provided => ({
+//     ...provided,
+//     zIndex: '10',
+//     borderRadius: '2px',
+//     border: '1px solid #ececec',
+//     boxShadow: 'none',
+//     marginTop: '0',
+//     width: '100%',
+//     ':before': {
+//       content: null,
+//       position: 'absolute',
+//       top: '0',
+//       left: '0',
+//       width: '10px',
+//       height: '5px',
+//       backgroundColor: '#000',
+//     },
+//   }),
+// };
 
 const errorStyles = {
   ...customStyles,

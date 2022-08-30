@@ -45,7 +45,7 @@ const customStyles = {
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    borderBottom: isSelected ? '1px solid transparent' : '1px solid #ececec',
+    borderBottom: '1px solid transparent',
     ':hover': {
       backgroundColor: isSelected ? '#dff2f1' : '#f7fBfA',
       borderBottom: '1px solid transparent',
@@ -106,15 +106,7 @@ const errorStyles = {
 
 const customDropDownIndicator = () => <Icon.Large icon={Icon.icons.arrow} className={cx(s.dropDownArrow)} />;
 
-const Option = ({
-  children,
-  value,
-  selectProps: { activeOptions, formatCreateLabel: notFoundLabel },
-  options,
-  isSelected,
-  label,
-  ...props
-}) => {
+const Option = ({ children, value, selectProps: { activeOptions }, options, isSelected, label, ...props }) => {
   const showIcon = activeOptions?.some(option => option.value === value) || isSelected;
   return (
     <components.Option {...props}>
@@ -123,6 +115,18 @@ const Option = ({
     </components.Option>
   );
 };
+
+Option.propTypes = {
+  selectProps: PropTypes.shape({
+    activeOptions: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  value: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  children: PropTypes.shape({}).isRequired,
+  options: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  isSelected: PropTypes.bool.isRequired,
+};
+
 const SelectInputOutsideChips = React.forwardRef(
   ({ isSearchable, disabled, options, borders, error, activeOptions, onDelete, ...props }, ref) => {
     return (
@@ -169,6 +173,8 @@ SelectInputOutsideChips.propTypes = {
   ).isRequired,
   borders: PropTypes.bool,
   error: PropTypes.bool,
+  activeOptions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 SelectInputOutsideChips.defaultProps = {
