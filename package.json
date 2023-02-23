@@ -1,6 +1,6 @@
 {
   "name": "@panenco/shortlist-ui",
-  "version": "1.0.93",
+  "version": "1.0.94",
   "description": "shortlist ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.cjs.js",
@@ -39,11 +39,11 @@
   },
   "peerDependencies": {
     "classnames": "^2.2.6",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react": "^17.0.0",
     "react-day-picker": "^7.3.0",
     "react-dom": "^17.0.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -87,11 +87,11 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.16.4",
-    "prop-types": "^15.7.2",
+    "prop-types": "^15.8.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-hot-loader": "^4.7.0",
-    "react-router-dom": "^5.0.1",
+    "react-router-dom": "^5.1.2",
     "rimraf": "^2.6.3",
     "rollup": "^1.2.2",
     "rollup-plugin-alias": "^1.5.1",
