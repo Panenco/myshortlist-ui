@@ -1,4 +1,10 @@
+# ⚠️ DEPRECATED ⚠️
+
+This package is not supported anymore. UI components were transferred to product UI.
+
 # Shortlist core UI library
+
+
 
 ## Prerequisites
 
